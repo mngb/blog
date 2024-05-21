@@ -6,3 +6,5 @@
    =jekyll build --drafts=
 ** 启动时含有草稿目录
    =jekyll serve --drafts=
+** 启动服务
+   =sudo bundle exec jekyll serve=
