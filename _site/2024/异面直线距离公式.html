@@ -1,12 +1,9 @@
----
-permalink: /:year/
----
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-03-28 Thu 22:32 -->
+<!-- 2024-05-22 Wed 22:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -218,6 +215,28 @@ permalink: /:year/
     /*]]>*///-->
 // @license-end
 </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
@@ -225,45 +244,31 @@ permalink: /:year/
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd9b270a">1. 常用操作</a></li>
+<li><a href="#orgcceea8a">1. 异面直线间距离公式</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd9b270a" class="outline-2">
-<h2 id="orgd9b270a"><span class="section-number-2">1.</span> 常用操作</h2>
+<div id="outline-container-orgcceea8a" class="outline-2">
+<h2 id="orgcceea8a"><span class="section-number-2">1.</span> 异面直线间距离公式</h2>
 <div class="outline-text-2" id="text-1">
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">操作</th>
-<th scope="col" class="org-left">快捷键</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left">插入链接</td>
-<td class="org-left">C-c C-l</td>
-</tr>
-
-<tr>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-</tbody>
-</table>
+<p>
+两异面直线 \(l_1\) \(l_2\) , 方程分别为：
+\(l_1: P = P_1 + t\vec{v_1}\)
+\(l_2: P = P_2 + t\vec{v_2}\)
+取和 \(l_2\) 共面，和 \(l_1\) 平行的直线 \(l_3\) 方程为：
+\(l_3: P = P_2 + t\vec{v_1}\)
+则 \(l_2,l_3\) 所确定平面 \(O_1\) 方程为：
+\(O_1: (P - P_2)\cdot(\vec{v_1}\times\vec{v_2}) = 0\)
+则异面直线 \(l_1, l_2\) 距离为直线 \(l_1\) 到平面 \(O_1\) 的距离，即为点 \(P_1\)
+到平面 \(O_1\) 的距离，由点到平面距离公式，可得该距离为：
+\(\frac{|(P_1 - P_2)\cdot(\vec{v_1}\times\vec{v_2})|}{|\vec{v_1}\times\vec{v_2}|}\)
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: PENG Kui</p>
-<p class="date">Created: 2024-03-28 Thu 22:32</p>
+<p class="date">Created: 2024-05-22 Wed 22:21</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
