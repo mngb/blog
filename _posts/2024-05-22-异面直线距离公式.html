@@ -6,7 +6,7 @@ permalink: /:year/:title:output_ext
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-05-22 Wed 22:21 -->
+<!-- 2024-05-22 Wed 22:56 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -248,6 +248,7 @@ permalink: /:year/:title:output_ext
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#orgcceea8a">1. 异面直线间距离公式</a></li>
+<li><a href="#org000e867">2. 点到平面距离公式</a></li>
 </ul>
 </div>
 </div>
@@ -256,22 +257,73 @@ permalink: /:year/:title:output_ext
 <div class="outline-text-2" id="text-1">
 <p>
 两异面直线 \(l_1\) \(l_2\) , 方程分别为：
+</p>
+
+<p>
 \(l_1: P = P_1 + t\vec{v_1}\)
 \(l_2: P = P_2 + t\vec{v_2}\)
+</p>
+
+<p>
 取和 \(l_2\) 共面，和 \(l_1\) 平行的直线 \(l_3\) 方程为：
+</p>
+
+<p>
 \(l_3: P = P_2 + t\vec{v_1}\)
+</p>
+
+<p>
 则 \(l_2,l_3\) 所确定平面 \(O_1\) 方程为：
+</p>
+
+<p>
 \(O_1: (P - P_2)\cdot(\vec{v_1}\times\vec{v_2}) = 0\)
+</p>
+
+<p>
 则异面直线 \(l_1, l_2\) 距离为直线 \(l_1\) 到平面 \(O_1\) 的距离，即为点 \(P_1\)
 到平面 \(O_1\) 的距离，由点到平面距离公式，可得该距离为：
-\(\frac{|(P_1 - P_2)\cdot(\vec{v_1}\times\vec{v_2})|}{|\vec{v_1}\times\vec{v_2}|}\)
+</p>
+
+<p>
+\[\frac{|(P_1 - P_2)\cdot(\vec{v_1}\times\vec{v_2})|}{|\vec{v_1}\times\vec{v_2}|}\]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org000e867" class="outline-2">
+<h2 id="org000e867"><span class="section-number-2">2.</span> 点到平面距离公式</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+平面法线为 \(\vec{v}\) , 平面过点 \(P_1\)
+则平面方程为：
+</p>
+
+<p>
+\((P - P_1)\cdot \vec{v} = 0\)
+</p>
+
+<p>
+任意点 \(Q\) 到平面距离可如下计算：
+</p>
+
+<p>
+\[\frac{|\vec{PQ} \cdot \vec{v}|}{|\vec{v}|}\]
+</p>
+
+<p>
+即为：
+</p>
+
+<p>
+\[\frac{|(Q - P_1) \cdot \vec{v}|}{|\vec{v}|}\]
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: PENG Kui</p>
-<p class="date">Created: 2024-05-22 Wed 22:21</p>
+<p class="date">Created: 2024-05-22 Wed 22:56</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
