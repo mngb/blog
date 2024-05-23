@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2024-05-23T16:04:27+08:00</updated><id>http://localhost:4000/blog/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">均值不等式的证明</title><link href="http://localhost:4000/blog/2024/%E5%9D%87%E5%80%BC%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E8%AF%81%E6%98%8E.html" rel="alternate" type="text/html" title="均值不等式的证明" /><published>2024-05-23T00:00:00+08:00</published><updated>2024-05-23T00:00:00+08:00</updated><id>http://localhost:4000/blog/2024/%E5%9D%87%E5%80%BC%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E8%AF%81%E6%98%8E</id><content type="html" xml:base="http://localhost:4000/blog/2024/%E5%9D%87%E5%80%BC%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E8%AF%81%E6%98%8E.html"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2024-05-23T21:23:01+08:00</updated><id>http://localhost:4000/blog/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">均值不等式的证明</title><link href="http://localhost:4000/blog/2024/%E5%9D%87%E5%80%BC%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E8%AF%81%E6%98%8E.html" rel="alternate" type="text/html" title="均值不等式的证明" /><published>2024-05-23T00:00:00+08:00</published><updated>2024-05-23T00:00:00+08:00</updated><id>http://localhost:4000/blog/2024/%E5%9D%87%E5%80%BC%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E8%AF%81%E6%98%8E</id><content type="html" xml:base="http://localhost:4000/blog/2024/%E5%9D%87%E5%80%BC%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E8%AF%81%E6%98%8E.html"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-05-23 Thu 16:04 -->
+<!-- 2024-05-23 Thu 21:22 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -222,15 +222,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org63f0c31">1. 简单的情形</a></li>
-<li><a href="#org3585cdc">2. 一般情况</a></li>
-<li><a href="#orgac1b8e2">3. 琴声不等式的证明</a></li>
+<li><a href="#org14c8bc8">1. 简单的情形</a></li>
+<li><a href="#orgb75191a">2. 一般情况</a></li>
+<li><a href="#orgdc4d7fc">3. 琴声不等式的证明</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org63f0c31" class="outline-2">
-<h2 id="org63f0c31"><span class="section-number-2">1.</span> 简单的情形</h2>
+<div id="outline-container-org14c8bc8" class="outline-2">
+<h2 id="org14c8bc8"><span class="section-number-2">1.</span> 简单的情形</h2>
 <div class="outline-text-2" id="text-1">
 
 <div class="equation-container">
@@ -246,20 +246,147 @@ a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}
 1
 </span>
 </div>
+
+<p>
+先证明 <img src="../assets/2024-05-23-均值不等式的证明_8007b81493610c108b48cc20cde9511ecee87ada.png" alt="$\sqrt{a_1 a_2} \leq \frac{a_1 + a_2}{2}$" />, 两边平方再相减，变为 <img src="../assets/2024-05-23-均值不等式的证明_20bb4fdaaf607a0cb68482b4bcacab14f684bd1e.png" alt="$0 \leq
+(\frac{a_1 - a_2}{2})^2$" />
+显然成立。
+同理可证明 <img src="../assets/2024-05-23-均值不等式的证明_7592aa291357b70c168f41f3fad76d4bb1efac1b.png" alt="$\frac{a_1 + a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}$" />
+对第一个不等式，设 <img src="../assets/2024-05-23-均值不等式的证明_a6e2f87bd5422b8dac93b9ad713ef121778f7fd6.png" alt="$b_1 = \frac{1}{a_1}, b_2 = \frac{1}{a_2}$" /> , 再用前面得出的
+结论同样可得。
+</p>
 </div>
 </div>
 
+<div id="outline-container-orgb75191a" class="outline-2">
+<h2 id="orgb75191a"><span class="section-number-2">2.</span> 一般情况</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+对 n 个变量的情形，证明：
+</p>
 
-<div id="outline-container-org3585cdc" class="outline-2">
-<h2 id="org3585cdc"><span class="section-number-2">2.</span> 一般情况</h2>
+
+<div class="equation-container">
+<span class="equation">
+<img src="../assets/2024-05-23-均值不等式的证明_f3f49eebb62926a7c43d360d749d4a13282442fd.png" alt="  \begin{equation*}
+\frac{n}{\sum a_i}
+\leq \sqrt[n]{\prod a_i}
+\leq \frac{\sum a_i}{n}
+\leq \sqrt{\frac{\sum a_i^2}{n}},
+\quad where \,\forall a_i &amp;gt; 0
+  \end{equation*}
+" />
+</span>
+<span class="equation-label">
+2
+</span>
 </div>
-<div id="outline-container-orgac1b8e2" class="outline-2">
-<h2 id="orgac1b8e2"><span class="section-number-2">3.</span> 琴声不等式的证明</h2>
+
+
+<p>
+  先证明 <img src="../assets/2024-05-23-均值不等式的证明_578a4a3082ab9b3351ad7f316d11848cdbea2345.png" alt="$\frac{\sum a_i}{n}
+\leq \sqrt{\frac{\sum a_i^2}{n}}$" /> ,由柯西不等式 <img src="../assets/2024-05-23-均值不等式的证明_1622d82ef071f8ca31149a6932b3cdf4146fedfc.png" alt="$(\sum a_i b_i)^2
+\leq (\sum a_i^2)(\sum b_i^2)$" />
+令 <img src="../assets/2024-05-23-均值不等式的证明_b123979df2843eb24ec3d2bdb7b700a4e36c72de.png" alt="$b_i = \frac{1}{n}$" />, 即得。
+</p>
+
+<p>
+按照前面的最简情形，只需证
+</p>
+
+<p>
+<img src="../assets/2024-05-23-均值不等式的证明_cb3b0bbd97a8bac58425abaa34863d035a912483.png" alt="$\sqrt[n]{\prod a_i}
+  \leq \frac{\sum a_i}{n}$" />
+即可，第一个不等式可以通过变换 <img src="../assets/2024-05-23-均值不等式的证明_12b97da08baeed725228009b0c8d5269c5307b86.png" alt="$b_i = \frac{1}{a_i}$" /> 和这个不等式证得。
+</p>
+
+<p>
+将左式左简单变换，可证：
+</p>
+
+
+<div class="equation-container">
+<span class="equation">
+<img src="../assets/2024-05-23-均值不等式的证明_284e1f075294615f32f4ed870a3258cf495c628e.png" alt="  \begin{equation*}
+\sqrt[n]{\prod a_i} =
+e^{\frac{\sum \ln{a_i}}{n}} \leq
+e^{\ln\frac{\sum {a_i}}{n}} =
+\frac{\sum a_i}{n}
+  \end{equation*}
+" />
+</span>
+<span class="equation-label">
+3
+</span>
+</div>
+
+<p>
+其中中间一个不等式用到了琴声不等式的结论，后面会给出琴声不等式的证明。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgdc4d7fc" class="outline-2">
+<h2 id="orgdc4d7fc"><span class="section-number-2">3.</span> 琴声不等式的证明</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+简单情形，对任意凸函数 <img src="../assets/2024-05-23-均值不等式的证明_9a94d2b30be9907660c60220cbb82d456bc12743.png" alt="$y=f(x)$" /> , 成立如下不等式：
+</p>
+
+
+<div class="equation-container">
+<span class="equation">
+<img src="../assets/2024-05-23-均值不等式的证明_56e8206e30df4f8ab84c78c2d1dc31539dd94daa.png" alt="  \begin{equation*}
+t f(x_1) + (1 - t) f(x_2) \geq
+f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
+  \end{equation*}
+" />
+</span>
+<span class="equation-label">
+4
+</span>
+</div>
+
+<p>
+不等式的理解，如图所示：
+</p>
+
+<div id="org763d4ad" class="figure">
+<p><img src="./../assets/fx.jpg" alt="fx.jpg" width="200px" />
+</p>
+<p><span class="figure-number">Figure 1: </span>f(x)</p>
+</div>
+
+<p>
+其中假定了 <img src="../assets/2024-05-23-均值不等式的证明_7c9cebd045c31d1ecade113837203352744ff119.png" alt="$x_1 \leq x_2$" />, <img src="../assets/2024-05-23-均值不等式的证明_e165129fd336c8650653db83bbc3d064bbdd2fda.png" alt="$A(x_1, f(x_1)), B(x_2, f(x_2))$" />
+则点 <img src="../assets/2024-05-23-均值不等式的证明_1317edb974c38f43386c9a9fbf8b76baeb180114.png" alt="$(t x_1 + (1-t) x_2, t f(x_1) + (1 - t) f(x_2))$" /> 一定在
+线段 <img src="../assets/2024-05-23-均值不等式的证明_76650d90efb44833fcd9b51ce3c571c8bfd645d8.png" alt="$\overline{AB}$" /> 上，而点  <img src="../assets/2024-05-23-均值不等式的证明_e09ff7a4aea7973c94089989bbb47f763c88da7e.png" alt="$(t x_1 + (1-t) x_2, f(t x_1 + (1 - t) x_2)$" /> 一定在
+弧线 <img src="../assets/2024-05-23-均值不等式的证明_4dbbe442116a659bacd10dfa7b238ba9d7f848ac.png" alt="$\overset{\frown}{AB}$" /> 上，由凸函数的定义，不等式显然成立。
+</p>
+
+<p>
+琴声不等式则是对 n 个自变量的情形：
+</p>
+
+
+<div class="equation-container">
+<span class="equation">
+<img src="../assets/2024-05-23-均值不等式的证明_6d0879541c5ffdcbdaf94f23363599b54af62cf2.png" alt="  \begin{equation*}
+\sum{\lambda_i f(x_i)} \geq f(\sum{\lambda_i x_i})\\
+\quad \sum{\lambda_i} = 1, \forall \lambda_i \in [0, 1]
+  \end{equation*}
+" />
+</span>
+<span class="equation-label">
+5
+</span>
+</div>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: PENG Kui</p>
-<p class="date">Created: 2024-05-23 Thu 16:04</p>
+<p class="date">Created: 2024-05-23 Thu 21:22</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
@@ -1139,7 +1266,7 @@ a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-05-21 Tue 15:20 -->
+<!-- 2024-05-23 Thu 21:22 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -1374,7 +1501,7 @@ a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}
 <h2 id="org3ff7f21"><span class="section-number-2">1.</span> 学习的金字塔留存模型</h2>
 <div class="outline-text-2" id="text-1">
 
-<div id="org52369d4" class="figure">
+<div id="orgd69b9d5" class="figure">
 <p><img src="../assets/学习的金字塔模型.png" alt="学习的金字塔模型.png" />
 </p>
 <p><span class="figure-number">Figure 1: </span>学习的金字塔模型</p>
@@ -1389,9 +1516,10 @@ a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}
 <h3 id="org5778eda"><span class="section-number-3">2.1.</span> 费曼学习法</h3>
 <div class="outline-text-3" id="text-2-1">
 
-<div id="orge055c67" class="figure">
-<p><img src="../assets/费曼学习法.png" alt="费曼学习法.png" />
+<div id="org3fb5f2d" class="figure">
+<p><img src="../assets/费曼学习法.png" alt="费曼学习法.png" width="600px" />
 </p>
+<p><span class="figure-number">Figure 2: </span>figure</p>
 </div>
 </div>
 </div>
@@ -1399,7 +1527,7 @@ a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}
 <h3 id="org2a95d20"><span class="section-number-3">2.2.</span> 刻意练习法</h3>
 <div class="outline-text-3" id="text-2-2">
 
-<div id="org619d0ac" class="figure">
+<div id="orgcdee32b" class="figure">
 <p><img src="../assets/刻意练习法.png" alt="刻意练习法.png" />
 </p>
 </div>
@@ -1409,7 +1537,7 @@ a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}
 <h3 id="org4f87b79"><span class="section-number-3">2.3.</span> 斯科特杨学习法</h3>
 <div class="outline-text-3" id="text-2-3">
 
-<div id="org2ffc596" class="figure">
+<div id="orgd6b791d" class="figure">
 <p><img src="../assets/斯科特杨学习法.png" alt="斯科特杨学习法.png" />
 </p>
 </div>
@@ -1428,7 +1556,7 @@ a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: PENG Kui</p>
-<p class="date">Created: 2024-05-21 Tue 15:20</p>
+<p class="date">Created: 2024-05-23 Thu 21:22</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

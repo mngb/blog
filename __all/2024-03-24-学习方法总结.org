@@ -5,6 +5,8 @@
   [[../assets/学习的金字塔模型.png]]
 * 常见学习方法
 ** 费曼学习法
+   #+CAPTION: figure
+   #+ATTR_HTML: :width 600px
    [[../assets/费曼学习法.png]]
 ** 刻意练习法
    [[../assets/刻意练习法.png]]
