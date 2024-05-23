@@ -1,6 +1,9 @@
 # -*- coding: utf-8; -*-
 
 #+OPTIONS: tex:imagemagick
+# Local Variables:
+# eval: (setq-local org-preview-latex-image-directory "../assets/")
+# End:
 
 * 简单的情形
   
@@ -9,6 +12,7 @@
 a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}
  , where \quad a_1,a_2 > 0
  \end{equation}
+
 
 * 一般情况
 * 琴声不等式的证明
