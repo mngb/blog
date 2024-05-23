@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2024-05-23T21:23:01+08:00</updated><id>http://localhost:4000/blog/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">均值不等式的证明</title><link href="http://localhost:4000/blog/2024/%E5%9D%87%E5%80%BC%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E8%AF%81%E6%98%8E.html" rel="alternate" type="text/html" title="均值不等式的证明" /><published>2024-05-23T00:00:00+08:00</published><updated>2024-05-23T00:00:00+08:00</updated><id>http://localhost:4000/blog/2024/%E5%9D%87%E5%80%BC%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E8%AF%81%E6%98%8E</id><content type="html" xml:base="http://localhost:4000/blog/2024/%E5%9D%87%E5%80%BC%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E8%AF%81%E6%98%8E.html"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2024-05-23T22:12:27+08:00</updated><id>http://localhost:4000/blog/feed.xml</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">均值不等式的证明</title><link href="http://localhost:4000/blog/2024/%E5%9D%87%E5%80%BC%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E8%AF%81%E6%98%8E.html" rel="alternate" type="text/html" title="均值不等式的证明" /><published>2024-05-23T00:00:00+08:00</published><updated>2024-05-23T00:00:00+08:00</updated><id>http://localhost:4000/blog/2024/%E5%9D%87%E5%80%BC%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E8%AF%81%E6%98%8E</id><content type="html" xml:base="http://localhost:4000/blog/2024/%E5%9D%87%E5%80%BC%E4%B8%8D%E7%AD%89%E5%BC%8F%E7%9A%84%E8%AF%81%E6%98%8E.html"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-05-23 Thu 21:22 -->
+<!-- 2024-05-23 Thu 22:12 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -351,7 +351,7 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
 不等式的理解，如图所示：
 </p>
 
-<div id="org763d4ad" class="figure">
+<div id="orgda09a54" class="figure">
 <p><img src="./../assets/fx.jpg" alt="fx.jpg" width="200px" />
 </p>
 <p><span class="figure-number">Figure 1: </span>f(x)</p>
@@ -381,12 +381,18 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
 5
 </span>
 </div>
+
+<p>
+将 <img src="../assets/2024-05-23-均值不等式的证明_6cd0e5c52323e203c8a830db38d8a282144a9ecb.png" alt="$f(\sum{\lambda_i x_i})$" /> 写成 <img src="../assets/2024-05-23-均值不等式的证明_225463720832da44d85535ba074349c38991b580.png" alt="$f(\lambda_1 x_1 +
+  (1 - \lambda_1)(\sum_{2}^{n} \frac{\lambda_i x_i}{1 - \lambda_1}))$" /> 再用简单
+情形的结论，可以逐级展开，即得证。
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: PENG Kui</p>
-<p class="date">Created: 2024-05-23 Thu 21:22</p>
+<p class="date">Created: 2024-05-23 Thu 22:12</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -81,4 +81,6 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
 \quad \sum{\lambda_i} = 1, \forall \lambda_i \in [0, 1]
   \end{equation}
 
-  
+  将 $f(\sum{\lambda_i x_i})$ 写成 $f(\lambda_1 x_1 +
+  (1 - \lambda_1)(\sum_{2}^{n} \frac{\lambda_i x_i}{1 - \lambda_1}))$ 再用简单
+  情形的结论，可以逐级展开，即得证。
