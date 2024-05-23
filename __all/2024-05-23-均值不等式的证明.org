@@ -1,0 +1,14 @@
+# -*- coding: utf-8; -*-
+
+#+OPTIONS: tex:imagemagick
+
+* 简单的情形
+  
+  \begin{equation}
+\frac{2}{\frac{1}{a_1} + \frac{1}{a_2}} \leq \sqrt{a_1 a_2} \leq \frac{a_1 +
+a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}
+ , where \quad a_1,a_2 > 0
+ \end{equation}
+
+* 一般情况
+* 琴声不等式的证明
