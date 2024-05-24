@@ -1,0 +1,6 @@
+/_site
+/.jekyll-metadata
+/.jekyll-cache
+/assets/org-ltximg_*
+/Gemfile.lock
+
