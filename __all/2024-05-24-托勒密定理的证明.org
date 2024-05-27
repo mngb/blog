@@ -1,0 +1,21 @@
+# -*- coding: utf-8; -*-
+* 定理描述
+  四边形 $ABCD$ 的边 $AB, BC, CD, DA$ 和对角线 $AC, BD$
+  满足如下不等式：
+  $$ AB \cdot CD + BC \cdot DA \geq AC \cdot BD$$
+  等号成立，当且仅当该四边形为圆内接四边形时。
+  
+* 证明
+  用复数表示方式证明。令
+  $a=\overrightarrow{OA}, b=\overrightarrow{OB}, c=\overrightarrow{OC},
+  d=\overrightarrow{OD}$
+  则
+  $$ (b - a)(d - c) + (c - b)(d - a) =\\
+  (bd + ac - ad - bc) + (cd + ab - bd - ac) = \\
+  cd + ab - ad - bc = (c - a)(d - b)$$
+  由三角不等式知
+  $$ |(b - a)(d - c)| + |(c - b)(d - a)| \geq |(c - a)(d - b)|$$
+  即
+  $$ AB \cdot CD + BC \cdot DA \geq AC \cdot BD$$
+  等号成立当且仅当复数 $(b - a)(d - c)$ 与 $(c - b)(d - a)$ 辐角相同。
+  即 $AB$ 与 $CD$ 辐角之和与 $BC$ $AD$ 辐角之和相等，
