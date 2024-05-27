@@ -1,5 +1,8 @@
-_site
+/_site/
 .sass-cache
 .jekyll-cache
 .jekyll-metadata
 vendor
+/assets/org-ltximg_*
+/Gemfile.lock
+/__all/ltximg/
