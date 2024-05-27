@@ -10,7 +10,7 @@ layout: single
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-05-27 Mon 19:23 -->
+<!-- 2024-05-27 Mon 21:05 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -222,47 +222,17 @@ layout: single
     /*]]>*///-->
 // @license-end
 </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
-</script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="content">
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org28aac1b">1. 定理描述</a></li>
-<li><a href="#orgcddcc24">2. 证明</a></li>
-</ul>
-</div>
-</div>
+
 <div id="outline-container-org28aac1b" class="outline-2">
 <h2 id="org28aac1b"><span class="section-number-2">1.</span> 定理描述</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-四边形 \(ABCD\) 的边 \(AB, BC, CD, DA\) 和对角线 \(AC, BD\)
+四边形 <img src="../assets/2024-05-24-托勒密定理的证明_24b6c53baa593e1956fc887ae5da52f75ef2230f.png" alt="$ABCD$" /> 的边 <img src="../assets/2024-05-24-托勒密定理的证明_2204bb29bb71b38d1ea721836621865c138076db.png" alt="$AB, BC, CD, DA$" /> 和对角线 <img src="../assets/2024-05-24-托勒密定理的证明_451ee3e93df3028813cda497a3070946f5aa1518.png" alt="$AC, BD$" />
 满足如下不等式：
-\[ AB \cdot CD + BC \cdot DA \geq AC \cdot BD\]
+<img src="../assets/2024-05-24-托勒密定理的证明_de7d63214ab96b69e5bf45bfe00d995bcbfa8f2b.png" alt="$$ AB \cdot CD + BC \cdot DA \geq AC \cdot BD$$" />
 等号成立，当且仅当该四边形为圆内接四边形时。
 </p>
 </div>
@@ -273,32 +243,32 @@ layout: single
 <div class="outline-text-2" id="text-2">
 <p>
 用复数表示方式证明。令
-\(a=\overrightarrow{OA}, b=\overrightarrow{OB}, c=\overrightarrow{OC},
-  d=\overrightarrow{OD}\)
+<img src="../assets/2024-05-24-托勒密定理的证明_f6723e9a7e848be35eeeaa0eda4fe7ee6f3039b2.png" alt="$a=\overrightarrow{OA}, b=\overrightarrow{OB}, c=\overrightarrow{OC},
+  d=\overrightarrow{OD}$" />
 则
-\[ (b - a)(d - c) + (c - b)(d - a) =\\
+<img src="../assets/2024-05-24-托勒密定理的证明_be168412f0c1661562d53054daba4aad8c35f86b.png" alt="$$ (b - a)(d - c) + (c - b)(d - a) =\\
   (bd + ac - ad - bc) + (cd + ab - bd - ac) = \\
-  cd + ab - ad - bc = (c - a)(d - b)\]
+  cd + ab - ad - bc = (c - a)(d - b)$$" />
 由三角不等式知
-\[ |(b - a)(d - c)| + |(c - b)(d - a)| \geq |(c - a)(d - b)|\]
+<img src="../assets/2024-05-24-托勒密定理的证明_a12e9198b799d86cb2dc7c8a6fb242fc78f3aa68.png" alt="$$ |(b - a)(d - c)| + |(c - b)(d - a)| \geq |(c - a)(d - b)|$$" />
 即
-\[ AB \cdot CD + BC \cdot DA \geq AC \cdot BD\]
-等号成立当且仅当复数 \((b - a)(d - c)\) 与 \((c - b)(d - a)\) 辐角相同。
-即 \(\frac{b - a}{d - a}\) 和 \(\frac{c - b}{d - c}\) 辐角相同，又因为
-\(arg(\frac{c - b}{d - c}) \equiv arg(\frac{b - c}{d - c}) + 180^\circ \pmod{360^\circ}\)
-其中 \(arg(x) \in [0, 360^\circ]\)
-即 \(arg(\frac{b - a}{d - a}) \equiv arg(\frac{b - c}{d - c}) + 180^\circ \pmod{360^\circ}\)
-由复数辐角性质 \(arg(\frac{x}{y}) \equiv arg(x) - arg(y) \equiv -arg(\frac{y}{x}) \pmod{360^\circ}\)
-上式转化为 \(arg(\frac{b - a}{d - a}) \equiv -arg(\frac{d - c}{b - c}) + 180^\circ \pmod{360^\circ}\)
-即为 \(arg(\frac{b - a}{d - a}) + arg(\frac{d - c}{b - c}) \equiv 180^\circ
-  \pmod{360^\circ}\), 恰好为四点共圆的充要条件。
+<img src="../assets/2024-05-24-托勒密定理的证明_de7d63214ab96b69e5bf45bfe00d995bcbfa8f2b.png" alt="$$ AB \cdot CD + BC \cdot DA \geq AC \cdot BD$$" />
+等号成立当且仅当复数 <img src="../assets/2024-05-24-托勒密定理的证明_35899b135012fcea0c73046b8481215f74110640.png" alt="$(b - a)(d - c)$" /> 与 <img src="../assets/2024-05-24-托勒密定理的证明_4fbebffaf1cf5a9c671724380b7b047872382746.png" alt="$(c - b)(d - a)$" /> 辐角相同。
+即 <img src="../assets/2024-05-24-托勒密定理的证明_10cb5c060d221b18ca81bd7ea91102b58360637b.png" alt="$\frac{b - a}{d - a}$" /> 和 <img src="../assets/2024-05-24-托勒密定理的证明_36a394899e17659393d53934a5afa79fd765d314.png" alt="$\frac{c - b}{d - c}$" /> 辐角相同，又因为
+<img src="../assets/2024-05-24-托勒密定理的证明_417c00140f389ffcda13540b37bd028c38c8034f.png" alt="$arg(\frac{c - b}{d - c}) \equiv arg(\frac{b - c}{d - c}) + 180^\circ \pmod{360^\circ}$" />
+其中 <img src="../assets/2024-05-24-托勒密定理的证明_b26c93fe044ddf5f04cf9c68a87b5dea6ce9b873.png" alt="$arg(x) \in [0, 360^\circ]$" />
+即 <img src="../assets/2024-05-24-托勒密定理的证明_841baaf8f2e31495867b7f49da4f63fe38710362.png" alt="$arg(\frac{b - a}{d - a}) \equiv arg(\frac{b - c}{d - c}) + 180^\circ \pmod{360^\circ}$" />
+由复数辐角性质 <img src="../assets/2024-05-24-托勒密定理的证明_7ef09e2e6d91df40bb5c518077139f7dd30b8480.png" alt="$arg(\frac{x}{y}) \equiv arg(x) - arg(y) \equiv -arg(\frac{y}{x}) \pmod{360^\circ}$" />
+上式转化为 <img src="../assets/2024-05-24-托勒密定理的证明_a60798ecdbe457d44c53a5a588b31fae094996cc.png" alt="$arg(\frac{b - a}{d - a}) \equiv -arg(\frac{d - c}{b - c}) + 180^\circ \pmod{360^\circ}$" />
+即为 <img src="../assets/2024-05-24-托勒密定理的证明_e9852fbf01944bdb14c66c69020729375314240b.png" alt="$arg(\frac{b - a}{d - a}) + arg(\frac{d - c}{b - c}) \equiv 180^\circ
+  \pmod{360^\circ}$" />, 恰好为四点共圆的充要条件。
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: PENG Kui</p>
-<p class="date">Created: 2024-05-27 Mon 19:23</p>
+<p class="date">Created: 2024-05-27 Mon 21:05</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

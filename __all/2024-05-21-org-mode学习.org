@@ -1,4 +1,12 @@
 # -*- coding: utf-8; -*-
+
+#+OPTIONS: tex:imagemagick
+#+OPTIONS: toc:nil
+# Local Variables:
+# eval: (setq-local org-preview-latex-image-directory "../assets/")
+# eval: (setq-local org-image-actual-width nil)
+# End:
+
 * 常用操作
   | 操作     | 快捷键  |
   |----------+---------|
