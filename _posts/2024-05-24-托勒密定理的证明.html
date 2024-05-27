@@ -10,7 +10,7 @@ layout: single
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-05-27 Mon 15:18 -->
+<!-- 2024-05-27 Mon 19:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -284,14 +284,21 @@ layout: single
 即
 \[ AB \cdot CD + BC \cdot DA \geq AC \cdot BD\]
 等号成立当且仅当复数 \((b - a)(d - c)\) 与 \((c - b)(d - a)\) 辐角相同。
-即 \(AB\) 与 \(CD\) 辐角之和与 \(BC\) \(AD\) 辐角之和相等，
+即 \(\frac{b - a}{d - a}\) 和 \(\frac{c - b}{d - c}\) 辐角相同，又因为
+\(arg(\frac{c - b}{d - c}) \equiv arg(\frac{b - c}{d - c}) + 180^\circ \pmod{360^\circ}\)
+其中 \(arg(x) \in [0, 360^\circ]\)
+即 \(arg(\frac{b - a}{d - a}) \equiv arg(\frac{b - c}{d - c}) + 180^\circ \pmod{360^\circ}\)
+由复数辐角性质 \(arg(\frac{x}{y}) \equiv arg(x) - arg(y) \equiv -arg(\frac{y}{x}) \pmod{360^\circ}\)
+上式转化为 \(arg(\frac{b - a}{d - a}) \equiv -arg(\frac{d - c}{b - c}) + 180^\circ \pmod{360^\circ}\)
+即为 \(arg(\frac{b - a}{d - a}) + arg(\frac{d - c}{b - c}) \equiv 180^\circ
+  \pmod{360^\circ}\), 恰好为四点共圆的充要条件。
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: PENG Kui</p>
-<p class="date">Created: 2024-05-27 Mon 15:18</p>
+<p class="date">Created: 2024-05-27 Mon 19:23</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
