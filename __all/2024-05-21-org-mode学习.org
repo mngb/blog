@@ -2,13 +2,28 @@
 
 #+OPTIONS: tex:imagemagick
 #+OPTIONS: toc:nil
-# Local Variables:
-# eval: (setq-local org-preview-latex-image-directory "../assets/")
-# eval: (setq-local org-image-actual-width nil)
-# End:
 
 * 常用操作
-  | 操作     | 快捷键  |
-  |----------+---------|
-  | 插入链接 | C-c C-l |
-  |          |         |
+
+** 编辑
+  | 操作               | 快捷键    |
+  |--------------------+-----------|
+  | 插入链接           | C-c C-l   |
+  | 新的 Heading       | C-Enter   |
+  | 新的 Item          | M-Enter   |
+  | Heading Level up   | M-<left>  |
+  | Heading Level down | M-<right> |
+  | Heading Move up    | M-<up>    |
+  | Heading Move down  | M-<down>  |
+  |                    |           |
+
+** 阅读
+   | 操作                             | 快捷键  |
+   |----------------------------------+---------|
+   | goto up level heading            | C-c C-u |
+   | goto next same level heading     | C-c C-f |
+   | goto previous same level heading | C-c C-b |
+   | goto next heading                | C-c C-n |
+   | goto previous heading            | C-c C-p |
+   | goto heading                     | C-c C-j |
+   |                                  |         |

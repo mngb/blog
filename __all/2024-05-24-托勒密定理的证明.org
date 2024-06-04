@@ -2,10 +2,6 @@
 
 #+OPTIONS: tex:imagemagick
 #+OPTIONS: toc:nil
-# Local Variables:
-# eval: (setq-local org-preview-latex-image-directory "../assets/")
-# eval: (setq-local org-image-actual-width nil)
-# End:
 
 * 定理描述
   四边形 $ABCD$ 的边 $AB, BC, CD, DA$ 和对角线 $AC, BD$

@@ -2,10 +2,6 @@
 
 #+OPTIONS: tex:imagemagick
 #+OPTIONS: toc:nil
-# Local Variables:
-# eval: (setq-local org-preview-latex-image-directory "../assets/")
-# eval: (setq-local org-image-actual-width nil)
-# End:
 
 * 异面直线间距离公式
   两异面直线 $l_1$ $l_2$ , 方程分别为：
