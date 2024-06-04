@@ -35,6 +35,7 @@ search: true
 lunr:
   search_within_pages: true
 
+author: PENG Kevin
 defaults:
   - scope:
       path: ""
@@ -43,7 +44,11 @@ defaults:
       show_date: true
       read_time: true
       layout: single
+      comments: true
+      share: true
+      related: true
       excerpt_separator: "" # 默认关闭文章摘要
+      author_profile: true # 显示作者页
 plugins:
   - jekyll-feed
   - jekyll-include-cache

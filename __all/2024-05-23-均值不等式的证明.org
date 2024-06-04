@@ -26,7 +26,7 @@ a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}
   对 n 个变量的情形，证明：
   
   \begin{equation}
-\frac{n}{\sum a_i}
+\frac{n}{\sum \frac{1}{a_i}}
 \leq \sqrt[n]{\prod a_i}
 \leq \frac{\sum a_i}{n}
 \leq \sqrt{\frac{\sum a_i^2}{n}},
