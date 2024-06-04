@@ -1,6 +1,10 @@
 # -*- coding: utf-8; -*-
+
+#+OPTIONS: tex:imagemagick
+#+OPTIONS: toc:nil
+
 * 安装
-  中国版是《谋智版》，不推荐下载。下载国际版。
+  中国版是《谋智版》，国内公司代理产品，不推荐下载。下载国际版。
   到官网 [[https://mozilla.org]] 下载。
 * 常用插件
 ** Surfingkeys
