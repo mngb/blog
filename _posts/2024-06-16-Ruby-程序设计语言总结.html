@@ -226,131 +226,192 @@ layout: single
 <body>
 <div id="content">
 
-<div id="outline-container-org151a3df" class="outline-2">
-<h2 id="org151a3df"><span class="section-number-2">1.</span> 安装</h2>
+<div id="outline-container-orgae3b30e" class="outline-2">
+<h2 id="orgae3b30e"><span class="section-number-2">1.</span> 设计理念</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-中国版是《谋智版》，国内公司代理产品，不推荐下载。下载国际版。
-到官网 <a href="https://mozilla.org">https://mozilla.org</a> 下载。
+让程序编写变得快乐。
 </p>
 </div>
 </div>
-<div id="outline-container-org888f0ad" class="outline-2">
-<h2 id="org888f0ad"><span class="section-number-2">2.</span> 常用插件</h2>
+
+<div id="outline-container-org1e24a7f" class="outline-2">
+<h2 id="org1e24a7f"><span class="section-number-2">2.</span> 基本语法</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org14b6889" class="outline-3">
-<h3 id="org14b6889"><span class="section-number-3">2.1.</span> Surfingkeys</h3>
+<div id="outline-container-orgefeba09" class="outline-3">
+<h3 id="orgefeba09"><span class="section-number-3">2.1.</span> 条件，循环，异常</h3>
 <div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+<pre class="src src-ruby"><span style="color: #b22222;"># </span><span style="color: #b22222;">if else</span>
+x = 10
+<span style="color: #0000cd;">if</span> x &gt; 9
+  <span style="color: #b35caf;">puts</span> <span style="color: #8b008b;">"x &gt; 9"</span>
+<span style="color: #0000cd;">elsif</span> x &lt; 8
+  <span style="color: #b35caf;">puts</span> <span style="color: #8b008b;">"x &lt; 8"</span>
+<span style="color: #0000cd;">else</span>
+  <span style="color: #b35caf;">puts</span> <span style="color: #8b008b;">"x = 8 OR x = 9"</span>
+<span style="color: #0000cd;">end</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">loop</span>
+10.times <span style="color: #0000cd;">do</span> |index|
+  <span style="color: #b35caf;">puts</span> <span style="color: #8b008b;">"</span><span style="color: #a0522d;">#{index}</span><span style="color: #8b008b;">"</span>
+<span style="color: #0000cd;">end</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">exception</span>
+<span style="color: #0000cd;">begin</span>
+  <span style="color: #b35caf;">raise</span> <span style="color: #8b008b;">"Error"</span>
+<span style="color: #0000cd;">rescue</span> =&gt; e
+  <span style="color: #b35caf;">puts</span> <span style="color: #8b008b;">"Error </span><span style="color: #a0522d;">#{e}</span><span style="color: #8b008b;">"</span>
+<span style="color: #0000cd;">end</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org264fd52" class="outline-3">
+<h3 id="org264fd52"><span class="section-number-3">2.2.</span> 函数，块，类，对象</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+<pre class="src src-ruby"><span style="color: #0000cd;">def</span> <span style="color: #ff0000;">func</span>(a, b)
+  a + b
+<span style="color: #0000cd;">end</span>
+
+<span style="color: #b22222;"># </span><span style="color: #b22222;">lambda func</span>
+f = -&gt;(a, b) {
+  a + b
+}
+f.call(1, 2)
+f2 = <span style="color: #b35caf;">lambda</span> <span style="color: #0000cd;">do</span> |a, b|
+  a + b
+<span style="color: #0000cd;">end</span>
+f2.call(2, 3)
+
+<span style="color: #0000cd;">class</span> <span style="color: #228b22;">Hello</span>
+  <span style="color: #b35caf;">private</span>
+  <span style="color: #0000cd;">def</span> <span style="color: #ff0000;">_func1</span>()
+  <span style="color: #0000cd;">end</span>
+
+  <span style="color: #b35caf;">public</span>
+  <span style="color: #0000cd;">def</span> <span style="color: #ff0000;">func2</span>()
+  <span style="color: #0000cd;">end</span>
+<span style="color: #0000cd;">end</span>
+obj = <span style="color: #228b22;">Hello</span>.new
+obj.func
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9702455" class="outline-3">
+<h3 id="org9702455"><span class="section-number-3">2.3.</span> 模块，混入，继承</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<pre class="src src-ruby"><span style="color: #0000cd;">module</span> <span style="color: #228b22;">HelloModule</span>
+  <span style="color: #0000cd;">def</span> <span style="color: #ff0000;">test</span>
+  <span style="color: #0000cd;">end</span>
+<span style="color: #0000cd;">end</span>
+
+<span style="color: #0000cd;">class</span> <span style="color: #228b22;">HelloClass</span>
+<span style="color: #0000cd;">end</span>
+<span style="color: #0000cd;">class</span> <span style="color: #228b22;">HelloClass2</span> &lt; <span style="color: #228b22;">HelloClass2</span>
+  <span style="color: #b35caf;">include</span> <span style="color: #228b22;">HelloModule</span>
+<span style="color: #0000cd;">end</span>
+obj = <span style="color: #228b22;">HelloClass2</span>.new
+obj.test
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7429097" class="outline-2">
+<h2 id="org7429097"><span class="section-number-2">3.</span> 一个实例</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org64b476f" class="outline-3">
+<h3 id="org64b476f"><span class="section-number-3">3.1.</span> 读入命令行参数并操作文件</h3>
+<div class="outline-text-3" id="text-3-1">
+<div class="org-src-container">
+<pre class="src src-ruby">filename = <span style="color: #228b22;">ARGV</span>[0]
+<span style="color: #228b22;">File</span>.read(filename).each_line <span style="color: #0000cd;">do</span> |line|
+  <span style="color: #b35caf;">puts</span> <span style="color: #8b008b;">"</span><span style="color: #a0522d;">#{line}</span><span style="color: #8b008b;">"</span>
+<span style="color: #0000cd;">end</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org87c2eb6" class="outline-2">
+<h2 id="org87c2eb6"><span class="section-number-2">4.</span> 常用 Gem</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org8ca1dca" class="outline-3">
+<h3 id="org8ca1dca"><span class="section-number-3">4.1.</span> gem</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
-绑定一些常用浏览器功能到快捷键，类似 Vim 键绑定：
+包管理工具
+<code>gem list .*active.*</code> 列出所有含有 active 的包
+<code>gem info activerecord</code> 显示包 activerecord 的详细信息
 </p>
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+</div>
+</div>
+<div id="outline-container-org6cd4a9e" class="outline-3">
+<h3 id="org6cd4a9e"><span class="section-number-3">4.2.</span> bundler</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+包依赖管理工具，维护一个 <code>Gemfile</code> 文件。
+<code>bundle install</code> 安装 <code>Gemfile</code> 中指定的 Gem
+</p>
+</div>
+</div>
+<div id="outline-container-orgedbca82" class="outline-3">
+<h3 id="orgedbca82"><span class="section-number-3">4.3.</span> pry</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+ruby 程序调试工具。
+</p>
+</div>
+</div>
+<div id="outline-container-org9654c12" class="outline-3">
+<h3 id="org9654c12"><span class="section-number-3">4.4.</span> rubocop</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+ruby 代码静态检查工具。
+</p>
+</div>
+</div>
+<div id="outline-container-org3a8e825" class="outline-3">
+<h3 id="org3a8e825"><span class="section-number-3">4.5.</span> rake</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+ruby 构建工具，使用 <code>Rakefile</code>, 类似于 <code>Makefile</code>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org8f4e8c4" class="outline-2">
+<h2 id="org8f4e8c4"><span class="section-number-2">5.</span> 程序原理</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orgef06741" class="outline-3">
+<h3 id="orgef06741"><span class="section-number-3">5.1.</span> 类对象关系图</h3>
+<div class="outline-text-3" id="text-5-1">
 
+<div id="org9ee82d0" class="figure">
+<p><img src="../assets/ruby_inheritance_chain.jpg" alt="ruby_inheritance_chain.jpg" />
+</p>
+</div>
+</div>
+</div>
 
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-left">功能</th>
-<th scope="col" class="org-left">快捷键</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-left">跳转到书签</td>
-<td class="org-left">b</td>
-</tr>
-
-<tr>
-<td class="org-left">将当前网页添加到书签</td>
-<td class="org-left">ab</td>
-</tr>
-
-<tr>
-<td class="org-left">打开 Google 搜索</td>
-<td class="org-left">og</td>
-</tr>
-
-<tr>
-<td class="org-left">打开历史记录</td>
-<td class="org-left">oh</td>
-</tr>
-
-<tr>
-<td class="org-left">打开网页</td>
-<td class="org-left">t</td>
-</tr>
-
-<tr>
-<td class="org-left">跳转到标签</td>
-<td class="org-left">T</td>
-</tr>
-
-<tr>
-<td class="org-left">切换到左边 Tab</td>
-<td class="org-left">E</td>
-</tr>
-
-<tr>
-<td class="org-left">切换到右边 Tab</td>
-<td class="org-left">R</td>
-</tr>
-
-<tr>
-<td class="org-left">当前页面后退</td>
-<td class="org-left">S</td>
-</tr>
-
-<tr>
-<td class="org-left">当前页面前进</td>
-<td class="org-left">D</td>
-</tr>
-
-<tr>
-<td class="org-left">关闭当前 Tab</td>
-<td class="org-left">x</td>
-</tr>
-
-<tr>
-<td class="org-left">打开最近关闭的 Tab</td>
-<td class="org-left">X</td>
-</tr>
-
-<tr>
-<td class="org-left">打开链接</td>
-<td class="org-left">f</td>
-</tr>
-
-<tr>
-<td class="org-left">转到输入框</td>
-<td class="org-left">i</td>
-</tr>
-
-<tr>
-<td class="org-left">刷新</td>
-<td class="org-left">r</td>
-</tr>
-
-<tr>
-<td class="org-left">搜索</td>
-<td class="org-left">/</td>
-</tr>
-
-<tr>
-<td class="org-left">打开命令</td>
-<td class="org-left">:</td>
-</tr>
-
-<tr>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-</tr>
-</tbody>
-</table>
+<div id="outline-container-org2d591f8" class="outline-3">
+<h3 id="org2d591f8"><span class="section-number-3">5.2.</span> 程序启动原理</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+见 Ruby 源代码。
+</p>
 </div>
 </div>
 </div>
