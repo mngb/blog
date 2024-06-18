@@ -5,10 +5,145 @@
 
 * Emacs 基本概念
 
+** frame
+   程序窗体。
+   
+** buffer
+   编辑缓冲区。
+   
+** point
+   指示一个缓冲区中的位置。
+   
+** region
+   一对 point, 指示缓冲区中的一个位置区间。
+   
+** mini-buffer
+   程序窗体最下端显示消息提示的地方。
+   
+** mode-line
+   显示文件名，major-mode 等 buffer 信息的地方。
+
+** major-mode
+   主模式。每个 buffer 有且只关联一个该模式。
+   
+** minor-mode
+   次模式。每个 buffer 可关联多个不同的该模式。
+
 * Elisp 基本语法
+
+** 基本数据类型
+   #+BEGIN_SRC emacs-lisp  
+     ;; number
+     #16r1ff
+     .15e2
+     
+     ;; char
+     ?Q
+     ?r
+     
+     ;; sequence
+     ;;; list (变长 sequence)
+     ;;;; cons cell
+     (car '(1 . 3))
+     (cdr '(1 . 3))
+     
+     ;;;; lists
+     (car '(1 2 3))
+     (cdr '(1 2 3))
+     (car '(1 . (2 . (3 . nil))))
+     (cdr '(1 . (2 . (3 . nil))))
+     
+     ;;; array (定长 sequence)
+     ;;;; string
+     "abcdefg"
+     #("abcdefg" 0 3 (face bold))
+     
+     ;;;; vector
+     [1 "two" 'three]
+   #+END_SRC
+
+** 程序控制结构
+   #+BEGIN_SRC emacs-lisp  
+     ;; sequence
+     (progn
+       1
+       2
+       3)
+     
+     ;; if else
+     (if t
+         t
+       nil)
+     (when t
+       t)
+     (unless nil
+       t)
+     
+     ;; loop
+     ;;; while
+     (progn
+       (setq num 0)
+       (while (< num 5)
+         (princ (format "%d" num))
+         (setq num (+ num 1))))
+     ;;; for
+     (dotimes (i 10 (* i i))
+       (princ (format "%d" i)))
+   #+END_SRC
+
+** 宏
+   #+BEGIN_SRC emacs-lisp  
+     ;; return s-expression to be computed
+     (defmacro inc (x)
+         (list 'setq x (list '1+ x)))
+     (progn
+       (setq y 1)
+       (inc y)
+       y)
+   #+END_SRC
+
+** 高级对象
+   #+BEGIN_SRC emacs-lisp  
+     ;; hash-table
+     (progn
+       (setq hash (make-hash-table :size 30))
+       (puthash 1 'a hash)
+       (puthash 2 'b hash)
+       (gethash 2 hash))
+     
+     ;; buffer
+     (buffer-list)
+     (get-buffer-create "*new-buffer*")
+     
+     ;; position
+     ;;; A position is the index of a character in the text of a buffer.
+     (point)
+     
+     ;; marker
+     ;;; A marker is a Lisp object used to specify a position
+     ;;; in a buffer relative to the surrounding text.
+     ;;; marker 绑定在两个字符间，位置随字符位置变动而变动
+     (progn
+       (setq m1 (make-marker))
+       (set-marker m1 100)
+       (goto-char (point-min))
+       (insert-char ?T)
+       m1)
+   #+END_SRC
 
 * 常用包
 
-* keymap 分发过程
+** org
+   文档编写工具，类似于 markdown, 但功能更强大。
 
+** use-package
+   包配置工具，使用延迟加载，便于管理包配置的同时按需加载。
+
+** company
+   自动补全的包，功能很实用。
+
+* keymap 分发过程
+  相当复杂，参看 [[https://emacs.stackexchange.com/questions/653/how-can-i-find-out-in-which-keymap-a-key-is-bound]]
+  
 * Emacs 启动流程
+  相当复杂，参看 [[file:../../../redef/library/Emacs/elisp.pdf:1072]]

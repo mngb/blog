@@ -10,7 +10,7 @@ layout: single
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-06-17 Mon 21:10 -->
+<!-- 2024-06-18 Tue 11:37 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -228,27 +228,259 @@ layout: single
 
 <div id="outline-container-org33116ed" class="outline-2">
 <h2 id="org33116ed"><span class="section-number-2">1.</span> Emacs 基本概念</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org422c072" class="outline-3">
+<h3 id="org422c072"><span class="section-number-3">1.1.</span> frame</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+程序窗体。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org6280228" class="outline-3">
+<h3 id="org6280228"><span class="section-number-3">1.2.</span> buffer</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+编辑缓冲区。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb4841ca" class="outline-3">
+<h3 id="orgb4841ca"><span class="section-number-3">1.3.</span> point</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+指示一个缓冲区中的位置。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org431c1ff" class="outline-3">
+<h3 id="org431c1ff"><span class="section-number-3">1.4.</span> region</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+一对 point, 指示缓冲区中的一个位置区间。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd9cdf5a" class="outline-3">
+<h3 id="orgd9cdf5a"><span class="section-number-3">1.5.</span> mini-buffer</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+程序窗体最下端显示消息提示的地方。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org883e7ff" class="outline-3">
+<h3 id="org883e7ff"><span class="section-number-3">1.6.</span> mode-line</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+显示文件名，major-mode 等 buffer 信息的地方。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga944a27" class="outline-3">
+<h3 id="orga944a27"><span class="section-number-3">1.7.</span> major-mode</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+主模式。每个 buffer 有且只关联一个该模式。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgddd7ba8" class="outline-3">
+<h3 id="orgddd7ba8"><span class="section-number-3">1.8.</span> minor-mode</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+次模式。每个 buffer 可关联多个不同的该模式。
+</p>
+</div>
+</div>
 </div>
 
 <div id="outline-container-org9ef1631" class="outline-2">
 <h2 id="org9ef1631"><span class="section-number-2">2.</span> Elisp 基本语法</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgeba9066" class="outline-3">
+<h3 id="orgeba9066"><span class="section-number-3">2.1.</span> 基本数据类型</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #b22222;">;; </span><span style="color: #b22222;">number</span>
+#16r1ff
+.15e2
+
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">char</span>
+?Q
+?r
+
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">sequence</span>
+<span style="color: #b22222;">;;; </span><span style="color: #b22222;">list (&#21464;&#38271; sequence)</span>
+<span style="color: #b22222;">;;;; </span><span style="color: #b22222;">cons cell</span>
+(car '(1 . 3))
+(cdr '(1 . 3))
+
+<span style="color: #b22222;">;;;; </span><span style="color: #b22222;">lists</span>
+(car '(1 2 3))
+(cdr '(1 2 3))
+(car '(1 . (2 . (3 . nil))))
+(cdr '(1 . (2 . (3 . nil))))
+
+<span style="color: #b22222;">;;; </span><span style="color: #b22222;">array (&#23450;&#38271; sequence)</span>
+<span style="color: #b22222;">;;;; </span><span style="color: #b22222;">string</span>
+<span style="color: #8b008b;">"abcdefg"</span>
+#(<span style="color: #8b008b;">"abcdefg"</span> 0 3 (face bold))
+
+<span style="color: #b22222;">;;;; </span><span style="color: #b22222;">vector</span>
+[1 <span style="color: #8b008b;">"two"</span> 'three]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org504c21a" class="outline-3">
+<h3 id="org504c21a"><span class="section-number-3">2.2.</span> 程序控制结构</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #b22222;">;; </span><span style="color: #b22222;">sequence</span>
+(<span style="color: #0000cd;">progn</span>
+  1
+  2
+  3)
+
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">if else</span>
+(<span style="color: #0000cd;">if</span> t
+    t
+  nil)
+(<span style="color: #0000cd;">when</span> t
+  t)
+(<span style="color: #0000cd;">unless</span> nil
+  t)
+
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">loop</span>
+<span style="color: #b22222;">;;; </span><span style="color: #b22222;">while</span>
+(<span style="color: #0000cd;">progn</span>
+  (<span style="color: #0000cd;">setq</span> num 0)
+  (<span style="color: #0000cd;">while</span> (&lt; num 5)
+    (princ (format <span style="color: #8b008b;">"%d"</span> num))
+    (<span style="color: #0000cd;">setq</span> num (+ num 1))))
+<span style="color: #b22222;">;;; </span><span style="color: #b22222;">for</span>
+(<span style="color: #0000cd;">dotimes</span> (i 10 (* i i))
+  (princ (format <span style="color: #8b008b;">"%d"</span> i)))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org24a6f9a" class="outline-3">
+<h3 id="org24a6f9a"><span class="section-number-3">2.3.</span> 宏</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #b22222;">;; </span><span style="color: #b22222;">return s-expression to be computed</span>
+(<span style="color: #0000cd;">defmacro</span> <span style="color: #ff0000;">inc</span> (x)
+    (list 'setq x (list '1+ x)))
+(<span style="color: #0000cd;">progn</span>
+  (<span style="color: #0000cd;">setq</span> y 1)
+  (<span style="color: #0000cd;">inc</span> y)
+  y)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org91e7f95" class="outline-3">
+<h3 id="org91e7f95"><span class="section-number-3">2.4.</span> 高级对象</h3>
+<div class="outline-text-3" id="text-2-4">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #b22222;">;; </span><span style="color: #b22222;">hash-table</span>
+(<span style="color: #0000cd;">progn</span>
+  (<span style="color: #0000cd;">setq</span> hash (make-hash-table <span style="color: #b35caf;">:size</span> 30))
+  (puthash 1 'a hash)
+  (puthash 2 'b hash)
+  (gethash 2 hash))
+
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">buffer</span>
+(buffer-list)
+(get-buffer-create <span style="color: #8b008b;">"*new-buffer*"</span>)
+
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">position</span>
+<span style="color: #b22222;">;;; </span><span style="color: #b22222;">A position is the index of a character in the text of a buffer.</span>
+(point)
+
+<span style="color: #b22222;">;; </span><span style="color: #b22222;">marker</span>
+<span style="color: #b22222;">;;; </span><span style="color: #b22222;">A marker is a Lisp object used to specify a position</span>
+<span style="color: #b22222;">;;; </span><span style="color: #b22222;">in a buffer relative to the surrounding text.</span>
+<span style="color: #b22222;">;;; </span><span style="color: #b22222;">marker &#32465;&#23450;&#22312;&#20004;&#20010;&#23383;&#31526;&#38388;&#65292;&#20301;&#32622;&#38543;&#23383;&#31526;&#20301;&#32622;&#21464;&#21160;&#32780;&#21464;&#21160;</span>
+(<span style="color: #0000cd;">progn</span>
+  (<span style="color: #0000cd;">setq</span> m1 (make-marker))
+  (set-marker m1 100)
+  (goto-char (point-min))
+  (insert-char ?T)
+  m1)
+</pre>
+</div>
+</div>
+</div>
 </div>
 
 <div id="outline-container-org20d981e" class="outline-2">
 <h2 id="org20d981e"><span class="section-number-2">3.</span> 常用包</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgeea0659" class="outline-3">
+<h3 id="orgeea0659"><span class="section-number-3">3.1.</span> org</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+文档编写工具，类似于 markdown, 但功能更强大。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org207b816" class="outline-3">
+<h3 id="org207b816"><span class="section-number-3">3.2.</span> use-package</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+包配置工具，使用延迟加载，便于管理包配置的同时按需加载。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1bc88fd" class="outline-3">
+<h3 id="org1bc88fd"><span class="section-number-3">3.3.</span> company</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+自动补全的包，功能很实用。
+</p>
+</div>
+</div>
 </div>
 
 <div id="outline-container-org4e2b982" class="outline-2">
 <h2 id="org4e2b982"><span class="section-number-2">4.</span> keymap 分发过程</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+相当复杂，参看 <a href="https://emacs.stackexchange.com/questions/653/how-can-i-find-out-in-which-keymap-a-key-is-bound">https://emacs.stackexchange.com/questions/653/how-can-i-find-out-in-which-keymap-a-key-is-bound</a>
+</p>
+</div>
 </div>
 
 <div id="outline-container-org8a9d3d7" class="outline-2">
 <h2 id="org8a9d3d7"><span class="section-number-2">5.</span> Emacs 启动流程</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+相当复杂，参看 <a href="../../../redef/library/Emacs/elisp.pdf:1072">../../../redef/library/Emacs/elisp.pdf:1072</a>
+</p>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: PENG Kevin</p>
-<p class="date">Created: 2024-06-17 Mon 21:10</p>
+<p class="date">Created: 2024-06-18 Tue 11:37</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
