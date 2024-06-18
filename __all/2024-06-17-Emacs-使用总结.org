@@ -146,4 +146,4 @@
   相当复杂，参看 [[https://emacs.stackexchange.com/questions/653/how-can-i-find-out-in-which-keymap-a-key-is-bound]]
   
 * Emacs 启动流程
-  相当复杂，参看 [[../../../redef/library/Emacs/elisp.pdf]]
+  相当复杂，参看 [[https://mngb.github.io/ox-hugo/elisp.pdf][elisp.pdf]]
