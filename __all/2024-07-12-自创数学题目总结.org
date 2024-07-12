@@ -1,0 +1,34 @@
+# -*- coding: utf-8; -*-
+#+options: tex:dvipng
+
+* note
+  hugo 现在对 latex 嵌入图片支持有问题，等待后续 hugo 版本稳定再增加 latex 的
+  hugo 导出功能。先把该类博客加到 Jeklly 中。
+  
+* 题目
+
+** 求数列前 n 项和
+   - 题目 :: 已知数列 $a_{1,n}$ 前 n 项和记为 $a_{2,n}$ , $a_{2,n}$ 前 n 项和记为 $a_{3,n}$
+     , ... , $a_{m,n}$ 前 n 项和记为 $a_{m+1,n}$, 已知 $a_{1,n} = n$ , 求
+     $a_{m,n}$ 的值。
+   - 解答 ::
+     猜想：注意到  $a_{1,n} = n$ , $a_{2,n} = \frac{n(n+1)}{2}$,
+
+     $$ a_{3,n} &= \frac{1}{2}[\frac{n(n+1)(2n+1)}{6} + \frac{n(n+1)}{2}]
+     \\ &= \frac{n(n+1)(n+2)}{6}
+     $$
+     则 $a_{m,n} = {{m + n -1}\choose m}$ 成立吗？
+     证明：对 m 使用数学归纳法，假设猜想在 m 时成立，要证明 m+1 时情形也成立。
+     #+NAME: eqn:1
+     \begin{equation}
+     a_{m+1,n} = \sum_{i=1}^{n}{{m + i -1}\choose m} = {{m + n}\choose{m+1}}
+     \end{equation}
+     即要证明 [[eqn:1]] 成立。
+     由组合公式：
+     $$ \binom{m + i - 1}{m} + \binom{m + i - 1}{m + 1} = \binom{m + i}{m+1} $$
+     [[eqn:1]] 式可以写成：
+     #+NAME: eqn:2
+     \begin{equation}
+     a_{m+1,n} = \binom{m}{m} + \sum_{i=2}^{n}{{m + i -1}\choose m} = \binom{m+1}{m+1} + \sum_{i=2}^{n}{{m + i -1}\choose m}
+     \end{equation}
+     [[eqn:2]] 逐项合并，即得 [[eqn:1]] . 证毕。
