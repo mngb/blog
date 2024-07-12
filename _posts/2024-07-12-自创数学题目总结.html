@@ -10,7 +10,7 @@ layout: single
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-07-12 Fri 21:42 -->
+<!-- 2024-07-12 Fri 23:36 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
@@ -268,14 +268,14 @@ hugo 导出功能。先把该类博客加到 Jeklly 中。
 <img src="../assets/./2024-07-12-自创数学题目总结_04082c57967fd852df00f8a8ac3b14a37d29d8b9.png" alt="$$ a_{3,n} &amp;amp;= \frac{1}{2}[\frac{n(n+1)(2n+1)}{6} + \frac{n(n+1)}{2}]
      \\ &amp;amp;= \frac{n(n+1)(n+2)}{6}
      $$" />
-则 <img src="../assets/./2024-07-12-自创数学题目总结_c99384fb0623cd3c889093f25956d27bd014e2ba.png" alt="$a_{m,n} = {{m + n -1}\choose m}$" /> 成立吗？
+则 <img src="../assets/./2024-07-12-自创数学题目总结_02e47dca0dbb752e588904b870248457c065b206.png" alt="$a_{m,n} = {\binom{m + n -1}{m}}$" /> 成立吗？
 证明：对 m 使用数学归纳法，假设猜想在 m 时成立，要证明 m+1 时情形也成立。
 </p>
 
-<div id="org231cedf" class="equation-container">
+<div id="orgc3592ae" class="equation-container">
 <span class="equation">
-<img src="../assets/./2024-07-12-自创数学题目总结_9dd0ae92c161b4c4f2a5c88a27f951e7e643cbf1.png" alt="\begin{equation*}
-a_{m+1,n} = \sum_{i=1}^{n}{{m + i -1}\choose m} = {{m + n}\choose{m+1}}
+<img src="../assets/./2024-07-12-自创数学题目总结_f640738e5e8af154bf7d3968aa80f780ca686519.png" alt="\begin{equation*}
+a_{m+1,n} = \sum_{i=1}^{n}{\binom{m + i -1}{m}} = {\binom{m + n}{m+1}}
 \end{equation*}
 " />
 </span>
@@ -284,16 +284,16 @@ a_{m+1,n} = \sum_{i=1}^{n}{{m + i -1}\choose m} = {{m + n}\choose{m+1}}
 </span>
 </div>
 <p>
-即要证明 <a href="#org231cedf">1</a> 成立。
+即要证明 <a href="#orgc3592ae">1</a> 成立。
 由组合公式：
 <img src="../assets/./2024-07-12-自创数学题目总结_1d3712a68b842036564e3019f156820dcd3a5554.png" alt="$$ \binom{m + i - 1}{m} + \binom{m + i - 1}{m + 1} = \binom{m + i}{m+1} $$" />
-<a href="#org231cedf">1</a> 式可以写成：
+<a href="#orgc3592ae">1</a> 式可以写成：
 </p>
 
-<div id="org709b5cf" class="equation-container">
+<div id="orge78c6a8" class="equation-container">
 <span class="equation">
-<img src="../assets/./2024-07-12-自创数学题目总结_837f16a02be37a97ca58c24915b91e306fb6f62c.png" alt="\begin{equation*}
-a_{m+1,n} = \binom{m}{m} + \sum_{i=2}^{n}{{m + i -1}\choose m} = \binom{m+1}{m+1} + \sum_{i=2}^{n}{{m + i -1}\choose m}
+<img src="../assets/./2024-07-12-自创数学题目总结_e32cb1826316b33fa4daefd6ec5c217ec209dabb.png" alt="\begin{equation*}
+a_{m+1,n} = \binom{m}{m} + \sum_{i=2}^{n}{\binom{m + i -1}{m}} = \binom{m+1}{m+1} + \sum_{i=2}^{n}{\binom{m + i -1}{m}}
 \end{equation*}
 " />
 </span>
@@ -302,7 +302,7 @@ a_{m+1,n} = \binom{m}{m} + \sum_{i=2}^{n}{{m + i -1}\choose m} = \binom{m+1}{m+1
 </span>
 </div>
 <p>
-<a href="#org709b5cf">2</a> 逐项合并，即得 <a href="#org231cedf">1</a> . 证毕。
+<a href="#orge78c6a8">2</a> 逐项合并，即得 <a href="#orgc3592ae">1</a> . 证毕。
 </p></dd>
 </dl>
 </div>
@@ -311,7 +311,7 @@ a_{m+1,n} = \binom{m}{m} + \sum_{i=2}^{n}{{m + i -1}\choose m} = \binom{m+1}{m+1
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: PENG Kevin</p>
-<p class="date">Created: 2024-07-12 Fri 21:42</p>
+<p class="date">Created: 2024-07-12 Fri 23:36</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

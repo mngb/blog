@@ -17,18 +17,18 @@
      $$ a_{3,n} &= \frac{1}{2}[\frac{n(n+1)(2n+1)}{6} + \frac{n(n+1)}{2}]
      \\ &= \frac{n(n+1)(n+2)}{6}
      $$
-     则 $a_{m,n} = {{m + n -1}\choose m}$ 成立吗？
+     则 $a_{m,n} = {\binom{m + n -1}{m}}$ 成立吗？
      证明：对 m 使用数学归纳法，假设猜想在 m 时成立，要证明 m+1 时情形也成立。
-     #+NAME: eqn:1
+     #+NAME: eqn_1
      \begin{equation}
-     a_{m+1,n} = \sum_{i=1}^{n}{{m + i -1}\choose m} = {{m + n}\choose{m+1}}
+     a_{m+1,n} = \sum_{i=1}^{n}{\binom{m + i -1}{m}} = {\binom{m + n}{m+1}}
      \end{equation}
-     即要证明 [[eqn:1]] 成立。
+     即要证明 [[eqn_1]] 成立。
      由组合公式：
      $$ \binom{m + i - 1}{m} + \binom{m + i - 1}{m + 1} = \binom{m + i}{m+1} $$
-     [[eqn:1]] 式可以写成：
-     #+NAME: eqn:2
+     [[eqn_1]] 式可以写成：
+     #+NAME: eqn-2
      \begin{equation}
-     a_{m+1,n} = \binom{m}{m} + \sum_{i=2}^{n}{{m + i -1}\choose m} = \binom{m+1}{m+1} + \sum_{i=2}^{n}{{m + i -1}\choose m}
+     a_{m+1,n} = \binom{m}{m} + \sum_{i=2}^{n}{\binom{m + i -1}{m}} = \binom{m+1}{m+1} + \sum_{i=2}^{n}{\binom{m + i -1}{m}}
      \end{equation}
-     [[eqn:2]] 逐项合并，即得 [[eqn:1]] . 证毕。
+     [[eqn-2]] 逐项合并，即得 [[eqn_1]] . 证毕。
