@@ -15,8 +15,9 @@ require 'socket'
 hostname = Socket.gethostname
 if hostname=="rainbow"
   # local
-  gem "jekyll", "~> 4.3.3"
+  gem "jekyll"
   gem "minimal-mistakes-jekyll", path: "../minimal-mistakes"
+  gem "kramdown-parser-gfm"
 else
   # github
   gem "minimal-mistakes-jekyll", git: 'https://github.com/mngb/minimal-mistakes.git'
