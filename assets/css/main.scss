@@ -3,6 +3,8 @@
 search: false
 ---
 
+$max-width: {% if site.page_content_width %} {{ site.page_content_width }} {% else %} 1280px {% endif %} !default;
+
 @charset "utf-8";
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
