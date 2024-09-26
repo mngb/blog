@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-05-28T10:51:29+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Kevin 的个人博客</title><subtitle>Kevin 的静态博客网站。</subtitle><author><name>PENG Kevin</name></author><entry><title type="html">托勒密定理的证明</title><link href="http://localhost:4000/2024/%E6%89%98%E5%8B%92%E5%AF%86%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E.html" rel="alternate" type="text/html" title="托勒密定理的证明" /><published>2024-05-24T00:00:00+08:00</published><updated>2024-05-24T00:00:00+08:00</updated><id>http://localhost:4000/2024/%E6%89%98%E5%8B%92%E5%AF%86%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E</id><content type="html" xml:base="http://localhost:4000/2024/%E6%89%98%E5%8B%92%E5%AF%86%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E.html"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-26T20:20:32+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Kevin 的个人博客</title><subtitle>Kevin 的静态博客网站。</subtitle><author><name>PENG Kevin</name></author><entry><title type="html">Selenuim 和 capybara 系统测试总结</title><link href="http://localhost:4000/2024/Selenuim-%E5%92%8C-Capybara-%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="Selenuim 和 capybara 系统测试总结" /><published>2024-09-26T00:00:00+08:00</published><updated>2024-09-26T00:00:00+08:00</updated><id>http://localhost:4000/2024/Selenuim%20%E5%92%8C%20Capybara%20%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/2024/Selenuim-%E5%92%8C-Capybara-%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95%E6%80%BB%E7%BB%93.html"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-05-27 Mon 21:05 -->
+<!-- 2024-09-26 四 19:02 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="PENG Kui" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="author" content="PENG Kevin" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -31,8 +31,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -41,21 +42,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -190,78 +191,2189 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 
-<div id="outline-container-org28aac1b" class="outline-2">
-<h2 id="org28aac1b"><span class="section-number-2">1.</span> 定理描述</h2>
+<div id="outline-container-org6065d46" class="outline-2">
+<h2 id="org6065d46"><span class="section-number-2">1.</span> 使用 selenium 和 capybara 的原因</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-四边形 <img src="../assets/2024-05-24-托勒密定理的证明_24b6c53baa593e1956fc887ae5da52f75ef2230f.png" alt="$ABCD$" /> 的边 <img src="../assets/2024-05-24-托勒密定理的证明_2204bb29bb71b38d1ea721836621865c138076db.png" alt="$AB, BC, CD, DA$" /> 和对角线 <img src="../assets/2024-05-24-托勒密定理的证明_451ee3e93df3028813cda497a3070946f5aa1518.png" alt="$AC, BD$" />
+个人每次网站开发修改后，都需要对功能使用手动验证一遍，以防在服务器侧部署了问题
+软件。为了每次释放前能进行自动化的功能验证，不得不引入网页自动化验证的外部包，
+其中 selenium 用于通过不同浏览器提供的 driver，和不同浏览器进行交互，capybara
+则可以通过 selenium 为功能测试编写提供方便的 DSL，可快速编写功能测试用例。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcbce151" class="outline-2">
+<h2 id="orgcbce151"><span class="section-number-2">2.</span> capybara 的使用</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<a href="https://github.com/teamcapybara/capybara">capybara</a> 通过调用 <a href="https://github.com/SeleniumHQ/">selenium</a> 提供的不同的浏览器 driver，来驱动和控制浏览器运行。
+本篇文章基于 Rails 7.2, capybara 和 selenium-webdriver gem 在 chrome 浏览器上进行了验证。
+</p>
+</div>
+
+<div id="outline-container-orgae91b63" class="outline-3">
+<h3 id="orgae91b63"><span class="section-number-3">2.1.</span> 环境配置</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+在 Ruby，Rails 7.2, capybara，selenium-webdriver 已安装好的情况下，环境配置
+如下：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-ruby"><span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">FuncTest</span> &lt; <span style="color: #2F8B58; font-weight: bold;">ApplicationSystemTestCase</span>
+  <span style="color: #2F8B58; font-weight: bold;">Selenium</span>::<span style="color: #2F8B58; font-weight: bold;">WebDriver</span>::<span style="color: #2F8B58; font-weight: bold;">Chrome</span>.path = <span style="color: #4E9A06;">"~/.cache/selenium/chrome/linux64/129.0.6668.58/chrome"</span>
+  driven_by <span style="color: #F5666D;">:selenium</span>, <span style="color: #A020F0;">using</span>: <span style="color: #F5666D;">:chrome</span>, <span style="color: #F5666D;">options:</span> {} <span style="color: #A52A2A; font-weight: bold;">do</span> |cap|
+    cap.add_argument(<span style="color: #4E9A06;">"--no-sandbox"</span>)
+    cap.add_argument(<span style="color: #4E9A06;">"--no-proxy-server"</span>)
+    cap.add_argument(<span style="color: #4E9A06;">"--user-data-dir=</span><span style="color: #0084C8; font-weight: bold;">#{Rails.root}</span><span style="color: #4E9A06;">/tmp/chrome/"</span>)
+    cap.add_preference(<span style="color: #4E9A06;">"download.default_directory"</span>, <span style="color: #4E9A06;">"</span><span style="color: #0084C8; font-weight: bold;">#{Rails.root}</span><span style="color: #4E9A06;">/test/fixtures/files/"</span>)
+    <span style="color: #2F8B58; font-weight: bold;">ENV</span>.delete(<span style="color: #4E9A06;">"HTTP_PROXY"</span>)
+    <span style="color: #2F8B58; font-weight: bold;">ENV</span>.delete(<span style="color: #4E9A06;">"http_proxy"</span>)
+    <span style="color: #2F8B58; font-weight: bold;">ENV</span>.delete(<span style="color: #4E9A06;">"HTTPS_PROXY"</span>)
+    <span style="color: #2F8B58; font-weight: bold;">ENV</span>.delete(<span style="color: #4E9A06;">"https_proxy"</span>)
+  <span style="color: #A52A2A; font-weight: bold;">end</span>
+<span style="color: #A52A2A; font-weight: bold;">end</span>
+</pre>
+</div>
+
+<p>
+chrome 的浏览器参数(argument)和配置(perference)参考 <a href="https://www.selenium.dev/documentation/webdriver/browsers/chrome/">chrome options</a> 。
+perference 的全部设置可参考 <code>--user-data-dir</code> 设置的目录的 <code>Default/Perferences</code>
+文件。
+</p>
+
+<p>
+capybara 的文档参考 <a href="https://rubydoc.info/github/teamcapybara/capybara/master#the-dsl">capybara doc</a> 。这里的一般是最新的文档，本地使用的文档可
+以如下生成：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bash">yard gems
+yard server --gems -s webrick
+</pre>
+</div>
+
+<p>
+再选择 capybara 查看。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcbddc5a" class="outline-3">
+<h3 id="orgcbddc5a"><span class="section-number-3">2.2.</span> capybara 常用 DSL</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org8758506" class="outline-4">
+<h4 id="org8758506"><span class="section-number-4">2.2.1.</span> 基础</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ol class="org-ol">
+<li><p>
+元素选择
+有 <code>css</code> 和 <code>xpath</code> 两种选择语法。
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">page.find(<span style="color: #F5666D;">:css</span>, <span style="color: #4E9A06;">'div'</span>)
+page.find(<span style="color: #F5666D;">:xpath</span>, <span style="color: #4E9A06;">'.//div'</span>)
+</pre>
+</div></li>
+
+<li>元素对象常用属性和方法
+<ul class="org-ul">
+<li>text</li>
+<li>value</li>
+<li>visible?</li>
+<li>tag_name</li>
+<li>style</li>
+<li id="send_keys">给元素发送按键消息</li>
+<li>disabled?</li>
+<li>click</li>
+<li id="[](attribute)">设置属性</li>
+<li id="others">在文档中搜索 <code>Node::Element</code> 。</li>
+</ul></li>
+
+<li><p>
+限定域
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">within(<span style="color: #4E9A06;">"#field"</span>) <span style="color: #A52A2A; font-weight: bold;">do</span>
+<span style="color: #A52A2A; font-weight: bold;">end</span>
+</pre>
+</div>
+<p>
+可以缩小 find 搜索范围。
+</p></li>
+
+<li><p>
+等待断言
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby"><span style="color: #204A87;"># </span><span style="color: #204A87;">&#31561;&#24453;&#20803;&#32032;&#21464;&#20026;&#21487;&#35265;</span>
+assert_selector(<span style="color: #4E9A06;">"#pdf_page_info"</span>, <span style="color: #F5666D;">visible:</span> <span style="color: #F5666D;">true</span>, <span style="color: #F5666D;">wait:</span> 5)
+
+<span style="color: #204A87;"># </span><span style="color: #204A87;">&#31561;&#24453;&#24403;&#21069;&#33410;&#28857;(within)&#20869;&#25110;&#26681;&#33410;&#28857;&#20869;&#20986;&#29616; appear</span>
+<span style="color: #204A87;"># </span><span style="color: #204A87;">&#20063;&#21487;</span>
+assert_text(<span style="color: #4E9A06;">"appear"</span>, <span style="color: #F5666D;">wait:</span> 5)
+</pre>
+</div>
+<p>
+更多断言在文档中搜索 <code>Capybara::Node::Matchers</code> 
+</p></li>
+
+<li><p>
+内容判断
+</p>
+<div class="org-src-container">
+<pre class="src src-ruby">page.has_content?(<span style="color: #4E9A06;">"content-xxx"</span>, <span style="color: #F5666D;">wait:</span> 3)
+</pre>
+</div>
+<p>
+等待页面出现内容 <code>content-xxx</code> ，最长等待 3 秒。
+</p></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org0e4d939" class="outline-4">
+<h4 id="org0e4d939"><span class="section-number-4">2.2.2.</span> 访问网页</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<div class="org-src-container">
+<pre class="src src-ruby">visit <span style="color: #4E9A06;">"/"</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5678866" class="outline-4">
+<h4 id="org5678866"><span class="section-number-4">2.2.3.</span> 上传文件</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<div class="org-src-container">
+<pre class="src src-ruby">page.attach_file(<span style="color: #2F8B58; font-weight: bold;">Rails</span>.root.join(<span style="color: #4E9A06;">"test/fixtures/files/test.pdf"</span>)) <span style="color: #A52A2A; font-weight: bold;">do</span>
+  page.find(<span style="color: #4E9A06;">"#open_file_browser"</span>).click
+<span style="color: #A52A2A; font-weight: bold;">end</span>
+</pre>
+</div>
+<p>
+其中点击 <code>#open_file_browser</code> , 这个事件要导致弹出文件选择框。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge2313c1" class="outline-4">
+<h4 id="orge2313c1"><span class="section-number-4">2.2.4.</span> 按键点击</h4>
+<div class="outline-text-4" id="text-2-2-4">
+<div class="org-src-container">
+<pre class="src src-ruby">click_button(<span style="color: #4E9A06;">"&#19978;&#20256;"</span>)
+</pre>
+</div>
+<p>
+只在按键可点击时点击，不可点击会抛出异常。
+这个查找时判断按键的 <code>name</code>, <code>value</code> 等内容是否匹配。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3e39cf8" class="outline-4">
+<h4 id="org3e39cf8"><span class="section-number-4">2.2.5.</span> 元素选择</h4>
+<div class="outline-text-4" id="text-2-2-5">
+<div class="org-src-container">
+<pre class="src src-ruby">page.find(<span style="color: #4E9A06;">"#pdf_file_upload_label"</span>)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3e2c0b3" class="outline-4">
+<h4 id="org3e2c0b3"><span class="section-number-4">2.2.6.</span> 表单填写</h4>
+<div class="outline-text-4" id="text-2-2-6">
+<div class="org-src-container">
+<pre class="src src-ruby">within(<span style="color: #4E9A06;">"#pdf_page_info"</span>) <span style="color: #A52A2A; font-weight: bold;">do</span>
+  fill_in(<span style="color: #4E9A06;">'start_content_number'</span>, <span style="color: #F5666D;">with:</span> 10)
+  fill_in(<span style="color: #4E9A06;">'end_content_number'</span>, <span style="color: #F5666D;">with:</span> 13)
+<span style="color: #A52A2A; font-weight: bold;">end</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb631b80" class="outline-4">
+<h4 id="orgb631b80"><span class="section-number-4">2.2.7.</span> 浏览器窗口</h4>
+<div class="outline-text-4" id="text-2-2-7">
+<div class="org-src-container">
+<pre class="src src-ruby">page.driver.browser.window_handle
+page.driver.browser.window_handles
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: PENG Kevin</p>
+<p class="date">Created: 2024-09-26 四 19:02</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>]]></content><author><name>PENG Kevin</name></author></entry><entry><title type="html">自创数学题目总结</title><link href="http://localhost:4000/2024/%E8%87%AA%E5%88%9B%E6%95%B0%E5%AD%A6%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="自创数学题目总结" /><published>2024-07-12T00:00:00+08:00</published><updated>2024-07-12T00:00:00+08:00</updated><id>http://localhost:4000/2024/%E8%87%AA%E5%88%9B%E6%95%B0%E5%AD%A6%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/2024/%E8%87%AA%E5%88%9B%E6%95%B0%E5%AD%A6%E9%A2%98%E7%9B%AE%E6%80%BB%E7%BB%93.html"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-09-26 四 18:44 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="PENG Kevin" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org331c441">1. note</a></li>
+<li><a href="#orgc0e6abe">2. 题目</a>
+<ul>
+<li><a href="#orga28b79a">2.1. 求数列前 n 项和</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org331c441" class="outline-2">
+<h2 id="org331c441"><span class="section-number-2">1.</span> note</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+hugo 现在对 latex 嵌入图片支持有问题，等待后续 hugo 版本稳定再增加 latex 的
+hugo 导出功能。先把该类博客加到 Jeklly 中。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc0e6abe" class="outline-2">
+<h2 id="orgc0e6abe"><span class="section-number-2">2.</span> 题目</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orga28b79a" class="outline-3">
+<h3 id="orga28b79a"><span class="section-number-3">2.1.</span> 求数列前 n 项和</h3>
+<div class="outline-text-3" id="text-2-1">
+<dl class="org-dl">
+<dt>题目</dt><dd>已知数列 <img src="../assets/./2024-07-12-自创数学题目总结_dde122a30f6e48694e7d438fbcab4868bff8c719.png" alt="$a_{1,n}$" /> 前 n 项和记为 <img src="../assets/./2024-07-12-自创数学题目总结_da6d1fd6077eee2ff568f4ad6527ee7a30741ec7.png" alt="$a_{2,n}$" /> , <img src="../assets/./2024-07-12-自创数学题目总结_da6d1fd6077eee2ff568f4ad6527ee7a30741ec7.png" alt="$a_{2,n}$" /> 前 n 项和记为 <img src="../assets/./2024-07-12-自创数学题目总结_2e7bcaadf92d3e5e6bd0b30a7597f400722803b2.png" alt="$a_{3,n}$" />
+, &#x2026; , <img src="../assets/./2024-07-12-自创数学题目总结_9fe2d86ffe981dbd9d81c556f1ca3f98ff58b3ee.png" alt="$a_{m,n}$" /> 前 n 项和记为 <img src="../assets/./2024-07-12-自创数学题目总结_e816a6867c41a817dce7e166a624bb41f177ae8c.png" alt="$a_{m+1,n}$" />, 已知 <img src="../assets/./2024-07-12-自创数学题目总结_cf8e38a75f45221a036a56e3637128b78a2230e2.png" alt="$a_{1,n} = n$" /> , 求
+<img src="../assets/./2024-07-12-自创数学题目总结_9fe2d86ffe981dbd9d81c556f1ca3f98ff58b3ee.png" alt="$a_{m,n}$" /> 的值。</dd>
+<dt>解答</dt><dd><p>
+猜想：注意到  <img src="../assets/./2024-07-12-自创数学题目总结_cf8e38a75f45221a036a56e3637128b78a2230e2.png" alt="$a_{1,n} = n$" /> , <img src="../assets/./2024-07-12-自创数学题目总结_c77e7307902ab6cf5fdbd9f6a7d8cbbb20661bcf.png" alt="$a_{2,n} = \frac{n(n+1)}{2}$" />,
+</p>
+
+<p>
+<img src="../assets/./2024-07-12-自创数学题目总结_74ebd28fa2b95189f389ded56c0774784245f57b.png" alt="$$ a_{3,n} &amp;amp;= \frac{1}{2}[\frac{n(n+1)(2n+1)}{6} + \frac{n(n+1)}{2}]
+     \\ &amp;amp;= \frac{n(n+1)(n+2)}{6}
+     $$" />
+则 <img src="../assets/./2024-07-12-自创数学题目总结_86ef5ecc75b9a952e762af582e8708f4d2f36c41.png" alt="$a_{m,n} = {\binom{m + n -1}{m}}$" /> 成立吗？
+证明：对 m 使用数学归纳法，假设猜想在 m 时成立，要证明 m+1 时情形也成立。
+</p>
+
+<div id="org0dbbd61" class="equation-container">
+<span class="equation">
+<img src="../assets/./2024-07-12-自创数学题目总结_2f23a5ceb05ce29c7e6635088f53eee000c820ce.png" alt="\begin{equation*}
+a_{m+1,n} = \sum_{i=1}^{n}{\binom{m + i -1}{m}} = {\binom{m + n}{m+1}}
+\end{equation*}
+" />
+</span>
+<span class="equation-label">
+1
+</span>
+</div>
+<p>
+即要证明 <a href="#org0dbbd61">1</a> 成立。
+由组合公式：
+<img src="../assets/./2024-07-12-自创数学题目总结_59b82d85f5a5aea6e3f6527028ab43cfc58de429.png" alt="$$ \binom{m + i - 1}{m} + \binom{m + i - 1}{m + 1} = \binom{m + i}{m+1} $$" />
+<a href="#org0dbbd61">1</a> 式可以写成：
+</p>
+
+<div id="orgcec9a5e" class="equation-container">
+<span class="equation">
+<img src="../assets/./2024-07-12-自创数学题目总结_0dab9c62996a028abc26b28eb26768142aa2907c.png" alt="\begin{equation*}
+a_{m+1,n} = \binom{m}{m} + \sum_{i=2}^{n}{\binom{m + i -1}{m}} = \binom{m+1}{m+1} + \sum_{i=2}^{n}{\binom{m + i -1}{m}}
+\end{equation*}
+" />
+</span>
+<span class="equation-label">
+2
+</span>
+</div>
+<p>
+<a href="#orgcec9a5e">2</a> 逐项合并，即得 <a href="#org0dbbd61">1</a> . 证毕。
+</p></dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: PENG Kevin</p>
+<p class="date">Created: 2024-09-26 四 18:44</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>]]></content><author><name>PENG Kevin</name></author></entry><entry><title type="html">高等代数学习总结</title><link href="http://localhost:4000/2024/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="高等代数学习总结" /><published>2024-07-08T00:00:00+08:00</published><updated>2024-07-08T00:00:00+08:00</updated><id>http://localhost:4000/2024/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/2024/%E9%AB%98%E7%AD%89%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93.html"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-09-01 日 12:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="PENG Kevin" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org235683a">1. 基本概念</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org235683a" class="outline-2">
+<h2 id="org235683a"><span class="section-number-2">1.</span> 基本概念</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>线性（向量）空间</li>
+<li>线性空间的子空间</li>
+<li>线性空间上子空间的商空间</li>
+<li>映射</li>
+<li>线性映射</li>
+<li>线性变换</li>
+<li>同构映射</li>
+<li>线性映射的核与像</li>
+<li>线性变换的不变子空间</li>
+<li>矩阵的相似</li>
+<li>线性变换的特征值和特征子空间</li>
+<li>多项式环和线性变换的最小多项式</li>
+<li>线性变换的循环子空间</li>
+<li>复数域上的线性变换的 Jordan 标准形</li>
+<li>双线性函数</li>
+<li>有限维实内积空间－欧几里得空间</li>
+<li>复内积空间－酉空间</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: PENG Kevin</p>
+<p class="date">Created: 2024-09-01 日 12:07</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>]]></content><author><name>PENG Kevin</name></author></entry><entry><title type="html">Emacs 使用总结</title><link href="http://localhost:4000/2024/Emacs-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="Emacs 使用总结" /><published>2024-06-17T00:00:00+08:00</published><updated>2024-06-17T00:00:00+08:00</updated><id>http://localhost:4000/2024/Emacs-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/2024/Emacs-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.html"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-09-01 日 12:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="PENG Kevin" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+
+<div id="outline-container-org8afef8d" class="outline-2">
+<h2 id="org8afef8d"><span class="section-number-2">1.</span> Emacs 基本概念</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgd4a7474" class="outline-3">
+<h3 id="orgd4a7474"><span class="section-number-3">1.1.</span> frame</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+程序窗体。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc9535bc" class="outline-3">
+<h3 id="orgc9535bc"><span class="section-number-3">1.2.</span> buffer</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+编辑缓冲区。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2ff24ac" class="outline-3">
+<h3 id="org2ff24ac"><span class="section-number-3">1.3.</span> point</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+指示一个缓冲区中的位置。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga127a45" class="outline-3">
+<h3 id="orga127a45"><span class="section-number-3">1.4.</span> region</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+一对 point, 指示缓冲区中的一个位置区间。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3198db2" class="outline-3">
+<h3 id="org3198db2"><span class="section-number-3">1.5.</span> mini-buffer</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+程序窗体最下端显示消息提示的地方。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org57e24a1" class="outline-3">
+<h3 id="org57e24a1"><span class="section-number-3">1.6.</span> mode-line</h3>
+<div class="outline-text-3" id="text-1-6">
+<p>
+显示文件名，major-mode 等 buffer 信息的地方。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb917cdc" class="outline-3">
+<h3 id="orgb917cdc"><span class="section-number-3">1.7.</span> major-mode</h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+主模式。每个 buffer 有且只关联一个该模式。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org085842d" class="outline-3">
+<h3 id="org085842d"><span class="section-number-3">1.8.</span> minor-mode</h3>
+<div class="outline-text-3" id="text-1-8">
+<p>
+次模式。每个 buffer 可关联多个不同的该模式。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc70a066" class="outline-2">
+<h2 id="orgc70a066"><span class="section-number-2">2.</span> Elisp 基本语法</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orgc167e14" class="outline-3">
+<h3 id="orgc167e14"><span class="section-number-3">2.1.</span> 基本数据类型</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #204A87;">;; </span><span style="color: #204A87;">number</span>
+#16r1ff
+.15e2
+
+<span style="color: #204A87;">;; </span><span style="color: #204A87;">char</span>
+?Q
+?r
+
+<span style="color: #204A87;">;; </span><span style="color: #204A87;">sequence</span>
+<span style="color: #204A87;">;;; </span><span style="color: #204A87;">list (&#21464;&#38271; sequence)</span>
+<span style="color: #204A87;">;;;; </span><span style="color: #204A87;">cons cell</span>
+(car '(1 . 3))
+(cdr '(1 . 3))
+
+<span style="color: #204A87;">;;;; </span><span style="color: #204A87;">lists</span>
+(car '(1 2 3))
+(cdr '(1 2 3))
+(car '(1 . (2 . (3 . nil))))
+(cdr '(1 . (2 . (3 . nil))))
+
+<span style="color: #204A87;">;;; </span><span style="color: #204A87;">array (&#23450;&#38271; sequence)</span>
+<span style="color: #204A87;">;;;; </span><span style="color: #204A87;">string</span>
+<span style="color: #4E9A06;">"abcdefg"</span>
+#(<span style="color: #4E9A06;">"abcdefg"</span> 0 3 (face bold))
+
+<span style="color: #204A87;">;;;; </span><span style="color: #204A87;">vector</span>
+[1 <span style="color: #4E9A06;">"two"</span> 'three]
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb943ac6" class="outline-3">
+<h3 id="orgb943ac6"><span class="section-number-3">2.2.</span> 程序控制结构</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #204A87;">;; </span><span style="color: #204A87;">sequence</span>
+(<span style="color: #A52A2A; font-weight: bold;">progn</span>
+  1
+  2
+  3)
+
+<span style="color: #204A87;">;; </span><span style="color: #204A87;">if else</span>
+(<span style="color: #A52A2A; font-weight: bold;">if</span> t
+    t
+  nil)
+(<span style="color: #A52A2A; font-weight: bold;">when</span> t
+  t)
+(<span style="color: #A52A2A; font-weight: bold;">unless</span> nil
+  t)
+
+<span style="color: #204A87;">;; </span><span style="color: #204A87;">loop</span>
+<span style="color: #204A87;">;;; </span><span style="color: #204A87;">while</span>
+(<span style="color: #A52A2A; font-weight: bold;">progn</span>
+  (<span style="color: #A52A2A; font-weight: bold;">setq</span> num 0)
+  (<span style="color: #A52A2A; font-weight: bold;">while</span> (&lt; num 5)
+    (princ (format <span style="color: #4E9A06;">"%d"</span> num))
+    (<span style="color: #A52A2A; font-weight: bold;">setq</span> num (+ num 1))))
+<span style="color: #204A87;">;;; </span><span style="color: #204A87;">for</span>
+(<span style="color: #A52A2A; font-weight: bold;">dotimes</span> (i 10 (* i i))
+  (princ (format <span style="color: #4E9A06;">"%d"</span> i)))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5813b5c" class="outline-3">
+<h3 id="org5813b5c"><span class="section-number-3">2.3.</span> 宏</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #204A87;">;; </span><span style="color: #204A87;">return s-expression to be computed</span>
+(<span style="color: #A52A2A; font-weight: bold;">defmacro</span> <span style="color: #00578E; font-weight: bold;">inc</span> (x)
+    (list 'setq x (list '1+ x)))
+(<span style="color: #A52A2A; font-weight: bold;">progn</span>
+  (<span style="color: #A52A2A; font-weight: bold;">setq</span> y 1)
+  (inc y)
+  y)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org054e264" class="outline-3">
+<h3 id="org054e264"><span class="section-number-3">2.4.</span> 高级对象</h3>
+<div class="outline-text-3" id="text-2-4">
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #204A87;">;; </span><span style="color: #204A87;">hash-table</span>
+(<span style="color: #A52A2A; font-weight: bold;">progn</span>
+  (<span style="color: #A52A2A; font-weight: bold;">setq</span> hash (make-hash-table <span style="color: #A020F0;">:size</span> 30))
+  (puthash 1 'a hash)
+  (puthash 2 'b hash)
+  (gethash 2 hash))
+
+<span style="color: #204A87;">;; </span><span style="color: #204A87;">buffer</span>
+(buffer-list)
+(get-buffer-create <span style="color: #4E9A06;">"*new-buffer*"</span>)
+
+<span style="color: #204A87;">;; </span><span style="color: #204A87;">position</span>
+<span style="color: #204A87;">;;; </span><span style="color: #204A87;">A position is the index of a character in the text of a buffer.</span>
+(point)
+
+<span style="color: #204A87;">;; </span><span style="color: #204A87;">marker</span>
+<span style="color: #204A87;">;;; </span><span style="color: #204A87;">A marker is a Lisp object used to specify a position</span>
+<span style="color: #204A87;">;;; </span><span style="color: #204A87;">in a buffer relative to the surrounding text.</span>
+<span style="color: #204A87;">;;; </span><span style="color: #204A87;">marker &#32465;&#23450;&#22312;&#20004;&#20010;&#23383;&#31526;&#38388;&#65292;&#20301;&#32622;&#38543;&#23383;&#31526;&#20301;&#32622;&#21464;&#21160;&#32780;&#21464;&#21160;</span>
+(<span style="color: #A52A2A; font-weight: bold;">progn</span>
+  (<span style="color: #A52A2A; font-weight: bold;">setq</span> m1 (make-marker))
+  (set-marker m1 100)
+  (goto-char (point-min))
+  (insert-char ?T)
+  m1)
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7d2a8d7" class="outline-2">
+<h2 id="org7d2a8d7"><span class="section-number-2">3.</span> 常用包</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org44eeccb" class="outline-3">
+<h3 id="org44eeccb"><span class="section-number-3">3.1.</span> org</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+文档编写工具，类似于 markdown, 但功能更强大。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org519f680" class="outline-3">
+<h3 id="org519f680"><span class="section-number-3">3.2.</span> use-package</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+包配置工具，使用延迟加载，便于管理包配置的同时按需加载。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org73966d9" class="outline-3">
+<h3 id="org73966d9"><span class="section-number-3">3.3.</span> company</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+自动补全的包，功能很实用。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd96c766" class="outline-2">
+<h2 id="orgd96c766"><span class="section-number-2">4.</span> keymap 分发过程</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+相当复杂，参看 <a href="https://emacs.stackexchange.com/questions/653/how-can-i-find-out-in-which-keymap-a-key-is-bound">https://emacs.stackexchange.com/questions/653/how-can-i-find-out-in-which-keymap-a-key-is-bound</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4089d11" class="outline-2">
+<h2 id="org4089d11"><span class="section-number-2">5.</span> Emacs 启动流程</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+相当复杂，参看 <a href="https://mngb.github.io/ox-hugo/elisp.pdf">elisp.pdf</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: PENG Kevin</p>
+<p class="date">Created: 2024-09-01 日 12:07</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>]]></content><author><name>PENG Kevin</name></author></entry><entry><title type="html">Ruby 程序设计语言总结</title><link href="http://localhost:4000/2024/Ruby-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="Ruby 程序设计语言总结" /><published>2024-06-16T00:00:00+08:00</published><updated>2024-06-16T00:00:00+08:00</updated><id>http://localhost:4000/2024/Ruby-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/2024/Ruby-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%AD%E8%A8%80%E6%80%BB%E7%BB%93.html"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-09-01 日 12:06 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="PENG Kevin" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+
+<div id="outline-container-orgb1644e1" class="outline-2">
+<h2 id="orgb1644e1"><span class="section-number-2">1.</span> 设计理念</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+让程序编写变得快乐。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1b1146d" class="outline-2">
+<h2 id="org1b1146d"><span class="section-number-2">2.</span> 基本语法</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org6ea810c" class="outline-3">
+<h3 id="org6ea810c"><span class="section-number-3">2.1.</span> 条件，循环，异常</h3>
+<div class="outline-text-3" id="text-2-1">
+<div class="org-src-container">
+<pre class="src src-ruby"><span style="color: #204A87;"># </span><span style="color: #204A87;">if else</span>
+x = 10
+<span style="color: #A52A2A; font-weight: bold;">if</span> x &gt; 9
+  <span style="color: #A020F0;">puts</span> <span style="color: #4E9A06;">"x &gt; 9"</span>
+<span style="color: #A52A2A; font-weight: bold;">elsif</span> x &lt; 8
+  <span style="color: #A020F0;">puts</span> <span style="color: #4E9A06;">"x &lt; 8"</span>
+<span style="color: #A52A2A; font-weight: bold;">else</span>
+  <span style="color: #A020F0;">puts</span> <span style="color: #4E9A06;">"x = 8 OR x = 9"</span>
+<span style="color: #A52A2A; font-weight: bold;">end</span>
+
+<span style="color: #204A87;"># </span><span style="color: #204A87;">loop</span>
+10.times <span style="color: #A52A2A; font-weight: bold;">do</span> |index|
+  <span style="color: #A020F0;">puts</span> <span style="color: #4E9A06;">"</span><span style="color: #0084C8; font-weight: bold;">#{index}</span><span style="color: #4E9A06;">"</span>
+<span style="color: #A52A2A; font-weight: bold;">end</span>
+
+<span style="color: #204A87;"># </span><span style="color: #204A87;">exception</span>
+<span style="color: #A52A2A; font-weight: bold;">begin</span>
+  <span style="color: #A020F0;">raise</span> <span style="color: #4E9A06;">"Error"</span>
+<span style="color: #A52A2A; font-weight: bold;">rescue</span> =&gt; e
+  <span style="color: #A020F0;">puts</span> <span style="color: #4E9A06;">"Error </span><span style="color: #0084C8; font-weight: bold;">#{e}</span><span style="color: #4E9A06;">"</span>
+<span style="color: #A52A2A; font-weight: bold;">end</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3063ae6" class="outline-3">
+<h3 id="org3063ae6"><span class="section-number-3">2.2.</span> 函数，块，类，对象</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+<pre class="src src-ruby"><span style="color: #A52A2A; font-weight: bold;">def</span> <span style="color: #00578E; font-weight: bold;">func</span>(a, b)
+  a + b
+<span style="color: #A52A2A; font-weight: bold;">end</span>
+
+<span style="color: #204A87;"># </span><span style="color: #204A87;">lambda func</span>
+f = -&gt;(a, b) {
+  a + b
+}
+f.call(1, 2)
+f2 = <span style="color: #A020F0;">lambda</span> <span style="color: #A52A2A; font-weight: bold;">do</span> |a, b|
+  a + b
+<span style="color: #A52A2A; font-weight: bold;">end</span>
+f2.call(2, 3)
+
+<span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">Hello</span>
+  <span style="color: #A020F0;">private</span>
+  <span style="color: #A52A2A; font-weight: bold;">def</span> <span style="color: #00578E; font-weight: bold;">_func1</span>()
+  <span style="color: #A52A2A; font-weight: bold;">end</span>
+
+  <span style="color: #A020F0;">public</span>
+  <span style="color: #A52A2A; font-weight: bold;">def</span> <span style="color: #00578E; font-weight: bold;">func2</span>()
+  <span style="color: #A52A2A; font-weight: bold;">end</span>
+<span style="color: #A52A2A; font-weight: bold;">end</span>
+obj = <span style="color: #2F8B58; font-weight: bold;">Hello</span>.new
+obj.func
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3a81443" class="outline-3">
+<h3 id="org3a81443"><span class="section-number-3">2.3.</span> 模块，混入，继承</h3>
+<div class="outline-text-3" id="text-2-3">
+<div class="org-src-container">
+<pre class="src src-ruby"><span style="color: #A52A2A; font-weight: bold;">module</span> <span style="color: #2F8B58; font-weight: bold;">HelloModule</span>
+  <span style="color: #A52A2A; font-weight: bold;">def</span> <span style="color: #00578E; font-weight: bold;">test</span>
+  <span style="color: #A52A2A; font-weight: bold;">end</span>
+<span style="color: #A52A2A; font-weight: bold;">end</span>
+
+<span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">HelloClass</span>
+<span style="color: #A52A2A; font-weight: bold;">end</span>
+<span style="color: #A52A2A; font-weight: bold;">class</span> <span style="color: #2F8B58; font-weight: bold;">HelloClass2</span> &lt; <span style="color: #2F8B58; font-weight: bold;">HelloClass2</span>
+  <span style="color: #A020F0;">include</span> <span style="color: #2F8B58; font-weight: bold;">HelloModule</span>
+<span style="color: #A52A2A; font-weight: bold;">end</span>
+obj = <span style="color: #2F8B58; font-weight: bold;">HelloClass2</span>.new
+obj.test
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc118c5b" class="outline-2">
+<h2 id="orgc118c5b"><span class="section-number-2">3.</span> 一个实例</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org866a4e2" class="outline-3">
+<h3 id="org866a4e2"><span class="section-number-3">3.1.</span> 读入命令行参数并操作文件</h3>
+<div class="outline-text-3" id="text-3-1">
+<div class="org-src-container">
+<pre class="src src-ruby">filename = <span style="color: #2F8B58; font-weight: bold;">ARGV</span>[0]
+<span style="color: #2F8B58; font-weight: bold;">File</span>.read(filename).each_line <span style="color: #A52A2A; font-weight: bold;">do</span> |line|
+  <span style="color: #A020F0;">puts</span> <span style="color: #4E9A06;">"</span><span style="color: #0084C8; font-weight: bold;">#{line}</span><span style="color: #4E9A06;">"</span>
+<span style="color: #A52A2A; font-weight: bold;">end</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1b65732" class="outline-2">
+<h2 id="org1b65732"><span class="section-number-2">4.</span> 常用 Gem</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-org179399e" class="outline-3">
+<h3 id="org179399e"><span class="section-number-3">4.1.</span> gem</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+包管理工具
+<code>gem list .*active.*</code> 列出所有含有 active 的包
+<code>gem info activerecord</code> 显示包 activerecord 的详细信息
+</p>
+</div>
+</div>
+<div id="outline-container-orgd4b6188" class="outline-3">
+<h3 id="orgd4b6188"><span class="section-number-3">4.2.</span> bundler</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+包依赖管理工具，维护一个 <code>Gemfile</code> 文件。
+<code>bundle install</code> 安装 <code>Gemfile</code> 中指定的 Gem
+</p>
+</div>
+</div>
+<div id="outline-container-org8d9740f" class="outline-3">
+<h3 id="org8d9740f"><span class="section-number-3">4.3.</span> pry</h3>
+<div class="outline-text-3" id="text-4-3">
+<p>
+ruby 程序调试工具。
+</p>
+</div>
+</div>
+<div id="outline-container-org71f873f" class="outline-3">
+<h3 id="org71f873f"><span class="section-number-3">4.4.</span> rubocop</h3>
+<div class="outline-text-3" id="text-4-4">
+<p>
+ruby 代码静态检查工具。
+</p>
+</div>
+</div>
+<div id="outline-container-org7d19f7f" class="outline-3">
+<h3 id="org7d19f7f"><span class="section-number-3">4.5.</span> rake</h3>
+<div class="outline-text-3" id="text-4-5">
+<p>
+ruby 构建工具，使用 <code>Rakefile</code>, 类似于 <code>Makefile</code>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orged5a1ea" class="outline-2">
+<h2 id="orged5a1ea"><span class="section-number-2">5.</span> 程序原理</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orga0c3f00" class="outline-3">
+<h3 id="orga0c3f00"><span class="section-number-3">5.1.</span> 类对象关系图</h3>
+<div class="outline-text-3" id="text-5-1">
+
+<div id="org01f8a8d" class="figure">
+<p><img src="../assets/ruby_inheritance_chain.jpg" alt="ruby_inheritance_chain.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf70e864" class="outline-3">
+<h3 id="orgf70e864"><span class="section-number-3">5.2.</span> 程序启动原理</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+见 Ruby 源代码。
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: PENG Kevin</p>
+<p class="date">Created: 2024-09-01 日 12:06</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>]]></content><author><name>PENG Kevin</name></author></entry><entry><title type="html">Firefox 使用总结</title><link href="http://localhost:4000/2024/firefox-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="Firefox 使用总结" /><published>2024-06-04T00:00:00+08:00</published><updated>2024-06-04T00:00:00+08:00</updated><id>http://localhost:4000/2024/firefox-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/2024/firefox-%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93.html"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-09-01 日 12:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="PENG Kevin" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+
+<div id="outline-container-org4737208" class="outline-2">
+<h2 id="org4737208"><span class="section-number-2">1.</span> 安装</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+中国版是《谋智版》，国内公司代理产品，不推荐下载。下载国际版。
+到官网 <a href="https://mozilla.org">https://mozilla.org</a> 下载。
+</p>
+</div>
+</div>
+<div id="outline-container-org71909c7" class="outline-2">
+<h2 id="org71909c7"><span class="section-number-2">2.</span> 常用插件</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org0a71008" class="outline-3">
+<h3 id="org0a71008"><span class="section-number-3">2.1.</span> Surfingkeys</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+绑定一些常用浏览器功能到快捷键，类似 Vim 键绑定：
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">功能</th>
+<th scope="col" class="org-left">快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">跳转到书签</td>
+<td class="org-left">b</td>
+</tr>
+
+<tr>
+<td class="org-left">将当前网页添加到书签</td>
+<td class="org-left">ab</td>
+</tr>
+
+<tr>
+<td class="org-left">打开 Google 搜索</td>
+<td class="org-left">og</td>
+</tr>
+
+<tr>
+<td class="org-left">打开历史记录</td>
+<td class="org-left">oh</td>
+</tr>
+
+<tr>
+<td class="org-left">打开网页</td>
+<td class="org-left">t</td>
+</tr>
+
+<tr>
+<td class="org-left">跳转到标签</td>
+<td class="org-left">T</td>
+</tr>
+
+<tr>
+<td class="org-left">切换到左边 Tab</td>
+<td class="org-left">E</td>
+</tr>
+
+<tr>
+<td class="org-left">切换到右边 Tab</td>
+<td class="org-left">R</td>
+</tr>
+
+<tr>
+<td class="org-left">当前页面后退</td>
+<td class="org-left">S</td>
+</tr>
+
+<tr>
+<td class="org-left">当前页面前进</td>
+<td class="org-left">D</td>
+</tr>
+
+<tr>
+<td class="org-left">关闭当前 Tab</td>
+<td class="org-left">x</td>
+</tr>
+
+<tr>
+<td class="org-left">打开最近关闭的 Tab</td>
+<td class="org-left">X</td>
+</tr>
+
+<tr>
+<td class="org-left">打开链接</td>
+<td class="org-left">f</td>
+</tr>
+
+<tr>
+<td class="org-left">转到输入框</td>
+<td class="org-left">i</td>
+</tr>
+
+<tr>
+<td class="org-left">刷新</td>
+<td class="org-left">r</td>
+</tr>
+
+<tr>
+<td class="org-left">搜索</td>
+<td class="org-left">/</td>
+</tr>
+
+<tr>
+<td class="org-left">打开命令</td>
+<td class="org-left">:</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: PENG Kevin</p>
+<p class="date">Created: 2024-09-01 日 12:07</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>]]></content><author><name>PENG Kevin</name></author></entry><entry><title type="html">托勒密定理的证明</title><link href="http://localhost:4000/2024/%E6%89%98%E5%8B%92%E5%AF%86%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E.html" rel="alternate" type="text/html" title="托勒密定理的证明" /><published>2024-05-24T00:00:00+08:00</published><updated>2024-05-24T00:00:00+08:00</updated><id>http://localhost:4000/2024/%E6%89%98%E5%8B%92%E5%AF%86%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E</id><content type="html" xml:base="http://localhost:4000/2024/%E6%89%98%E5%8B%92%E5%AF%86%E5%AE%9A%E7%90%86%E7%9A%84%E8%AF%81%E6%98%8E.html"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-09-01 日 12:07 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="PENG Kevin" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+
+<div id="outline-container-orgd7271bd" class="outline-2">
+<h2 id="orgd7271bd"><span class="section-number-2">1.</span> 定理描述</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+四边形 <img src="../assets/./2024-05-24-托勒密定理的证明_99ba58ef58decf5ade1e1447152108359315aadd.png" alt="$ABCD$" /> 的边 <img src="../assets/./2024-05-24-托勒密定理的证明_091b06628211ad51aa25447cb10b72deb8d4e8ce.png" alt="$AB, BC, CD, DA$" /> 和对角线 <img src="../assets/./2024-05-24-托勒密定理的证明_e384a988f6d2219dc45c314e58285d8d67266a12.png" alt="$AC, BD$" />
 满足如下不等式：
-<img src="../assets/2024-05-24-托勒密定理的证明_de7d63214ab96b69e5bf45bfe00d995bcbfa8f2b.png" alt="$$ AB \cdot CD + BC \cdot DA \geq AC \cdot BD$$" />
+<img src="../assets/./2024-05-24-托勒密定理的证明_b0179d2ae527d66b8ee50ca9e69a60b1d783e7c9.png" alt="$$ AB \cdot CD + BC \cdot DA \geq AC \cdot BD$$" />
 等号成立，当且仅当该四边形为圆内接四边形时。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgcddcc24" class="outline-2">
-<h2 id="orgcddcc24"><span class="section-number-2">2.</span> 证明</h2>
+<div id="outline-container-orgfcfe18c" class="outline-2">
+<h2 id="orgfcfe18c"><span class="section-number-2">2.</span> 证明</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 用复数表示方式证明。令
-<img src="../assets/2024-05-24-托勒密定理的证明_f6723e9a7e848be35eeeaa0eda4fe7ee6f3039b2.png" alt="$a=\overrightarrow{OA}, b=\overrightarrow{OB}, c=\overrightarrow{OC},
+<img src="../assets/./2024-05-24-托勒密定理的证明_652b0e5b0c4601aef2504428792bcbea51324c26.png" alt="$a=\overrightarrow{OA}, b=\overrightarrow{OB}, c=\overrightarrow{OC},
   d=\overrightarrow{OD}$" />
 则
-<img src="../assets/2024-05-24-托勒密定理的证明_be168412f0c1661562d53054daba4aad8c35f86b.png" alt="$$ (b - a)(d - c) + (c - b)(d - a) =\\
+<img src="../assets/./2024-05-24-托勒密定理的证明_1ecec72d1c8bf95470d188e9387f5388c5d0da58.png" alt="$$ (b - a)(d - c) + (c - b)(d - a) =\\
   (bd + ac - ad - bc) + (cd + ab - bd - ac) = \\
   cd + ab - ad - bc = (c - a)(d - b)$$" />
 由三角不等式知
-<img src="../assets/2024-05-24-托勒密定理的证明_a12e9198b799d86cb2dc7c8a6fb242fc78f3aa68.png" alt="$$ |(b - a)(d - c)| + |(c - b)(d - a)| \geq |(c - a)(d - b)|$$" />
+<img src="../assets/./2024-05-24-托勒密定理的证明_9edd0cc91026ddbc8d93d63e0b1744a98e5eda4a.png" alt="$$ |(b - a)(d - c)| + |(c - b)(d - a)| \geq |(c - a)(d - b)|$$" />
 即
-<img src="../assets/2024-05-24-托勒密定理的证明_de7d63214ab96b69e5bf45bfe00d995bcbfa8f2b.png" alt="$$ AB \cdot CD + BC \cdot DA \geq AC \cdot BD$$" />
-等号成立当且仅当复数 <img src="../assets/2024-05-24-托勒密定理的证明_35899b135012fcea0c73046b8481215f74110640.png" alt="$(b - a)(d - c)$" /> 与 <img src="../assets/2024-05-24-托勒密定理的证明_4fbebffaf1cf5a9c671724380b7b047872382746.png" alt="$(c - b)(d - a)$" /> 辐角相同。
-即 <img src="../assets/2024-05-24-托勒密定理的证明_10cb5c060d221b18ca81bd7ea91102b58360637b.png" alt="$\frac{b - a}{d - a}$" /> 和 <img src="../assets/2024-05-24-托勒密定理的证明_36a394899e17659393d53934a5afa79fd765d314.png" alt="$\frac{c - b}{d - c}$" /> 辐角相同，又因为
-<img src="../assets/2024-05-24-托勒密定理的证明_417c00140f389ffcda13540b37bd028c38c8034f.png" alt="$arg(\frac{c - b}{d - c}) \equiv arg(\frac{b - c}{d - c}) + 180^\circ \pmod{360^\circ}$" />
-其中 <img src="../assets/2024-05-24-托勒密定理的证明_b26c93fe044ddf5f04cf9c68a87b5dea6ce9b873.png" alt="$arg(x) \in [0, 360^\circ]$" />
-即 <img src="../assets/2024-05-24-托勒密定理的证明_841baaf8f2e31495867b7f49da4f63fe38710362.png" alt="$arg(\frac{b - a}{d - a}) \equiv arg(\frac{b - c}{d - c}) + 180^\circ \pmod{360^\circ}$" />
-由复数辐角性质 <img src="../assets/2024-05-24-托勒密定理的证明_7ef09e2e6d91df40bb5c518077139f7dd30b8480.png" alt="$arg(\frac{x}{y}) \equiv arg(x) - arg(y) \equiv -arg(\frac{y}{x}) \pmod{360^\circ}$" />
-上式转化为 <img src="../assets/2024-05-24-托勒密定理的证明_a60798ecdbe457d44c53a5a588b31fae094996cc.png" alt="$arg(\frac{b - a}{d - a}) \equiv -arg(\frac{d - c}{b - c}) + 180^\circ \pmod{360^\circ}$" />
-即为 <img src="../assets/2024-05-24-托勒密定理的证明_e9852fbf01944bdb14c66c69020729375314240b.png" alt="$arg(\frac{b - a}{d - a}) + arg(\frac{d - c}{b - c}) \equiv 180^\circ
+<img src="../assets/./2024-05-24-托勒密定理的证明_b0179d2ae527d66b8ee50ca9e69a60b1d783e7c9.png" alt="$$ AB \cdot CD + BC \cdot DA \geq AC \cdot BD$$" />
+等号成立当且仅当复数 <img src="../assets/./2024-05-24-托勒密定理的证明_661c589e9be9bc30b18158fb0f66f1a6c925f6ed.png" alt="$(b - a)(d - c)$" /> 与 <img src="../assets/./2024-05-24-托勒密定理的证明_ba82f41edae5c95fdea663daf80bd9c3f29b4ead.png" alt="$(c - b)(d - a)$" /> 辐角相同。
+即 <img src="../assets/./2024-05-24-托勒密定理的证明_0a21dd56ba97f691e8d0f0a18b17d764efafe0cc.png" alt="$\frac{b - a}{d - a}$" /> 和 <img src="../assets/./2024-05-24-托勒密定理的证明_4e34fe83ece2b4067ad0c1159ec12a59cd5e3b97.png" alt="$\frac{c - b}{d - c}$" /> 辐角相同，又因为
+<img src="../assets/./2024-05-24-托勒密定理的证明_cdb0741712096284da09a082fb802d3411be7357.png" alt="$arg(\frac{c - b}{d - c}) \equiv arg(\frac{b - c}{d - c}) + 180^\circ \pmod{360^\circ}$" />
+其中 <img src="../assets/./2024-05-24-托勒密定理的证明_5993f64f3946c31a3c76a20026333a4aaa577106.png" alt="$arg(x) \in [0, 360^\circ]$" />
+即 <img src="../assets/./2024-05-24-托勒密定理的证明_85ae8c17fbf181ef199ddcf42c6cc0e0cd2004af.png" alt="$arg(\frac{b - a}{d - a}) \equiv arg(\frac{b - c}{d - c}) + 180^\circ \pmod{360^\circ}$" />
+由复数辐角性质 <img src="../assets/./2024-05-24-托勒密定理的证明_552eb3ee35a5596e2a2f0da1dffe0d9215f93491.png" alt="$arg(\frac{x}{y}) \equiv arg(x) - arg(y) \equiv -arg(\frac{y}{x}) \pmod{360^\circ}$" />
+上式转化为 <img src="../assets/./2024-05-24-托勒密定理的证明_bc814b3a5d450e7b85fda3fc462b4b10ceea35bd.png" alt="$arg(\frac{b - a}{d - a}) \equiv -arg(\frac{d - c}{b - c}) + 180^\circ \pmod{360^\circ}$" />
+即为 <img src="../assets/./2024-05-24-托勒密定理的证明_1cff429302cbe32c5964b414b8377f8914ba53a1.png" alt="$arg(\frac{b - a}{d - a}) + arg(\frac{d - c}{b - c}) \equiv 180^\circ
   \pmod{360^\circ}$" />, 恰好为四点共圆的充要条件。
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: PENG Kui</p>
-<p class="date">Created: 2024-05-27 Mon 21:05</p>
+<p class="author">Author: PENG Kevin</p>
+<p class="date">Created: 2024-09-01 日 12:07</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
@@ -270,14 +2382,14 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-05-27 Mon 21:05 -->
+<!-- 2024-09-01 日 12:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="PENG Kui" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="author" content="PENG Kevin" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -298,8 +2410,9 @@
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -308,21 +2421,21 @@
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -457,42 +2570,19 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 
-<div id="outline-container-org14c8bc8" class="outline-2">
-<h2 id="org14c8bc8"><span class="section-number-2">1.</span> 简单的情形</h2>
+<div id="outline-container-orgd723f84" class="outline-2">
+<h2 id="orgd723f84"><span class="section-number-2">1.</span> 简单的情形</h2>
 <div class="outline-text-2" id="text-1">
 
 <div class="equation-container">
 <span class="equation">
-<img src="../assets/2024-05-23-均值不等式的证明_2414028605d2755bc7ef4bff4eacc0ecafc420c3.png" alt="  \begin{equation*}
+<img src="../assets/./2024-05-23-均值不等式的证明_f8e33fcaf8a46f5feefad00a903057e432cfcdf6.png" alt="  \begin{equation*}
 \frac{2}{\frac{1}{a_1} + \frac{1}{a_2}} \leq \sqrt{a_1 a_2} \leq \frac{a_1 +
 a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}
  , where \quad a_1,a_2 &amp;gt; 0
@@ -505,18 +2595,18 @@ a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}
 </div>
 
 <p>
-先证明 <img src="../assets/2024-05-23-均值不等式的证明_8007b81493610c108b48cc20cde9511ecee87ada.png" alt="$\sqrt{a_1 a_2} \leq \frac{a_1 + a_2}{2}$" />, 两边平方再相减，变为 <img src="../assets/2024-05-23-均值不等式的证明_20bb4fdaaf607a0cb68482b4bcacab14f684bd1e.png" alt="$0 \leq
+先证明 <img src="../assets/./2024-05-23-均值不等式的证明_c0d0e78f8aecc90c517f4fb9c0a292755bda6f7c.png" alt="$\sqrt{a_1 a_2} \leq \frac{a_1 + a_2}{2}$" />, 两边平方再相减，变为 <img src="../assets/./2024-05-23-均值不等式的证明_468debdfb6e474e72c3ef7f0452d7fa94b8ae830.png" alt="$0 \leq
 (\frac{a_1 - a_2}{2})^2$" />
 显然成立。
-同理可证明 <img src="../assets/2024-05-23-均值不等式的证明_7592aa291357b70c168f41f3fad76d4bb1efac1b.png" alt="$\frac{a_1 + a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}$" />
-对第一个不等式，设 <img src="../assets/2024-05-23-均值不等式的证明_a6e2f87bd5422b8dac93b9ad713ef121778f7fd6.png" alt="$b_1 = \frac{1}{a_1}, b_2 = \frac{1}{a_2}$" /> , 再用前面得出的
+同理可证明 <img src="../assets/./2024-05-23-均值不等式的证明_3035b03267eb3a8a0687ef93333d7b78b94174f2.png" alt="$\frac{a_1 + a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}$" />
+对第一个不等式，设 <img src="../assets/./2024-05-23-均值不等式的证明_81380288243ad1ed7df58c9220e00353a39b3d95.png" alt="$b_1 = \frac{1}{a_1}, b_2 = \frac{1}{a_2}$" /> , 再用前面得出的
 结论同样可得。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgb75191a" class="outline-2">
-<h2 id="orgb75191a"><span class="section-number-2">2.</span> 一般情况</h2>
+<div id="outline-container-orge8b0a0b" class="outline-2">
+<h2 id="orge8b0a0b"><span class="section-number-2">2.</span> 一般情况</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 对 n 个变量的情形，证明：
@@ -525,8 +2615,8 @@ a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}
 
 <div class="equation-container">
 <span class="equation">
-<img src="../assets/2024-05-23-均值不等式的证明_f3f49eebb62926a7c43d360d749d4a13282442fd.png" alt="  \begin{equation*}
-\frac{n}{\sum a_i}
+<img src="../assets/./2024-05-23-均值不等式的证明_361d9cf0d6c2e716ae5a90a14a6ce7ce3a20bccc.png" alt="  \begin{equation*}
+\frac{n}{\sum \frac{1}{a_i}}
 \leq \sqrt[n]{\prod a_i}
 \leq \frac{\sum a_i}{n}
 \leq \sqrt{\frac{\sum a_i^2}{n}},
@@ -541,10 +2631,10 @@ a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}
 
 
 <p>
-  先证明 <img src="../assets/2024-05-23-均值不等式的证明_578a4a3082ab9b3351ad7f316d11848cdbea2345.png" alt="$\frac{\sum a_i}{n}
-\leq \sqrt{\frac{\sum a_i^2}{n}}$" /> ,由柯西不等式 <img src="../assets/2024-05-23-均值不等式的证明_1622d82ef071f8ca31149a6932b3cdf4146fedfc.png" alt="$(\sum a_i b_i)^2
+  先证明 <img src="../assets/./2024-05-23-均值不等式的证明_decda873887b462f845e7015a743eeae21a5fff5.png" alt="$\frac{\sum a_i}{n}
+\leq \sqrt{\frac{\sum a_i^2}{n}}$" /> ,由柯西不等式 <img src="../assets/./2024-05-23-均值不等式的证明_a2d2e7a5db720265b71bf3caa24e6e82a3ee2ae1.png" alt="$(\sum a_i b_i)^2
 \leq (\sum a_i^2)(\sum b_i^2)$" />
-令 <img src="../assets/2024-05-23-均值不等式的证明_b123979df2843eb24ec3d2bdb7b700a4e36c72de.png" alt="$b_i = \frac{1}{n}$" />, 即得。
+令 <img src="../assets/./2024-05-23-均值不等式的证明_6968783dd2290f824b2b457574cc30932fd9fac1.png" alt="$b_i = \frac{1}{n}$" />, 即得。
 </p>
 
 <p>
@@ -552,9 +2642,9 @@ a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}
 </p>
 
 <p>
-<img src="../assets/2024-05-23-均值不等式的证明_cb3b0bbd97a8bac58425abaa34863d035a912483.png" alt="$\sqrt[n]{\prod a_i}
+<img src="../assets/./2024-05-23-均值不等式的证明_c9a6ca5a08a647e6baa1389e736f1ca76251d1e1.png" alt="$\sqrt[n]{\prod a_i}
   \leq \frac{\sum a_i}{n}$" />
-即可，第一个不等式可以通过变换 <img src="../assets/2024-05-23-均值不等式的证明_12b97da08baeed725228009b0c8d5269c5307b86.png" alt="$b_i = \frac{1}{a_i}$" /> 和这个不等式证得。
+即可，第一个不等式可以通过变换 <img src="../assets/./2024-05-23-均值不等式的证明_08d4ec226cc0e10cc32802ff79c954166f547031.png" alt="$b_i = \frac{1}{a_i}$" /> 和这个不等式证得。
 </p>
 
 <p>
@@ -564,7 +2654,7 @@ a_2}{2} \leq \sqrt{\frac{a_1^2+a_2^2}{2}}
 
 <div class="equation-container">
 <span class="equation">
-<img src="../assets/2024-05-23-均值不等式的证明_284e1f075294615f32f4ed870a3258cf495c628e.png" alt="  \begin{equation*}
+<img src="../assets/./2024-05-23-均值不等式的证明_80e8e1df6bc9919fe1bee7b12e8cc57b642552c7.png" alt="  \begin{equation*}
 \sqrt[n]{\prod a_i} =
 e^{\frac{\sum \ln{a_i}}{n}} \leq
 e^{\ln\frac{\sum {a_i}}{n}} =
@@ -583,17 +2673,17 @@ e^{\ln\frac{\sum {a_i}}{n}} =
 </div>
 </div>
 
-<div id="outline-container-orgdc4d7fc" class="outline-2">
-<h2 id="orgdc4d7fc"><span class="section-number-2">3.</span> 琴声不等式的证明</h2>
+<div id="outline-container-orgcde47e8" class="outline-2">
+<h2 id="orgcde47e8"><span class="section-number-2">3.</span> 琴声不等式的证明</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-简单情形，对任意凸函数 <img src="../assets/2024-05-23-均值不等式的证明_9a94d2b30be9907660c60220cbb82d456bc12743.png" alt="$y=f(x)$" /> , 成立如下不等式：
+简单情形，对任意凸函数 <img src="../assets/./2024-05-23-均值不等式的证明_b621929eae6b489d34be7cfb6dc33bf2c1d4b630.png" alt="$y=f(x)$" /> , 成立如下不等式：
 </p>
 
 
 <div class="equation-container">
 <span class="equation">
-<img src="../assets/2024-05-23-均值不等式的证明_56e8206e30df4f8ab84c78c2d1dc31539dd94daa.png" alt="  \begin{equation*}
+<img src="../assets/./2024-05-23-均值不等式的证明_82ca7d00be3f0cfa5bf3ac29b4048d1352486642.png" alt="  \begin{equation*}
 t f(x_1) + (1 - t) f(x_2) \geq
 f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
   \end{equation*}
@@ -608,17 +2698,17 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
 不等式的理解，如图所示：
 </p>
 
-<div id="org0c884a2" class="figure">
+<div id="org0441e71" class="figure">
 <p><img src="./../assets/fx.jpg" alt="fx.jpg" width="200px" />
 </p>
 <p><span class="figure-number">Figure 1: </span>f(x)</p>
 </div>
 
 <p>
-其中假定了 <img src="../assets/2024-05-23-均值不等式的证明_7c9cebd045c31d1ecade113837203352744ff119.png" alt="$x_1 \leq x_2$" />, <img src="../assets/2024-05-23-均值不等式的证明_e165129fd336c8650653db83bbc3d064bbdd2fda.png" alt="$A(x_1, f(x_1)), B(x_2, f(x_2))$" />
-则点 <img src="../assets/2024-05-23-均值不等式的证明_1317edb974c38f43386c9a9fbf8b76baeb180114.png" alt="$(t x_1 + (1-t) x_2, t f(x_1) + (1 - t) f(x_2))$" /> 一定在
-线段 <img src="../assets/2024-05-23-均值不等式的证明_76650d90efb44833fcd9b51ce3c571c8bfd645d8.png" alt="$\overline{AB}$" /> 上，而点  <img src="../assets/2024-05-23-均值不等式的证明_e09ff7a4aea7973c94089989bbb47f763c88da7e.png" alt="$(t x_1 + (1-t) x_2, f(t x_1 + (1 - t) x_2)$" /> 一定在
-弧线 <img src="../assets/2024-05-23-均值不等式的证明_4dbbe442116a659bacd10dfa7b238ba9d7f848ac.png" alt="$\overset{\frown}{AB}$" /> 上，由凸函数的定义，不等式显然成立。
+其中假定了 <img src="../assets/./2024-05-23-均值不等式的证明_5f5a7ea0a48d80785962f5edfaa257766067a08b.png" alt="$x_1 \leq x_2$" />, <img src="../assets/./2024-05-23-均值不等式的证明_e7393e9f29690a744c0c3b097a1528241085be47.png" alt="$A(x_1, f(x_1)), B(x_2, f(x_2))$" />
+则点 <img src="../assets/./2024-05-23-均值不等式的证明_e35c8c1fbee935445cb7ee1707fe06d304604c35.png" alt="$(t x_1 + (1-t) x_2, t f(x_1) + (1 - t) f(x_2))$" /> 一定在
+线段 <img src="../assets/./2024-05-23-均值不等式的证明_3de067ee255d3995cc2e51c170a12227242ae4f9.png" alt="$\overline{AB}$" /> 上，而点  <img src="../assets/./2024-05-23-均值不等式的证明_3b986b640210acede181e2b486b45336d6d8efca.png" alt="$(t x_1 + (1-t) x_2, f(t x_1 + (1 - t) x_2)$" /> 一定在
+弧线 <img src="../assets/./2024-05-23-均值不等式的证明_c11f608e9b43d222d3434c96d7ed72037f2d5fec.png" alt="$\overset{\frown}{AB}$" /> 上，由凸函数的定义，不等式显然成立。
 </p>
 
 <p>
@@ -628,7 +2718,7 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
 
 <div class="equation-container">
 <span class="equation">
-<img src="../assets/2024-05-23-均值不等式的证明_6d0879541c5ffdcbdaf94f23363599b54af62cf2.png" alt="  \begin{equation*}
+<img src="../assets/./2024-05-23-均值不等式的证明_4046b323ddb37eba4ecbc811db1053e256941aa4.png" alt="  \begin{equation*}
 \sum{\lambda_i f(x_i)} \geq f(\sum{\lambda_i x_i})\\
 \quad \sum{\lambda_i} = 1, \forall \lambda_i \in [0, 1]
   \end{equation*}
@@ -640,7 +2730,7 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
 </div>
 
 <p>
-将 <img src="../assets/2024-05-23-均值不等式的证明_6cd0e5c52323e203c8a830db38d8a282144a9ecb.png" alt="$f(\sum{\lambda_i x_i})$" /> 写成 <img src="../assets/2024-05-23-均值不等式的证明_225463720832da44d85535ba074349c38991b580.png" alt="$f(\lambda_1 x_1 +
+将 <img src="../assets/./2024-05-23-均值不等式的证明_0c8960d660d830b1a2b485d2ecdc06d3519f9953.png" alt="$f(\sum{\lambda_i x_i})$" /> 写成 <img src="../assets/./2024-05-23-均值不等式的证明_4ca4e05dc2e2eabecc21fa83b91f06eda6a9f9b6.png" alt="$f(\lambda_1 x_1 +
   (1 - \lambda_1)(\sum_{2}^{n} \frac{\lambda_i x_i}{1 - \lambda_1}))$" /> 再用简单
 情形的结论，可以逐级展开，即得证。
 </p>
@@ -648,21 +2738,24 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: PENG Kui</p>
-<p class="date">Created: 2024-05-27 Mon 21:05</p>
+<p class="author">Author: PENG Kevin</p>
+<p class="date">Created: 2024-09-01 日 12:07</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
-</html>]]></content><author><name>PENG Kevin</name></author></entry><entry><title type="html">异面直线距离公式</title><link href="http://localhost:4000/2024/%E5%BC%82%E9%9D%A2%E7%9B%B4%E7%BA%BF%E8%B7%9D%E7%A6%BB%E5%85%AC%E5%BC%8F.html" rel="alternate" type="text/html" title="异面直线距离公式" /><published>2024-05-22T00:00:00+08:00</published><updated>2024-05-22T00:00:00+08:00</updated><id>http://localhost:4000/2024/%E5%BC%82%E9%9D%A2%E7%9B%B4%E7%BA%BF%E8%B7%9D%E7%A6%BB%E5%85%AC%E5%BC%8F</id><content type="html" xml:base="http://localhost:4000/2024/%E5%BC%82%E9%9D%A2%E7%9B%B4%E7%BA%BF%E8%B7%9D%E7%A6%BB%E5%85%AC%E5%BC%8F.html"><![CDATA[<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+</html>]]></content><author><name>PENG Kevin</name></author></entry><entry><title type="html">异面直线距离公式</title><link href="http://localhost:4000/2024/%E5%BC%82%E9%9D%A2%E7%9B%B4%E7%BA%BF%E8%B7%9D%E7%A6%BB%E5%85%AC%E5%BC%8F.html" rel="alternate" type="text/html" title="异面直线距离公式" /><published>2024-05-22T00:00:00+08:00</published><updated>2024-05-22T00:00:00+08:00</updated><id>http://localhost:4000/2024/%E5%BC%82%E9%9D%A2%E7%9B%B4%E7%BA%BF%E8%B7%9D%E7%A6%BB%E5%85%AC%E5%BC%8F</id><content type="html" xml:base="http://localhost:4000/2024/%E5%BC%82%E9%9D%A2%E7%9B%B4%E7%BA%BF%E8%B7%9D%E7%A6%BB%E5%85%AC%E5%BC%8F.html"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-05-27 Mon 21:05 -->
+<!-- 2024-09-01 日 12:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="PENG Kui" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="author" content="PENG Kevin" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -683,8 +2776,9 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -693,21 +2787,21 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -842,92 +2936,69 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 
-<div id="outline-container-orgcceea8a" class="outline-2">
-<h2 id="orgcceea8a"><span class="section-number-2">1.</span> 异面直线间距离公式</h2>
+<div id="outline-container-org07e1a74" class="outline-2">
+<h2 id="org07e1a74"><span class="section-number-2">1.</span> 异面直线间距离公式</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-两异面直线 <img src="../assets/2024-05-22-异面直线距离公式_6928564a621c3fe689e55cd6b5632d76a2130f88.png" alt="$l_1$" /> <img src="../assets/2024-05-22-异面直线距离公式_6330acabe6096df475c3ae80a4a5ac04e1b6da32.png" alt="$l_2$" /> , 方程分别为：
+两异面直线 <img src="../assets/./2024-05-22-异面直线距离公式_dfa981430cf1b4141e8771af38b8ae5ab50e91c9.png" alt="$l_1$" /> <img src="../assets/./2024-05-22-异面直线距离公式_f8a5f9e7d8c4ca4e1f25c31996fd97e9944026c9.png" alt="$l_2$" /> , 方程分别为：
 </p>
 
 <p>
-<img src="../assets/2024-05-22-异面直线距离公式_dba0cd3e47c9cbf17ed9fa0170dec900f9fe9e08.png" alt="$l_1: P = P_1 + t\vec{v_1}$" />
-<img src="../assets/2024-05-22-异面直线距离公式_79a1fd4323bb3c76f717b705467e343dda08ba8b.png" alt="$l_2: P = P_2 + t\vec{v_2}$" />
+<img src="../assets/./2024-05-22-异面直线距离公式_1099f24add522bcae78f856cb131b97f2661eb20.png" alt="$l_1: P = P_1 + t\vec{v_1}$" />
+<img src="../assets/./2024-05-22-异面直线距离公式_6c76b574a4ae94c83d986259afe533b15e4695fe.png" alt="$l_2: P = P_2 + t\vec{v_2}$" />
 </p>
 
 <p>
-取和 <img src="../assets/2024-05-22-异面直线距离公式_6330acabe6096df475c3ae80a4a5ac04e1b6da32.png" alt="$l_2$" /> 共面，和 <img src="../assets/2024-05-22-异面直线距离公式_6928564a621c3fe689e55cd6b5632d76a2130f88.png" alt="$l_1$" /> 平行的直线 <img src="../assets/2024-05-22-异面直线距离公式_ea34c4016111756f232ccf5f012d956492240a97.png" alt="$l_3$" /> 方程为：
+取和 <img src="../assets/./2024-05-22-异面直线距离公式_f8a5f9e7d8c4ca4e1f25c31996fd97e9944026c9.png" alt="$l_2$" /> 共面，和 <img src="../assets/./2024-05-22-异面直线距离公式_dfa981430cf1b4141e8771af38b8ae5ab50e91c9.png" alt="$l_1$" /> 平行的直线 <img src="../assets/./2024-05-22-异面直线距离公式_fcb9f58e9df8cf3e1397aeaa2dfc6977d10789ea.png" alt="$l_3$" /> 方程为：
 </p>
 
 <p>
-<img src="../assets/2024-05-22-异面直线距离公式_af8efe716262dbe5f1c3adf46b2aa4f5361fdc15.png" alt="$l_3: P = P_2 + t\vec{v_1}$" />
+<img src="../assets/./2024-05-22-异面直线距离公式_defb836449285d8b55876854d96d739f89537b52.png" alt="$l_3: P = P_2 + t\vec{v_1}$" />
 </p>
 
 <p>
-则 <img src="../assets/2024-05-22-异面直线距离公式_592b41dd28db736e3e9016710a34a7e71bbd0cb3.png" alt="$l_2,l_3$" /> 所确定平面 <img src="../assets/2024-05-22-异面直线距离公式_191c873df497bb173669d4bebf14509a2d41954e.png" alt="$O_1$" /> 方程为：
+则 <img src="../assets/./2024-05-22-异面直线距离公式_582b24db2f5d4f4cad5e3c300b5d49fa612c59fc.png" alt="$l_2,l_3$" /> 所确定平面 <img src="../assets/./2024-05-22-异面直线距离公式_887ed3cbb2a066cc5a741bc9d0b05e1ac7dd2d11.png" alt="$O_1$" /> 方程为：
 </p>
 
 <p>
-<img src="../assets/2024-05-22-异面直线距离公式_486448892d8c0a5b68832012369bb2237b912236.png" alt="$O_1: (P - P_2)\cdot(\vec{v_1}\times\vec{v_2}) = 0$" />
+<img src="../assets/./2024-05-22-异面直线距离公式_d5288b419a4425eaa93cd190acff165fcb67f135.png" alt="$O_1: (P - P_2)\cdot(\vec{v_1}\times\vec{v_2}) = 0$" />
 </p>
 
 <p>
-则异面直线 <img src="../assets/2024-05-22-异面直线距离公式_e8e3d0b85bedd7642828f28e56a150f7f84b8dea.png" alt="$l_1, l_2$" /> 距离为直线 <img src="../assets/2024-05-22-异面直线距离公式_6928564a621c3fe689e55cd6b5632d76a2130f88.png" alt="$l_1$" /> 到平面 <img src="../assets/2024-05-22-异面直线距离公式_191c873df497bb173669d4bebf14509a2d41954e.png" alt="$O_1$" /> 的距离，即为点 <img src="../assets/2024-05-22-异面直线距离公式_2a950bb0be64926dce86fafaaf291f937865ee73.png" alt="$P_1$" />
-到平面 <img src="../assets/2024-05-22-异面直线距离公式_191c873df497bb173669d4bebf14509a2d41954e.png" alt="$O_1$" /> 的距离，由点到平面距离公式，可得该距离为：
+则异面直线 <img src="../assets/./2024-05-22-异面直线距离公式_718fa3de826b5db33e260c4ed319623a5f17a530.png" alt="$l_1, l_2$" /> 距离为直线 <img src="../assets/./2024-05-22-异面直线距离公式_dfa981430cf1b4141e8771af38b8ae5ab50e91c9.png" alt="$l_1$" /> 到平面 <img src="../assets/./2024-05-22-异面直线距离公式_887ed3cbb2a066cc5a741bc9d0b05e1ac7dd2d11.png" alt="$O_1$" /> 的距离，即为点 <img src="../assets/./2024-05-22-异面直线距离公式_7493caa498ea75160c9d72e9d79e43f466d75b47.png" alt="$P_1$" />
+到平面 <img src="../assets/./2024-05-22-异面直线距离公式_887ed3cbb2a066cc5a741bc9d0b05e1ac7dd2d11.png" alt="$O_1$" /> 的距离，由点到平面距离公式，可得该距离为：
 </p>
 
 <p>
-<img src="../assets/2024-05-22-异面直线距离公式_4202dc590f7ae44c36018cc8111f2e6caeba9361.png" alt="$$\frac{|(P_1 - P_2)\cdot(\vec{v_1}\times\vec{v_2})|}{|\vec{v_1}\times\vec{v_2}|}$$" />
+<img src="../assets/./2024-05-22-异面直线距离公式_a170919eac4d25d72f2c731cb0fb0c114559f12f.png" alt="$$\frac{|(P_1 - P_2)\cdot(\vec{v_1}\times\vec{v_2})|}{|\vec{v_1}\times\vec{v_2}|}$$" />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org000e867" class="outline-2">
-<h2 id="org000e867"><span class="section-number-2">2.</span> 点到平面距离公式</h2>
+<div id="outline-container-orgf10daa7" class="outline-2">
+<h2 id="orgf10daa7"><span class="section-number-2">2.</span> 点到平面距离公式</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-平面法线为 <img src="../assets/2024-05-22-异面直线距离公式_4bc02b1ed7d30c414f4ceb4ba292709fd76d7348.png" alt="$\vec{v}$" /> , 平面过点 <img src="../assets/2024-05-22-异面直线距离公式_2a950bb0be64926dce86fafaaf291f937865ee73.png" alt="$P_1$" />
+平面法线为 <img src="../assets/./2024-05-22-异面直线距离公式_de182ff91a40b1cf6aaf677d0e9fd92e00fc76f7.png" alt="$\vec{v}$" /> , 平面过点 <img src="../assets/./2024-05-22-异面直线距离公式_7493caa498ea75160c9d72e9d79e43f466d75b47.png" alt="$P_1$" />
 则平面方程为：
 </p>
 
 <p>
-<img src="../assets/2024-05-22-异面直线距离公式_6ea7188dc771fe73faed04f94791c5eaaada0d09.png" alt="$(P - P_1)\cdot \vec{v} = 0$" />
+<img src="../assets/./2024-05-22-异面直线距离公式_a4723ea59c5f7f35b9d2a2abe10bbb3d137ab11b.png" alt="$(P - P_1)\cdot \vec{v} = 0$" />
 </p>
 
 <p>
-任意点 <img src="../assets/2024-05-22-异面直线距离公式_20cec9161f21921aef312cda6342d55882174f5d.png" alt="$Q$" /> 到平面距离可如下计算：
+任意点 <img src="../assets/./2024-05-22-异面直线距离公式_3f2bd35fc87db505597036a5f1be379076fc96bc.png" alt="$Q$" /> 到平面距离可如下计算：
 </p>
 
 <p>
-<img src="../assets/2024-05-22-异面直线距离公式_d8326831ae42b171b96e402e1687c3c302cc81b4.png" alt="$$\frac{|\vec{PQ} \cdot \vec{v}|}{|\vec{v}|}$$" />
+<img src="../assets/./2024-05-22-异面直线距离公式_e1ef1c365858c529fc600dd3f0562b196f4c2e06.png" alt="$$\frac{|\vec{PQ} \cdot \vec{v}|}{|\vec{v}|}$$" />
 </p>
 
 <p>
@@ -935,14 +3006,14 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
 </p>
 
 <p>
-<img src="../assets/2024-05-22-异面直线距离公式_8e95bb9024e83f1351cfaeb2c0833ede7d17eade.png" alt="$$\frac{|(Q - P_1) \cdot \vec{v}|}{|\vec{v}|}$$" />
+<img src="../assets/./2024-05-22-异面直线距离公式_aac8219d83fead2e0f7a7753667abf0d9eb47aca.png" alt="$$\frac{|(Q - P_1) \cdot \vec{v}|}{|\vec{v}|}$$" />
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: PENG Kui</p>
-<p class="date">Created: 2024-05-27 Mon 21:05</p>
+<p class="author">Author: PENG Kevin</p>
+<p class="date">Created: 2024-09-01 日 12:06</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
@@ -951,14 +3022,14 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-05-27 Mon 21:05 -->
+<!-- 2024-09-01 日 12:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="PENG Kui" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="author" content="PENG Kevin" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -979,8 +3050,9 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -989,21 +3061,21 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -1138,38 +3210,19 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 
-<div id="outline-container-org388129c" class="outline-2">
-<h2 id="org388129c"><span class="section-number-2">1.</span> 常用操作</h2>
+<div id="outline-container-org1315566" class="outline-2">
+<h2 id="org1315566"><span class="section-number-2">1.</span> 常用操作</h2>
 <div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org32d2cab" class="outline-3">
+<h3 id="org32d2cab"><span class="section-number-3">1.1.</span> 编辑</h3>
+<div class="outline-text-3" id="text-1-1">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -1191,6 +3244,93 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
 </tr>
 
 <tr>
+<td class="org-left">新的 Heading</td>
+<td class="org-left">C-Enter</td>
+</tr>
+
+<tr>
+<td class="org-left">新的 Item</td>
+<td class="org-left">M-Enter</td>
+</tr>
+
+<tr>
+<td class="org-left">Heading Level up</td>
+<td class="org-left">M-&lt;left&gt;</td>
+</tr>
+
+<tr>
+<td class="org-left">Heading Level down</td>
+<td class="org-left">M-&lt;right&gt;</td>
+</tr>
+
+<tr>
+<td class="org-left">Heading Move up</td>
+<td class="org-left">M-&lt;up&gt;</td>
+</tr>
+
+<tr>
+<td class="org-left">Heading Move down</td>
+<td class="org-left">M-&lt;down&gt;</td>
+</tr>
+
+<tr>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgc5aa1a3" class="outline-3">
+<h3 id="orgc5aa1a3"><span class="section-number-3">1.2.</span> 阅读</h3>
+<div class="outline-text-3" id="text-1-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">操作</th>
+<th scope="col" class="org-left">快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">goto up level heading</td>
+<td class="org-left">C-c C-u</td>
+</tr>
+
+<tr>
+<td class="org-left">goto next same level heading</td>
+<td class="org-left">C-c C-f</td>
+</tr>
+
+<tr>
+<td class="org-left">goto previous same level heading</td>
+<td class="org-left">C-c C-b</td>
+</tr>
+
+<tr>
+<td class="org-left">goto next heading</td>
+<td class="org-left">C-c C-n</td>
+</tr>
+
+<tr>
+<td class="org-left">goto previous heading</td>
+<td class="org-left">C-c C-p</td>
+</tr>
+
+<tr>
+<td class="org-left">goto heading</td>
+<td class="org-left">C-c C-j</td>
+</tr>
+
+<tr>
 <td class="org-left">&#xa0;</td>
 <td class="org-left">&#xa0;</td>
 </tr>
@@ -1199,558 +3339,10 @@ f(t x_1 + (1 - t) x_2),\quad \forall t \in [0, 1]
 </div>
 </div>
 </div>
-<div id="postamble" class="status">
-<p class="author">Author: PENG Kui</p>
-<p class="date">Created: 2024-05-27 Mon 21:05</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
-</div>
-</body>
-</html>]]></content><author><name>PENG Kevin</name></author></entry><entry><title type="html">Jekyll 学习</title><link href="http://localhost:4000/2024/jekyll-%E5%AD%A6%E4%B9%A0.html" rel="alternate" type="text/html" title="Jekyll 学习" /><published>2024-03-29T00:00:00+08:00</published><updated>2024-03-29T00:00:00+08:00</updated><id>http://localhost:4000/2024/jekyll-%E5%AD%A6%E4%B9%A0</id><content type="html" xml:base="http://localhost:4000/2024/jekyll-%E5%AD%A6%E4%B9%A0.html"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-<!-- 2024-05-27 Mon 21:05 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="PENG Kui" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-    padding-top: 1.2em;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
-    padding: 3px;
-    border: 1px solid black;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
-</style>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
-</head>
-<body>
-<div id="content">
-
-<div id="outline-container-orgb96e1ca" class="outline-2">
-<h2 id="orgb96e1ca"><span class="section-number-2">1.</span> 常用操作</h2>
-<div class="outline-text-2" id="text-1">
-</div>
-<div id="outline-container-org23591af" class="outline-3">
-<h3 id="org23591af"><span class="section-number-3">1.1.</span> 新建空项目</h3>
-<div class="outline-text-3" id="text-1-1">
-<p>
-<code>jekyll new &lt;prj_name&gt; --blank</code>
-</p>
-</div>
-</div>
-<div id="outline-container-org44c0c32" class="outline-3">
-<h3 id="org44c0c32"><span class="section-number-3">1.2.</span> 编译包含草稿目录</h3>
-<div class="outline-text-3" id="text-1-2">
-<p>
-<code>jekyll build --drafts</code>
-</p>
-</div>
-</div>
-<div id="outline-container-orgc21d894" class="outline-3">
-<h3 id="orgc21d894"><span class="section-number-3">1.3.</span> 启动时含有草稿目录</h3>
-<div class="outline-text-3" id="text-1-3">
-<p>
-<code>jekyll serve --drafts</code>
-</p>
-</div>
-</div>
-<div id="outline-container-org884a69e" class="outline-3">
-<h3 id="org884a69e"><span class="section-number-3">1.4.</span> 启动服务</h3>
-<div class="outline-text-3" id="text-1-4">
-<p>
-<code>sudo bundle exec jekyll serve</code>
-</p>
-</div>
-</div>
-</div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: PENG Kui</p>
-<p class="date">Created: 2024-05-27 Mon 21:05</p>
-<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
-</div>
-</body>
-</html>]]></content><author><name>PENG Kevin</name></author></entry><entry><title type="html">学习方法总结</title><link href="http://localhost:4000/2024/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="学习方法总结" /><published>2024-03-24T00:00:00+08:00</published><updated>2024-03-24T00:00:00+08:00</updated><id>http://localhost:4000/2024/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/2024/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93.html"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-<!-- 2024-05-27 Mon 21:05 -->
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>&lrm;</title>
-<meta name="generator" content="Org mode" />
-<meta name="author" content="PENG Kui" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
-  .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
-  .tag    { background-color: #eee; font-family: monospace;
-            padding: 2px; font-size: 80%; font-weight: normal; }
-  .timestamp { color: #bebebe; }
-  .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
-  .underline { text-decoration: underline; }
-  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
-  p.verse { margin-left: 3%; }
-  pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
-    padding: 8pt;
-    font-family: monospace;
-    overflow: auto;
-    margin: 1.2em;
-  }
-  pre.src {
-    position: relative;
-    overflow: auto;
-    padding-top: 1.2em;
-  }
-  pre.src:before {
-    display: none;
-    position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
-    padding: 3px;
-    border: 1px solid black;
-  }
-  pre.src:hover:before { display: inline; margin-top: 14px;}
-  /* Languages per Org manual */
-  pre.src-asymptote:before { content: 'Asymptote'; }
-  pre.src-awk:before { content: 'Awk'; }
-  pre.src-C:before { content: 'C'; }
-  /* pre.src-C++ doesn't work in CSS */
-  pre.src-clojure:before { content: 'Clojure'; }
-  pre.src-css:before { content: 'CSS'; }
-  pre.src-D:before { content: 'D'; }
-  pre.src-ditaa:before { content: 'ditaa'; }
-  pre.src-dot:before { content: 'Graphviz'; }
-  pre.src-calc:before { content: 'Emacs Calc'; }
-  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
-  pre.src-fortran:before { content: 'Fortran'; }
-  pre.src-gnuplot:before { content: 'gnuplot'; }
-  pre.src-haskell:before { content: 'Haskell'; }
-  pre.src-hledger:before { content: 'hledger'; }
-  pre.src-java:before { content: 'Java'; }
-  pre.src-js:before { content: 'Javascript'; }
-  pre.src-latex:before { content: 'LaTeX'; }
-  pre.src-ledger:before { content: 'Ledger'; }
-  pre.src-lisp:before { content: 'Lisp'; }
-  pre.src-lilypond:before { content: 'Lilypond'; }
-  pre.src-lua:before { content: 'Lua'; }
-  pre.src-matlab:before { content: 'MATLAB'; }
-  pre.src-mscgen:before { content: 'Mscgen'; }
-  pre.src-ocaml:before { content: 'Objective Caml'; }
-  pre.src-octave:before { content: 'Octave'; }
-  pre.src-org:before { content: 'Org mode'; }
-  pre.src-oz:before { content: 'OZ'; }
-  pre.src-plantuml:before { content: 'Plantuml'; }
-  pre.src-processing:before { content: 'Processing.js'; }
-  pre.src-python:before { content: 'Python'; }
-  pre.src-R:before { content: 'R'; }
-  pre.src-ruby:before { content: 'Ruby'; }
-  pre.src-sass:before { content: 'Sass'; }
-  pre.src-scheme:before { content: 'Scheme'; }
-  pre.src-screen:before { content: 'Gnu Screen'; }
-  pre.src-sed:before { content: 'Sed'; }
-  pre.src-sh:before { content: 'shell'; }
-  pre.src-sql:before { content: 'SQL'; }
-  pre.src-sqlite:before { content: 'SQLite'; }
-  /* additional languages in org.el's org-babel-load-languages alist */
-  pre.src-forth:before { content: 'Forth'; }
-  pre.src-io:before { content: 'IO'; }
-  pre.src-J:before { content: 'J'; }
-  pre.src-makefile:before { content: 'Makefile'; }
-  pre.src-maxima:before { content: 'Maxima'; }
-  pre.src-perl:before { content: 'Perl'; }
-  pre.src-picolisp:before { content: 'Pico Lisp'; }
-  pre.src-scala:before { content: 'Scala'; }
-  pre.src-shell:before { content: 'Shell Script'; }
-  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
-  /* additional language identifiers per "defun org-babel-execute"
-       in ob-*.el */
-  pre.src-cpp:before  { content: 'C++'; }
-  pre.src-abc:before  { content: 'ABC'; }
-  pre.src-coq:before  { content: 'Coq'; }
-  pre.src-groovy:before  { content: 'Groovy'; }
-  /* additional language identifiers from org-babel-shell-names in
-     ob-shell.el: ob-shell is the only babel language using a lambda to put
-     the execution function name together. */
-  pre.src-bash:before  { content: 'bash'; }
-  pre.src-csh:before  { content: 'csh'; }
-  pre.src-ash:before  { content: 'ash'; }
-  pre.src-dash:before  { content: 'dash'; }
-  pre.src-ksh:before  { content: 'ksh'; }
-  pre.src-mksh:before  { content: 'mksh'; }
-  pre.src-posh:before  { content: 'posh'; }
-  /* Additional Emacs modes also supported by the LaTeX listings package */
-  pre.src-ada:before { content: 'Ada'; }
-  pre.src-asm:before { content: 'Assembler'; }
-  pre.src-caml:before { content: 'Caml'; }
-  pre.src-delphi:before { content: 'Delphi'; }
-  pre.src-html:before { content: 'HTML'; }
-  pre.src-idl:before { content: 'IDL'; }
-  pre.src-mercury:before { content: 'Mercury'; }
-  pre.src-metapost:before { content: 'MetaPost'; }
-  pre.src-modula-2:before { content: 'Modula-2'; }
-  pre.src-pascal:before { content: 'Pascal'; }
-  pre.src-ps:before { content: 'PostScript'; }
-  pre.src-prolog:before { content: 'Prolog'; }
-  pre.src-simula:before { content: 'Simula'; }
-  pre.src-tcl:before { content: 'tcl'; }
-  pre.src-tex:before { content: 'TeX'; }
-  pre.src-plain-tex:before { content: 'Plain TeX'; }
-  pre.src-verilog:before { content: 'Verilog'; }
-  pre.src-vhdl:before { content: 'VHDL'; }
-  pre.src-xml:before { content: 'XML'; }
-  pre.src-nxml:before { content: 'XML'; }
-  /* add a generic configuration mode; LaTeX export needs an additional
-     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
-  pre.src-conf:before { content: 'Configuration File'; }
-
-  table { border-collapse:collapse; }
-  caption.t-above { caption-side: top; }
-  caption.t-bottom { caption-side: bottom; }
-  td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
-  dt { font-weight: bold; }
-  .footpara { display: inline; }
-  .footdef  { margin-bottom: 1em; }
-  .figure { padding: 1em; }
-  .figure p { text-align: center; }
-  .equation-container {
-    display: table;
-    text-align: center;
-    width: 100%;
-  }
-  .equation {
-    vertical-align: middle;
-  }
-  .equation-label {
-    display: table-cell;
-    text-align: right;
-    vertical-align: middle;
-  }
-  .inlinetask {
-    padding: 10px;
-    border: 2px solid gray;
-    margin: 10px;
-    background: #ffffcc;
-  }
-  #org-div-home-and-up
-   { text-align: right; font-size: 70%; white-space: nowrap; }
-  textarea { overflow-x: auto; }
-  .linenr { font-size: smaller }
-  .code-highlighted { background-color: #ffff00; }
-  .org-info-js_info-navigation { border-style: none; }
-  #org-info-js_console-label
-    { font-size: 10px; font-weight: bold; white-space: nowrap; }
-  .org-info-js_search-highlight
-    { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
-</style>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
-</head>
-<body>
-<div id="content">
-
-<div id="outline-container-org3ff7f21" class="outline-2">
-<h2 id="org3ff7f21"><span class="section-number-2">1.</span> 学习的金字塔留存模型</h2>
-<div class="outline-text-2" id="text-1">
-
-<div id="orgd4cf99b" class="figure">
-<p><img src="../assets/学习的金字塔模型.png" alt="学习的金字塔模型.png" />
-</p>
-<p><span class="figure-number">Figure 1: </span>学习的金字塔模型</p>
-</div>
-</div>
-</div>
-<div id="outline-container-org7e0c660" class="outline-2">
-<h2 id="org7e0c660"><span class="section-number-2">2.</span> 常见学习方法</h2>
-<div class="outline-text-2" id="text-2">
-</div>
-<div id="outline-container-org5778eda" class="outline-3">
-<h3 id="org5778eda"><span class="section-number-3">2.1.</span> 费曼学习法</h3>
-<div class="outline-text-3" id="text-2-1">
-
-<div id="org0c1fe5b" class="figure">
-<p><img src="../assets/费曼学习法.png" alt="费曼学习法.png" width="600px" />
-</p>
-<p><span class="figure-number">Figure 2: </span>figure</p>
-</div>
-</div>
-</div>
-<div id="outline-container-org2a95d20" class="outline-3">
-<h3 id="org2a95d20"><span class="section-number-3">2.2.</span> 刻意练习法</h3>
-<div class="outline-text-3" id="text-2-2">
-
-<div id="orgd87418c" class="figure">
-<p><img src="../assets/刻意练习法.png" alt="刻意练习法.png" />
-</p>
-</div>
-</div>
-</div>
-<div id="outline-container-org4f87b79" class="outline-3">
-<h3 id="org4f87b79"><span class="section-number-3">2.3.</span> 斯科特杨学习法</h3>
-<div class="outline-text-3" id="text-2-3">
-
-<div id="org1d0addc" class="figure">
-<p><img src="../assets/斯科特杨学习法.png" alt="斯科特杨学习法.png" />
-</p>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-orga6520df" class="outline-2">
-<h2 id="orga6520df"><span class="section-number-2">3.</span> 总结</h2>
-<div class="outline-text-2" id="text-3">
-<p>
-根据不同的学习内容，目前的学习方法总结起来大致包括：
-输出驱动，目标驱动，学以致用，时间管理，遗忘管理，监督学习，伙伴学习等。
-</p>
-</div>
-</div>
-</div>
-<div id="postamble" class="status">
-<p class="author">Author: PENG Kui</p>
-<p class="date">Created: 2024-05-27 Mon 21:05</p>
+<p class="author">Author: PENG Kevin</p>
+<p class="date">Created: 2024-09-01 日 12:06</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

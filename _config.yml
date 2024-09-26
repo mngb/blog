@@ -49,6 +49,8 @@ defaults:
       related: true
       excerpt_separator: "" # 默认关闭文章摘要
       author_profile: true # 显示作者页
+      enable_copy_code_button: true
+
 plugins:
   - jekyll-feed
   - jekyll-include-cache
