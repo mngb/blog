@@ -1,5 +1,7 @@
 # -*- coding: utf-8; -*-
 #+options: tex:dvipng
+#+OPTIONS: toc:nil
+#+OPTIONS: ^:nil
 
 * 使用 selenium 和 capybara 的原因
   个人每次网站开发修改后，都需要对功能使用手动验证一遍，以防在服务器侧部署了问题
