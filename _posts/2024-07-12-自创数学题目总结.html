@@ -10,14 +10,14 @@ layout: single
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-07-12 Fri 23:36 -->
+<!-- 2024-09-26 四 18:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="PENG Kevin" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -38,8 +38,9 @@ layout: single
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -48,21 +49,21 @@ layout: single
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -197,50 +198,27 @@ layout: single
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
-<div id="table-of-contents">
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org213e6c3">1. note</a></li>
-<li><a href="#org68a3921">2. 题目</a>
+<li><a href="#org331c441">1. note</a></li>
+<li><a href="#orgc0e6abe">2. 题目</a>
 <ul>
-<li><a href="#orgf20bf17">2.1. 求数列前 n 项和</a></li>
+<li><a href="#orga28b79a">2.1. 求数列前 n 项和</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org213e6c3" class="outline-2">
-<h2 id="org213e6c3"><span class="section-number-2">1.</span> note</h2>
+<div id="outline-container-org331c441" class="outline-2">
+<h2 id="org331c441"><span class="section-number-2">1.</span> note</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 hugo 现在对 latex 嵌入图片支持有问题，等待后续 hugo 版本稳定再增加 latex 的
@@ -249,32 +227,32 @@ hugo 导出功能。先把该类博客加到 Jeklly 中。
 </div>
 </div>
 
-<div id="outline-container-org68a3921" class="outline-2">
-<h2 id="org68a3921"><span class="section-number-2">2.</span> 题目</h2>
+<div id="outline-container-orgc0e6abe" class="outline-2">
+<h2 id="orgc0e6abe"><span class="section-number-2">2.</span> 题目</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgf20bf17" class="outline-3">
-<h3 id="orgf20bf17"><span class="section-number-3">2.1.</span> 求数列前 n 项和</h3>
+<div id="outline-container-orga28b79a" class="outline-3">
+<h3 id="orga28b79a"><span class="section-number-3">2.1.</span> 求数列前 n 项和</h3>
 <div class="outline-text-3" id="text-2-1">
 <dl class="org-dl">
-<dt>题目</dt><dd>已知数列 <img src="../assets/./2024-07-12-自创数学题目总结_ef78d028f6800bad12f521d6046bda2e3f32ec47.png" alt="$a_{1,n}$" /> 前 n 项和记为 <img src="../assets/./2024-07-12-自创数学题目总结_f8176194a2073ee83a4f4e423ae74a96382229e1.png" alt="$a_{2,n}$" /> , <img src="../assets/./2024-07-12-自创数学题目总结_f8176194a2073ee83a4f4e423ae74a96382229e1.png" alt="$a_{2,n}$" /> 前 n 项和记为 <img src="../assets/./2024-07-12-自创数学题目总结_9297cfc407c22b9967c9368d11d106b55992bac2.png" alt="$a_{3,n}$" />
-, &#x2026; , <img src="../assets/./2024-07-12-自创数学题目总结_7c277624c6170a6aaa9c2b273c8dd2a087fd473c.png" alt="$a_{m,n}$" /> 前 n 项和记为 <img src="../assets/./2024-07-12-自创数学题目总结_573f6a4cdeb2511908925504c846ca0eb151c285.png" alt="$a_{m+1,n}$" />, 已知 <img src="../assets/./2024-07-12-自创数学题目总结_ff7b55afdf5af0adf315e32c357e354c84dc2128.png" alt="$a_{1,n} = n$" /> , 求
-<img src="../assets/./2024-07-12-自创数学题目总结_7c277624c6170a6aaa9c2b273c8dd2a087fd473c.png" alt="$a_{m,n}$" /> 的值。</dd>
+<dt>题目</dt><dd>已知数列 <img src="../assets/./2024-07-12-自创数学题目总结_dde122a30f6e48694e7d438fbcab4868bff8c719.png" alt="$a_{1,n}$" /> 前 n 项和记为 <img src="../assets/./2024-07-12-自创数学题目总结_da6d1fd6077eee2ff568f4ad6527ee7a30741ec7.png" alt="$a_{2,n}$" /> , <img src="../assets/./2024-07-12-自创数学题目总结_da6d1fd6077eee2ff568f4ad6527ee7a30741ec7.png" alt="$a_{2,n}$" /> 前 n 项和记为 <img src="../assets/./2024-07-12-自创数学题目总结_2e7bcaadf92d3e5e6bd0b30a7597f400722803b2.png" alt="$a_{3,n}$" />
+, &#x2026; , <img src="../assets/./2024-07-12-自创数学题目总结_9fe2d86ffe981dbd9d81c556f1ca3f98ff58b3ee.png" alt="$a_{m,n}$" /> 前 n 项和记为 <img src="../assets/./2024-07-12-自创数学题目总结_e816a6867c41a817dce7e166a624bb41f177ae8c.png" alt="$a_{m+1,n}$" />, 已知 <img src="../assets/./2024-07-12-自创数学题目总结_cf8e38a75f45221a036a56e3637128b78a2230e2.png" alt="$a_{1,n} = n$" /> , 求
+<img src="../assets/./2024-07-12-自创数学题目总结_9fe2d86ffe981dbd9d81c556f1ca3f98ff58b3ee.png" alt="$a_{m,n}$" /> 的值。</dd>
 <dt>解答</dt><dd><p>
-猜想：注意到  <img src="../assets/./2024-07-12-自创数学题目总结_ff7b55afdf5af0adf315e32c357e354c84dc2128.png" alt="$a_{1,n} = n$" /> , <img src="../assets/./2024-07-12-自创数学题目总结_a723f21a0802c97bbe76785726184dc53fd2a917.png" alt="$a_{2,n} = \frac{n(n+1)}{2}$" />,
+猜想：注意到  <img src="../assets/./2024-07-12-自创数学题目总结_cf8e38a75f45221a036a56e3637128b78a2230e2.png" alt="$a_{1,n} = n$" /> , <img src="../assets/./2024-07-12-自创数学题目总结_c77e7307902ab6cf5fdbd9f6a7d8cbbb20661bcf.png" alt="$a_{2,n} = \frac{n(n+1)}{2}$" />,
 </p>
 
 <p>
-<img src="../assets/./2024-07-12-自创数学题目总结_04082c57967fd852df00f8a8ac3b14a37d29d8b9.png" alt="$$ a_{3,n} &amp;amp;= \frac{1}{2}[\frac{n(n+1)(2n+1)}{6} + \frac{n(n+1)}{2}]
+<img src="../assets/./2024-07-12-自创数学题目总结_74ebd28fa2b95189f389ded56c0774784245f57b.png" alt="$$ a_{3,n} &amp;amp;= \frac{1}{2}[\frac{n(n+1)(2n+1)}{6} + \frac{n(n+1)}{2}]
      \\ &amp;amp;= \frac{n(n+1)(n+2)}{6}
      $$" />
-则 <img src="../assets/./2024-07-12-自创数学题目总结_02e47dca0dbb752e588904b870248457c065b206.png" alt="$a_{m,n} = {\binom{m + n -1}{m}}$" /> 成立吗？
+则 <img src="../assets/./2024-07-12-自创数学题目总结_86ef5ecc75b9a952e762af582e8708f4d2f36c41.png" alt="$a_{m,n} = {\binom{m + n -1}{m}}$" /> 成立吗？
 证明：对 m 使用数学归纳法，假设猜想在 m 时成立，要证明 m+1 时情形也成立。
 </p>
 
-<div id="orgc3592ae" class="equation-container">
+<div id="org0dbbd61" class="equation-container">
 <span class="equation">
-<img src="../assets/./2024-07-12-自创数学题目总结_f640738e5e8af154bf7d3968aa80f780ca686519.png" alt="\begin{equation*}
+<img src="../assets/./2024-07-12-自创数学题目总结_2f23a5ceb05ce29c7e6635088f53eee000c820ce.png" alt="\begin{equation*}
 a_{m+1,n} = \sum_{i=1}^{n}{\binom{m + i -1}{m}} = {\binom{m + n}{m+1}}
 \end{equation*}
 " />
@@ -284,15 +262,15 @@ a_{m+1,n} = \sum_{i=1}^{n}{\binom{m + i -1}{m}} = {\binom{m + n}{m+1}}
 </span>
 </div>
 <p>
-即要证明 <a href="#orgc3592ae">1</a> 成立。
+即要证明 <a href="#org0dbbd61">1</a> 成立。
 由组合公式：
-<img src="../assets/./2024-07-12-自创数学题目总结_1d3712a68b842036564e3019f156820dcd3a5554.png" alt="$$ \binom{m + i - 1}{m} + \binom{m + i - 1}{m + 1} = \binom{m + i}{m+1} $$" />
-<a href="#orgc3592ae">1</a> 式可以写成：
+<img src="../assets/./2024-07-12-自创数学题目总结_59b82d85f5a5aea6e3f6527028ab43cfc58de429.png" alt="$$ \binom{m + i - 1}{m} + \binom{m + i - 1}{m + 1} = \binom{m + i}{m+1} $$" />
+<a href="#org0dbbd61">1</a> 式可以写成：
 </p>
 
-<div id="orge78c6a8" class="equation-container">
+<div id="orgcec9a5e" class="equation-container">
 <span class="equation">
-<img src="../assets/./2024-07-12-自创数学题目总结_e32cb1826316b33fa4daefd6ec5c217ec209dabb.png" alt="\begin{equation*}
+<img src="../assets/./2024-07-12-自创数学题目总结_0dab9c62996a028abc26b28eb26768142aa2907c.png" alt="\begin{equation*}
 a_{m+1,n} = \binom{m}{m} + \sum_{i=2}^{n}{\binom{m + i -1}{m}} = \binom{m+1}{m+1} + \sum_{i=2}^{n}{\binom{m + i -1}{m}}
 \end{equation*}
 " />
@@ -302,7 +280,7 @@ a_{m+1,n} = \binom{m}{m} + \sum_{i=2}^{n}{\binom{m + i -1}{m}} = \binom{m+1}{m+1
 </span>
 </div>
 <p>
-<a href="#orge78c6a8">2</a> 逐项合并，即得 <a href="#orgc3592ae">1</a> . 证毕。
+<a href="#orgcec9a5e">2</a> 逐项合并，即得 <a href="#org0dbbd61">1</a> . 证毕。
 </p></dd>
 </dl>
 </div>
@@ -311,7 +289,7 @@ a_{m+1,n} = \binom{m}{m} + \sum_{i=2}^{n}{\binom{m + i -1}{m}} = \binom{m+1}{m+1
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: PENG Kevin</p>
-<p class="date">Created: 2024-07-12 Fri 23:36</p>
+<p class="date">Created: 2024-09-26 四 18:44</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

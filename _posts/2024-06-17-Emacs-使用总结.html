@@ -10,14 +10,14 @@ layout: single
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-06-18 Tue 16:33 -->
+<!-- 2024-09-01 日 12:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="PENG Kevin" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -38,8 +38,9 @@ layout: single
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -48,21 +49,21 @@ layout: single
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -197,41 +198,18 @@ layout: single
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 
-<div id="outline-container-org33116ed" class="outline-2">
-<h2 id="org33116ed"><span class="section-number-2">1.</span> Emacs 基本概念</h2>
+<div id="outline-container-org8afef8d" class="outline-2">
+<h2 id="org8afef8d"><span class="section-number-2">1.</span> Emacs 基本概念</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org422c072" class="outline-3">
-<h3 id="org422c072"><span class="section-number-3">1.1.</span> frame</h3>
+<div id="outline-container-orgd4a7474" class="outline-3">
+<h3 id="orgd4a7474"><span class="section-number-3">1.1.</span> frame</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 程序窗体。
@@ -239,8 +217,8 @@ layout: single
 </div>
 </div>
 
-<div id="outline-container-org6280228" class="outline-3">
-<h3 id="org6280228"><span class="section-number-3">1.2.</span> buffer</h3>
+<div id="outline-container-orgc9535bc" class="outline-3">
+<h3 id="orgc9535bc"><span class="section-number-3">1.2.</span> buffer</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 编辑缓冲区。
@@ -248,8 +226,8 @@ layout: single
 </div>
 </div>
 
-<div id="outline-container-orgb4841ca" class="outline-3">
-<h3 id="orgb4841ca"><span class="section-number-3">1.3.</span> point</h3>
+<div id="outline-container-org2ff24ac" class="outline-3">
+<h3 id="org2ff24ac"><span class="section-number-3">1.3.</span> point</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 指示一个缓冲区中的位置。
@@ -257,8 +235,8 @@ layout: single
 </div>
 </div>
 
-<div id="outline-container-org431c1ff" class="outline-3">
-<h3 id="org431c1ff"><span class="section-number-3">1.4.</span> region</h3>
+<div id="outline-container-orga127a45" class="outline-3">
+<h3 id="orga127a45"><span class="section-number-3">1.4.</span> region</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 一对 point, 指示缓冲区中的一个位置区间。
@@ -266,8 +244,8 @@ layout: single
 </div>
 </div>
 
-<div id="outline-container-orgd9cdf5a" class="outline-3">
-<h3 id="orgd9cdf5a"><span class="section-number-3">1.5.</span> mini-buffer</h3>
+<div id="outline-container-org3198db2" class="outline-3">
+<h3 id="org3198db2"><span class="section-number-3">1.5.</span> mini-buffer</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 程序窗体最下端显示消息提示的地方。
@@ -275,8 +253,8 @@ layout: single
 </div>
 </div>
 
-<div id="outline-container-org883e7ff" class="outline-3">
-<h3 id="org883e7ff"><span class="section-number-3">1.6.</span> mode-line</h3>
+<div id="outline-container-org57e24a1" class="outline-3">
+<h3 id="org57e24a1"><span class="section-number-3">1.6.</span> mode-line</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 显示文件名，major-mode 等 buffer 信息的地方。
@@ -284,8 +262,8 @@ layout: single
 </div>
 </div>
 
-<div id="outline-container-orga944a27" class="outline-3">
-<h3 id="orga944a27"><span class="section-number-3">1.7.</span> major-mode</h3>
+<div id="outline-container-orgb917cdc" class="outline-3">
+<h3 id="orgb917cdc"><span class="section-number-3">1.7.</span> major-mode</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 主模式。每个 buffer 有且只关联一个该模式。
@@ -293,8 +271,8 @@ layout: single
 </div>
 </div>
 
-<div id="outline-container-orgddd7ba8" class="outline-3">
-<h3 id="orgddd7ba8"><span class="section-number-3">1.8.</span> minor-mode</h3>
+<div id="outline-container-org085842d" class="outline-3">
+<h3 id="org085842d"><span class="section-number-3">1.8.</span> minor-mode</h3>
 <div class="outline-text-3" id="text-1-8">
 <p>
 次模式。每个 buffer 可关联多个不同的该模式。
@@ -303,121 +281,121 @@ layout: single
 </div>
 </div>
 
-<div id="outline-container-org9ef1631" class="outline-2">
-<h2 id="org9ef1631"><span class="section-number-2">2.</span> Elisp 基本语法</h2>
+<div id="outline-container-orgc70a066" class="outline-2">
+<h2 id="orgc70a066"><span class="section-number-2">2.</span> Elisp 基本语法</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-orgeba9066" class="outline-3">
-<h3 id="orgeba9066"><span class="section-number-3">2.1.</span> 基本数据类型</h3>
+<div id="outline-container-orgc167e14" class="outline-3">
+<h3 id="orgc167e14"><span class="section-number-3">2.1.</span> 基本数据类型</h3>
 <div class="outline-text-3" id="text-2-1">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #b22222;">;; </span><span style="color: #b22222;">number</span>
+<pre class="src src-emacs-lisp"><span style="color: #204A87;">;; </span><span style="color: #204A87;">number</span>
 #16r1ff
 .15e2
 
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">char</span>
+<span style="color: #204A87;">;; </span><span style="color: #204A87;">char</span>
 ?Q
 ?r
 
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">sequence</span>
-<span style="color: #b22222;">;;; </span><span style="color: #b22222;">list (&#21464;&#38271; sequence)</span>
-<span style="color: #b22222;">;;;; </span><span style="color: #b22222;">cons cell</span>
+<span style="color: #204A87;">;; </span><span style="color: #204A87;">sequence</span>
+<span style="color: #204A87;">;;; </span><span style="color: #204A87;">list (&#21464;&#38271; sequence)</span>
+<span style="color: #204A87;">;;;; </span><span style="color: #204A87;">cons cell</span>
 (car '(1 . 3))
 (cdr '(1 . 3))
 
-<span style="color: #b22222;">;;;; </span><span style="color: #b22222;">lists</span>
+<span style="color: #204A87;">;;;; </span><span style="color: #204A87;">lists</span>
 (car '(1 2 3))
 (cdr '(1 2 3))
 (car '(1 . (2 . (3 . nil))))
 (cdr '(1 . (2 . (3 . nil))))
 
-<span style="color: #b22222;">;;; </span><span style="color: #b22222;">array (&#23450;&#38271; sequence)</span>
-<span style="color: #b22222;">;;;; </span><span style="color: #b22222;">string</span>
-<span style="color: #8b008b;">"abcdefg"</span>
-#(<span style="color: #8b008b;">"abcdefg"</span> 0 3 (face bold))
+<span style="color: #204A87;">;;; </span><span style="color: #204A87;">array (&#23450;&#38271; sequence)</span>
+<span style="color: #204A87;">;;;; </span><span style="color: #204A87;">string</span>
+<span style="color: #4E9A06;">"abcdefg"</span>
+#(<span style="color: #4E9A06;">"abcdefg"</span> 0 3 (face bold))
 
-<span style="color: #b22222;">;;;; </span><span style="color: #b22222;">vector</span>
-[1 <span style="color: #8b008b;">"two"</span> 'three]
+<span style="color: #204A87;">;;;; </span><span style="color: #204A87;">vector</span>
+[1 <span style="color: #4E9A06;">"two"</span> 'three]
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org504c21a" class="outline-3">
-<h3 id="org504c21a"><span class="section-number-3">2.2.</span> 程序控制结构</h3>
+<div id="outline-container-orgb943ac6" class="outline-3">
+<h3 id="orgb943ac6"><span class="section-number-3">2.2.</span> 程序控制结构</h3>
 <div class="outline-text-3" id="text-2-2">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #b22222;">;; </span><span style="color: #b22222;">sequence</span>
-(<span style="color: #0000cd;">progn</span>
+<pre class="src src-emacs-lisp"><span style="color: #204A87;">;; </span><span style="color: #204A87;">sequence</span>
+(<span style="color: #A52A2A; font-weight: bold;">progn</span>
   1
   2
   3)
 
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">if else</span>
-(<span style="color: #0000cd;">if</span> t
+<span style="color: #204A87;">;; </span><span style="color: #204A87;">if else</span>
+(<span style="color: #A52A2A; font-weight: bold;">if</span> t
     t
   nil)
-(<span style="color: #0000cd;">when</span> t
+(<span style="color: #A52A2A; font-weight: bold;">when</span> t
   t)
-(<span style="color: #0000cd;">unless</span> nil
+(<span style="color: #A52A2A; font-weight: bold;">unless</span> nil
   t)
 
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">loop</span>
-<span style="color: #b22222;">;;; </span><span style="color: #b22222;">while</span>
-(<span style="color: #0000cd;">progn</span>
-  (<span style="color: #0000cd;">setq</span> num 0)
-  (<span style="color: #0000cd;">while</span> (&lt; num 5)
-    (princ (format <span style="color: #8b008b;">"%d"</span> num))
-    (<span style="color: #0000cd;">setq</span> num (+ num 1))))
-<span style="color: #b22222;">;;; </span><span style="color: #b22222;">for</span>
-(<span style="color: #0000cd;">dotimes</span> (i 10 (* i i))
-  (princ (format <span style="color: #8b008b;">"%d"</span> i)))
+<span style="color: #204A87;">;; </span><span style="color: #204A87;">loop</span>
+<span style="color: #204A87;">;;; </span><span style="color: #204A87;">while</span>
+(<span style="color: #A52A2A; font-weight: bold;">progn</span>
+  (<span style="color: #A52A2A; font-weight: bold;">setq</span> num 0)
+  (<span style="color: #A52A2A; font-weight: bold;">while</span> (&lt; num 5)
+    (princ (format <span style="color: #4E9A06;">"%d"</span> num))
+    (<span style="color: #A52A2A; font-weight: bold;">setq</span> num (+ num 1))))
+<span style="color: #204A87;">;;; </span><span style="color: #204A87;">for</span>
+(<span style="color: #A52A2A; font-weight: bold;">dotimes</span> (i 10 (* i i))
+  (princ (format <span style="color: #4E9A06;">"%d"</span> i)))
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org24a6f9a" class="outline-3">
-<h3 id="org24a6f9a"><span class="section-number-3">2.3.</span> 宏</h3>
+<div id="outline-container-org5813b5c" class="outline-3">
+<h3 id="org5813b5c"><span class="section-number-3">2.3.</span> 宏</h3>
 <div class="outline-text-3" id="text-2-3">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #b22222;">;; </span><span style="color: #b22222;">return s-expression to be computed</span>
-(<span style="color: #0000cd;">defmacro</span> <span style="color: #ff0000;">inc</span> (x)
+<pre class="src src-emacs-lisp"><span style="color: #204A87;">;; </span><span style="color: #204A87;">return s-expression to be computed</span>
+(<span style="color: #A52A2A; font-weight: bold;">defmacro</span> <span style="color: #00578E; font-weight: bold;">inc</span> (x)
     (list 'setq x (list '1+ x)))
-(<span style="color: #0000cd;">progn</span>
-  (<span style="color: #0000cd;">setq</span> y 1)
-  (<span style="color: #0000cd;">inc</span> y)
+(<span style="color: #A52A2A; font-weight: bold;">progn</span>
+  (<span style="color: #A52A2A; font-weight: bold;">setq</span> y 1)
+  (inc y)
   y)
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org91e7f95" class="outline-3">
-<h3 id="org91e7f95"><span class="section-number-3">2.4.</span> 高级对象</h3>
+<div id="outline-container-org054e264" class="outline-3">
+<h3 id="org054e264"><span class="section-number-3">2.4.</span> 高级对象</h3>
 <div class="outline-text-3" id="text-2-4">
 <div class="org-src-container">
-<pre class="src src-emacs-lisp"><span style="color: #b22222;">;; </span><span style="color: #b22222;">hash-table</span>
-(<span style="color: #0000cd;">progn</span>
-  (<span style="color: #0000cd;">setq</span> hash (make-hash-table <span style="color: #b35caf;">:size</span> 30))
+<pre class="src src-emacs-lisp"><span style="color: #204A87;">;; </span><span style="color: #204A87;">hash-table</span>
+(<span style="color: #A52A2A; font-weight: bold;">progn</span>
+  (<span style="color: #A52A2A; font-weight: bold;">setq</span> hash (make-hash-table <span style="color: #A020F0;">:size</span> 30))
   (puthash 1 'a hash)
   (puthash 2 'b hash)
   (gethash 2 hash))
 
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">buffer</span>
+<span style="color: #204A87;">;; </span><span style="color: #204A87;">buffer</span>
 (buffer-list)
-(get-buffer-create <span style="color: #8b008b;">"*new-buffer*"</span>)
+(get-buffer-create <span style="color: #4E9A06;">"*new-buffer*"</span>)
 
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">position</span>
-<span style="color: #b22222;">;;; </span><span style="color: #b22222;">A position is the index of a character in the text of a buffer.</span>
+<span style="color: #204A87;">;; </span><span style="color: #204A87;">position</span>
+<span style="color: #204A87;">;;; </span><span style="color: #204A87;">A position is the index of a character in the text of a buffer.</span>
 (point)
 
-<span style="color: #b22222;">;; </span><span style="color: #b22222;">marker</span>
-<span style="color: #b22222;">;;; </span><span style="color: #b22222;">A marker is a Lisp object used to specify a position</span>
-<span style="color: #b22222;">;;; </span><span style="color: #b22222;">in a buffer relative to the surrounding text.</span>
-<span style="color: #b22222;">;;; </span><span style="color: #b22222;">marker &#32465;&#23450;&#22312;&#20004;&#20010;&#23383;&#31526;&#38388;&#65292;&#20301;&#32622;&#38543;&#23383;&#31526;&#20301;&#32622;&#21464;&#21160;&#32780;&#21464;&#21160;</span>
-(<span style="color: #0000cd;">progn</span>
-  (<span style="color: #0000cd;">setq</span> m1 (make-marker))
+<span style="color: #204A87;">;; </span><span style="color: #204A87;">marker</span>
+<span style="color: #204A87;">;;; </span><span style="color: #204A87;">A marker is a Lisp object used to specify a position</span>
+<span style="color: #204A87;">;;; </span><span style="color: #204A87;">in a buffer relative to the surrounding text.</span>
+<span style="color: #204A87;">;;; </span><span style="color: #204A87;">marker &#32465;&#23450;&#22312;&#20004;&#20010;&#23383;&#31526;&#38388;&#65292;&#20301;&#32622;&#38543;&#23383;&#31526;&#20301;&#32622;&#21464;&#21160;&#32780;&#21464;&#21160;</span>
+(<span style="color: #A52A2A; font-weight: bold;">progn</span>
+  (<span style="color: #A52A2A; font-weight: bold;">setq</span> m1 (make-marker))
   (set-marker m1 100)
   (goto-char (point-min))
   (insert-char ?T)
@@ -428,12 +406,12 @@ layout: single
 </div>
 </div>
 
-<div id="outline-container-org20d981e" class="outline-2">
-<h2 id="org20d981e"><span class="section-number-2">3.</span> 常用包</h2>
+<div id="outline-container-org7d2a8d7" class="outline-2">
+<h2 id="org7d2a8d7"><span class="section-number-2">3.</span> 常用包</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgeea0659" class="outline-3">
-<h3 id="orgeea0659"><span class="section-number-3">3.1.</span> org</h3>
+<div id="outline-container-org44eeccb" class="outline-3">
+<h3 id="org44eeccb"><span class="section-number-3">3.1.</span> org</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 文档编写工具，类似于 markdown, 但功能更强大。
@@ -441,8 +419,8 @@ layout: single
 </div>
 </div>
 
-<div id="outline-container-org207b816" class="outline-3">
-<h3 id="org207b816"><span class="section-number-3">3.2.</span> use-package</h3>
+<div id="outline-container-org519f680" class="outline-3">
+<h3 id="org519f680"><span class="section-number-3">3.2.</span> use-package</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 包配置工具，使用延迟加载，便于管理包配置的同时按需加载。
@@ -450,8 +428,8 @@ layout: single
 </div>
 </div>
 
-<div id="outline-container-org1bc88fd" class="outline-3">
-<h3 id="org1bc88fd"><span class="section-number-3">3.3.</span> company</h3>
+<div id="outline-container-org73966d9" class="outline-3">
+<h3 id="org73966d9"><span class="section-number-3">3.3.</span> company</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 自动补全的包，功能很实用。
@@ -460,8 +438,8 @@ layout: single
 </div>
 </div>
 
-<div id="outline-container-org4e2b982" class="outline-2">
-<h2 id="org4e2b982"><span class="section-number-2">4.</span> keymap 分发过程</h2>
+<div id="outline-container-orgd96c766" class="outline-2">
+<h2 id="orgd96c766"><span class="section-number-2">4.</span> keymap 分发过程</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 相当复杂，参看 <a href="https://emacs.stackexchange.com/questions/653/how-can-i-find-out-in-which-keymap-a-key-is-bound">https://emacs.stackexchange.com/questions/653/how-can-i-find-out-in-which-keymap-a-key-is-bound</a>
@@ -469,8 +447,8 @@ layout: single
 </div>
 </div>
 
-<div id="outline-container-org8a9d3d7" class="outline-2">
-<h2 id="org8a9d3d7"><span class="section-number-2">5.</span> Emacs 启动流程</h2>
+<div id="outline-container-org4089d11" class="outline-2">
+<h2 id="org4089d11"><span class="section-number-2">5.</span> Emacs 启动流程</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 相当复杂，参看 <a href="https://mngb.github.io/ox-hugo/elisp.pdf">elisp.pdf</a>
@@ -480,7 +458,7 @@ layout: single
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: PENG Kevin</p>
-<p class="date">Created: 2024-06-18 Tue 16:33</p>
+<p class="date">Created: 2024-09-01 日 12:07</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

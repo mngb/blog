@@ -10,14 +10,14 @@ layout: single
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-06-04 Tue 14:41 -->
+<!-- 2024-09-01 日 12:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>&lrm;</title>
-<meta name="generator" content="Org mode" />
 <meta name="author" content="PENG Kevin" />
-<style type="text/css">
- <!--/*--><![CDATA[/*><!--*/
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
   .title  { text-align: center;
              margin-bottom: .2em; }
   .subtitle { text-align: center;
@@ -38,8 +38,9 @@ layout: single
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
   pre {
-    border: 1px solid #ccc;
-    box-shadow: 3px 3px 3px #eee;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
     padding: 8pt;
     font-family: monospace;
     overflow: auto;
@@ -48,21 +49,21 @@ layout: single
   pre.src {
     position: relative;
     overflow: auto;
-    padding-top: 1.2em;
   }
   pre.src:before {
     display: none;
     position: absolute;
-    background-color: white;
-    top: -10px;
-    right: 10px;
+    top: -8px;
+    right: 12px;
     padding: 3px;
-    border: 1px solid black;
+    color: #555;
+    background-color: #f2f2f299;
   }
   pre.src:hover:before { display: inline; margin-top: 14px;}
   /* Languages per Org manual */
   pre.src-asymptote:before { content: 'Asymptote'; }
   pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
   pre.src-C:before { content: 'C'; }
   /* pre.src-C++ doesn't work in CSS */
   pre.src-clojure:before { content: 'Clojure'; }
@@ -197,70 +198,47 @@ layout: single
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
-  /*]]>*/-->
+  .org-svg { }
 </style>
-<script type="text/javascript">
-// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
-<!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.add("code-highlighted");
-         target.classList.add("code-highlighted");
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.classList.remove("code-highlighted");
-         target.classList.remove("code-highlighted");
-       }
-     }
-    /*]]>*///-->
-// @license-end
-</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 
-<div id="outline-container-org28aac1b" class="outline-2">
-<h2 id="org28aac1b"><span class="section-number-2">1.</span> 定理描述</h2>
+<div id="outline-container-orgd7271bd" class="outline-2">
+<h2 id="orgd7271bd"><span class="section-number-2">1.</span> 定理描述</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-四边形 <img src="../assets/2024-05-24-托勒密定理的证明_24b6c53baa593e1956fc887ae5da52f75ef2230f.png" alt="$ABCD$" /> 的边 <img src="../assets/2024-05-24-托勒密定理的证明_2204bb29bb71b38d1ea721836621865c138076db.png" alt="$AB, BC, CD, DA$" /> 和对角线 <img src="../assets/2024-05-24-托勒密定理的证明_451ee3e93df3028813cda497a3070946f5aa1518.png" alt="$AC, BD$" />
+四边形 <img src="../assets/./2024-05-24-托勒密定理的证明_99ba58ef58decf5ade1e1447152108359315aadd.png" alt="$ABCD$" /> 的边 <img src="../assets/./2024-05-24-托勒密定理的证明_091b06628211ad51aa25447cb10b72deb8d4e8ce.png" alt="$AB, BC, CD, DA$" /> 和对角线 <img src="../assets/./2024-05-24-托勒密定理的证明_e384a988f6d2219dc45c314e58285d8d67266a12.png" alt="$AC, BD$" />
 满足如下不等式：
-<img src="../assets/2024-05-24-托勒密定理的证明_de7d63214ab96b69e5bf45bfe00d995bcbfa8f2b.png" alt="$$ AB \cdot CD + BC \cdot DA \geq AC \cdot BD$$" />
+<img src="../assets/./2024-05-24-托勒密定理的证明_b0179d2ae527d66b8ee50ca9e69a60b1d783e7c9.png" alt="$$ AB \cdot CD + BC \cdot DA \geq AC \cdot BD$$" />
 等号成立，当且仅当该四边形为圆内接四边形时。
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgcddcc24" class="outline-2">
-<h2 id="orgcddcc24"><span class="section-number-2">2.</span> 证明</h2>
+<div id="outline-container-orgfcfe18c" class="outline-2">
+<h2 id="orgfcfe18c"><span class="section-number-2">2.</span> 证明</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 用复数表示方式证明。令
-<img src="../assets/2024-05-24-托勒密定理的证明_f6723e9a7e848be35eeeaa0eda4fe7ee6f3039b2.png" alt="$a=\overrightarrow{OA}, b=\overrightarrow{OB}, c=\overrightarrow{OC},
+<img src="../assets/./2024-05-24-托勒密定理的证明_652b0e5b0c4601aef2504428792bcbea51324c26.png" alt="$a=\overrightarrow{OA}, b=\overrightarrow{OB}, c=\overrightarrow{OC},
   d=\overrightarrow{OD}$" />
 则
-<img src="../assets/2024-05-24-托勒密定理的证明_be168412f0c1661562d53054daba4aad8c35f86b.png" alt="$$ (b - a)(d - c) + (c - b)(d - a) =\\
+<img src="../assets/./2024-05-24-托勒密定理的证明_1ecec72d1c8bf95470d188e9387f5388c5d0da58.png" alt="$$ (b - a)(d - c) + (c - b)(d - a) =\\
   (bd + ac - ad - bc) + (cd + ab - bd - ac) = \\
   cd + ab - ad - bc = (c - a)(d - b)$$" />
 由三角不等式知
-<img src="../assets/2024-05-24-托勒密定理的证明_a12e9198b799d86cb2dc7c8a6fb242fc78f3aa68.png" alt="$$ |(b - a)(d - c)| + |(c - b)(d - a)| \geq |(c - a)(d - b)|$$" />
+<img src="../assets/./2024-05-24-托勒密定理的证明_9edd0cc91026ddbc8d93d63e0b1744a98e5eda4a.png" alt="$$ |(b - a)(d - c)| + |(c - b)(d - a)| \geq |(c - a)(d - b)|$$" />
 即
-<img src="../assets/2024-05-24-托勒密定理的证明_de7d63214ab96b69e5bf45bfe00d995bcbfa8f2b.png" alt="$$ AB \cdot CD + BC \cdot DA \geq AC \cdot BD$$" />
-等号成立当且仅当复数 <img src="../assets/2024-05-24-托勒密定理的证明_35899b135012fcea0c73046b8481215f74110640.png" alt="$(b - a)(d - c)$" /> 与 <img src="../assets/2024-05-24-托勒密定理的证明_4fbebffaf1cf5a9c671724380b7b047872382746.png" alt="$(c - b)(d - a)$" /> 辐角相同。
-即 <img src="../assets/2024-05-24-托勒密定理的证明_10cb5c060d221b18ca81bd7ea91102b58360637b.png" alt="$\frac{b - a}{d - a}$" /> 和 <img src="../assets/2024-05-24-托勒密定理的证明_36a394899e17659393d53934a5afa79fd765d314.png" alt="$\frac{c - b}{d - c}$" /> 辐角相同，又因为
-<img src="../assets/2024-05-24-托勒密定理的证明_417c00140f389ffcda13540b37bd028c38c8034f.png" alt="$arg(\frac{c - b}{d - c}) \equiv arg(\frac{b - c}{d - c}) + 180^\circ \pmod{360^\circ}$" />
-其中 <img src="../assets/2024-05-24-托勒密定理的证明_b26c93fe044ddf5f04cf9c68a87b5dea6ce9b873.png" alt="$arg(x) \in [0, 360^\circ]$" />
-即 <img src="../assets/2024-05-24-托勒密定理的证明_841baaf8f2e31495867b7f49da4f63fe38710362.png" alt="$arg(\frac{b - a}{d - a}) \equiv arg(\frac{b - c}{d - c}) + 180^\circ \pmod{360^\circ}$" />
-由复数辐角性质 <img src="../assets/2024-05-24-托勒密定理的证明_7ef09e2e6d91df40bb5c518077139f7dd30b8480.png" alt="$arg(\frac{x}{y}) \equiv arg(x) - arg(y) \equiv -arg(\frac{y}{x}) \pmod{360^\circ}$" />
-上式转化为 <img src="../assets/2024-05-24-托勒密定理的证明_a60798ecdbe457d44c53a5a588b31fae094996cc.png" alt="$arg(\frac{b - a}{d - a}) \equiv -arg(\frac{d - c}{b - c}) + 180^\circ \pmod{360^\circ}$" />
-即为 <img src="../assets/2024-05-24-托勒密定理的证明_e9852fbf01944bdb14c66c69020729375314240b.png" alt="$arg(\frac{b - a}{d - a}) + arg(\frac{d - c}{b - c}) \equiv 180^\circ
+<img src="../assets/./2024-05-24-托勒密定理的证明_b0179d2ae527d66b8ee50ca9e69a60b1d783e7c9.png" alt="$$ AB \cdot CD + BC \cdot DA \geq AC \cdot BD$$" />
+等号成立当且仅当复数 <img src="../assets/./2024-05-24-托勒密定理的证明_661c589e9be9bc30b18158fb0f66f1a6c925f6ed.png" alt="$(b - a)(d - c)$" /> 与 <img src="../assets/./2024-05-24-托勒密定理的证明_ba82f41edae5c95fdea663daf80bd9c3f29b4ead.png" alt="$(c - b)(d - a)$" /> 辐角相同。
+即 <img src="../assets/./2024-05-24-托勒密定理的证明_0a21dd56ba97f691e8d0f0a18b17d764efafe0cc.png" alt="$\frac{b - a}{d - a}$" /> 和 <img src="../assets/./2024-05-24-托勒密定理的证明_4e34fe83ece2b4067ad0c1159ec12a59cd5e3b97.png" alt="$\frac{c - b}{d - c}$" /> 辐角相同，又因为
+<img src="../assets/./2024-05-24-托勒密定理的证明_cdb0741712096284da09a082fb802d3411be7357.png" alt="$arg(\frac{c - b}{d - c}) \equiv arg(\frac{b - c}{d - c}) + 180^\circ \pmod{360^\circ}$" />
+其中 <img src="../assets/./2024-05-24-托勒密定理的证明_5993f64f3946c31a3c76a20026333a4aaa577106.png" alt="$arg(x) \in [0, 360^\circ]$" />
+即 <img src="../assets/./2024-05-24-托勒密定理的证明_85ae8c17fbf181ef199ddcf42c6cc0e0cd2004af.png" alt="$arg(\frac{b - a}{d - a}) \equiv arg(\frac{b - c}{d - c}) + 180^\circ \pmod{360^\circ}$" />
+由复数辐角性质 <img src="../assets/./2024-05-24-托勒密定理的证明_552eb3ee35a5596e2a2f0da1dffe0d9215f93491.png" alt="$arg(\frac{x}{y}) \equiv arg(x) - arg(y) \equiv -arg(\frac{y}{x}) \pmod{360^\circ}$" />
+上式转化为 <img src="../assets/./2024-05-24-托勒密定理的证明_bc814b3a5d450e7b85fda3fc462b4b10ceea35bd.png" alt="$arg(\frac{b - a}{d - a}) \equiv -arg(\frac{d - c}{b - c}) + 180^\circ \pmod{360^\circ}$" />
+即为 <img src="../assets/./2024-05-24-托勒密定理的证明_1cff429302cbe32c5964b414b8377f8914ba53a1.png" alt="$arg(\frac{b - a}{d - a}) + arg(\frac{d - c}{b - c}) \equiv 180^\circ
   \pmod{360^\circ}$" />, 恰好为四点共圆的充要条件。
 </p>
 </div>
@@ -268,7 +246,7 @@ layout: single
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: PENG Kevin</p>
-<p class="date">Created: 2024-06-04 Tue 14:41</p>
+<p class="date">Created: 2024-09-01 日 12:07</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

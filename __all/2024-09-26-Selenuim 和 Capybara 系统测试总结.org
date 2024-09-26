@@ -1,0 +1,133 @@
+# -*- coding: utf-8; -*-
+#+options: tex:dvipng
+
+* 使用 selenium 和 capybara 的原因
+  个人每次网站开发修改后，都需要对功能使用手动验证一遍，以防在服务器侧部署了问题
+  软件。为了每次释放前能进行自动化的功能验证，不得不引入网页自动化验证的外部包，
+  其中 selenium 用于通过不同浏览器提供的 driver，和不同浏览器进行交互，capybara
+  则可以通过 selenium 为功能测试编写提供方便的 DSL，可快速编写功能测试用例。
+
+* capybara 的使用
+  [[https://github.com/teamcapybara/capybara][capybara]] 通过调用 [[https://github.com/SeleniumHQ/][selenium]] 提供的不同的浏览器 driver，来驱动和控制浏览器运行。
+  本篇文章基于 Rails 7.2, capybara 和 selenium-webdriver gem 在 chrome 浏览器上进行了验证。
+
+** 环境配置
+
+   在 Ruby，Rails 7.2, capybara，selenium-webdriver 已安装好的情况下，环境配置
+   如下：
+
+   #+BEGIN_SRC ruby  
+     class FuncTest < ApplicationSystemTestCase
+       Selenium::WebDriver::Chrome.path = "~/.cache/selenium/chrome/linux64/129.0.6668.58/chrome"
+       driven_by :selenium, using: :chrome, options: {} do |cap|
+         cap.add_argument("--no-sandbox")
+         cap.add_argument("--no-proxy-server")
+         cap.add_argument("--user-data-dir=#{Rails.root}/tmp/chrome/")
+         cap.add_preference("download.default_directory", "#{Rails.root}/test/fixtures/files/")
+         ENV.delete("HTTP_PROXY")
+         ENV.delete("http_proxy")
+         ENV.delete("HTTPS_PROXY")
+         ENV.delete("https_proxy")
+       end
+     end
+   #+END_SRC
+
+   chrome 的浏览器参数(argument)和配置(perference)参考 [[https://www.selenium.dev/documentation/webdriver/browsers/chrome/][chrome options]] 。
+   perference 的全部设置可参考 =--user-data-dir= 设置的目录的 =Default/Perferences=
+   文件。
+
+   capybara 的文档参考 [[https://rubydoc.info/github/teamcapybara/capybara/master#the-dsl][capybara doc]] 。这里的一般是最新的文档，本地使用的文档可
+   以如下生成：
+   
+   #+BEGIN_SRC bash  
+     yard gems
+     yard server --gems -s webrick
+   #+END_SRC
+
+   再选择 capybara 查看。
+
+** capybara 常用 DSL
+
+*** 基础
+    1. 元素选择
+       有 =css= 和 =xpath= 两种选择语法。
+       #+BEGIN_SRC ruby  
+         page.find(:css, 'div')
+         page.find(:xpath, './/div')
+       #+END_SRC
+       
+    2. 元素对象常用属性和方法
+       - text
+       - value
+       - visible?
+       - tag_name
+       - style
+       - send_keys :: 给元素发送按键消息
+       - disabled?
+       - click
+       - [](attribute) :: 设置属性
+       - others :: 在文档中搜索 =Node::Element= 。
+         
+    3. 限定域
+       #+BEGIN_SRC ruby  
+         within("#field") do
+         end
+       #+END_SRC
+       可以缩小 find 搜索范围。
+       
+    4. 等待断言
+       #+BEGIN_SRC ruby
+         # 等待元素变为可见
+         assert_selector("#pdf_page_info", visible: true, wait: 5)
+
+         # 等待当前节点(within)内或根节点内出现 appear
+         # 也可
+         assert_text("appear", wait: 5)
+       #+END_SRC
+       更多断言在文档中搜索 =Capybara::Node::Matchers= 
+
+    5. 内容判断
+       #+BEGIN_SRC ruby  
+         page.has_content?("content-xxx", wait: 3)
+       #+END_SRC
+       等待页面出现内容 =content-xxx= ，最长等待 3 秒。
+
+*** 访问网页
+    #+BEGIN_SRC ruby  
+      visit "/"
+    #+END_SRC
+
+*** 上传文件
+    #+BEGIN_SRC ruby  
+      page.attach_file(Rails.root.join("test/fixtures/files/test.pdf")) do
+        page.find("#open_file_browser").click
+      end
+    #+END_SRC
+    其中点击 =#open_file_browser= , 这个事件要导致弹出文件选择框。
+
+*** 按键点击
+    #+BEGIN_SRC ruby  
+      click_button("上传")
+    #+END_SRC
+    只在按键可点击时点击，不可点击会抛出异常。
+    这个查找时判断按键的 =name=, =value= 等内容是否匹配。
+
+*** 元素选择
+    #+BEGIN_SRC ruby  
+      page.find("#pdf_file_upload_label")
+    #+END_SRC
+    
+*** 表单填写
+    #+BEGIN_SRC ruby  
+      within("#pdf_page_info") do
+        fill_in('start_content_number', with: 10)
+        fill_in('end_content_number', with: 13)
+      end
+    #+END_SRC
+
+*** 浏览器窗口
+    #+BEGIN_SRC ruby  
+      page.driver.browser.window_handle
+      page.driver.browser.window_handles
+    #+END_SRC
+

@@ -3,6 +3,7 @@
 .jekyll-cache
 .jekyll-metadata
 vendor
+# 导出时会自动生成对应文件，不再使用临时文件
 /assets/org-ltximg_*
 /Gemfile.lock
 /__all/ltximg/
